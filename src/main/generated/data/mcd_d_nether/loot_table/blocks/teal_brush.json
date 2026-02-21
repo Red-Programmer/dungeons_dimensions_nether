@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "mcd_d_nether:teal_brush",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "quadrant": "quad_1"
+              }
+            }
+          ],
+          "name": "mcd_d_nether:teal_brush"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

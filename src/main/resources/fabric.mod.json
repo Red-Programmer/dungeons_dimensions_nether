@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "mcd_d_nether",
+	"version": "1.1.0",
+	"name": "Dungeons Dimensions Nether",
+	"description": "Makes the nether more detailed like in Minecraft Dungeons!",
+	"authors": [
+		"Redupro"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/user/Redupro",
+		"sources": ""
+	},
+	"license": "ARR",
+	"icon": "assets/mcd_d_nether/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.redupro.mcd_d_nether.DungeonsDimensionsNether"
+		],
+		"fabric-datagen": [
+			"net.redupro.mcd_d_nether.DungeonsDimensionsNetherDataGenerator"
+		],
+        "client": [
+            "net.redupro.mcd_d_nether.DungeonsDimensionsNetherClient"
+        ]
+	},
+	"mixins": [
+		"mcd_d_nether.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

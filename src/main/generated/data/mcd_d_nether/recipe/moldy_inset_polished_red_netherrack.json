@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "mcd_d_nether:inset_polished_red_netherrack",
+    "mcd_d_nether:nether_wart_fluff"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mcd_d_nether:moldy_inset_polished_red_netherrack"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "orange_dye",
+  "ingredients": [
+    "mcd_d_nether:warped_blossom"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:orange_dye"
+  }
+}

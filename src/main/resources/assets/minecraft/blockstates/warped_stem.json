@@ -1,0 +1,112 @@
+{
+    "multipart": [
+        {
+            "when": {"axis": "x"},
+            "apply": [
+                {"model": "minecraft:block/warped_stem", "x": 90, "y": 90}
+            ]
+        },
+        {
+            "when": {"axis": "y", "distance":  "1"},
+            "apply": [
+                {"model": "mcd_d_nether:block/warped_stem/stem_1"}
+            ]
+        },
+        {
+            "when": {"axis": "y", "distance":  "2"},
+            "apply": [
+                {"model": "mcd_d_nether:block/warped_stem/stem_2"}
+            ]
+        },
+        {
+            "when": {"axis": "y", "distance":  "3"},
+            "apply": [
+                {"model": "mcd_d_nether:block/warped_stem/stem_3"}
+            ]
+        },
+        {
+            "when": {"axis": "y", "distance":  "4"},
+            "apply": [
+                {"model": "mcd_d_nether:block/warped_stem/stem_4"}
+            ]
+        },
+        {
+            "when": {"axis": "z"},
+            "apply": [
+                {"model": "minecraft:block/warped_stem", "x": 90}
+            ]
+        },
+        {
+            "when": {"axis": "y", "distance": "3"},
+            "apply": [
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_a", "y": 0, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_a", "y": 90, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_a", "y": 180, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_a", "y": 270, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_a_a", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_a_a", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_a_a", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_a_a", "y": 270, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_aa", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_aa", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_aa", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_aa", "y": 270, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_ab", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_ab", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_ab", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_ab", "y": 270, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_b", "y": 0, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_b", "y": 90, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_b", "y": 180, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_b", "y": 270, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_b_a", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_b_a", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_b_a", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_b_a", "y": 270, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_bb", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_bb", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_bb", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist1/shelf_fungus_bb", "y": 270, "weight": 1}
+            ]
+        },
+        {
+            "when": {"axis": "y", "distance": "2"},
+            "apply": [
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_a", "y": 0, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_a", "y": 90, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_a", "y": 180, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_a", "y": 270, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_a_a", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_a_a", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_a_a", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_a_a", "y": 270, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_aa", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_aa", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_aa", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_aa", "y": 270, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_ab", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_ab", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_ab", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_ab", "y": 270, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_b", "y": 0, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_b", "y": 90, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_b", "y": 180, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_b", "y": 270, "weight": 5},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_b_a", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_b_a", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_b_a", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_b_a", "y": 270, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_bb", "y": 0, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_bb", "y": 90, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_bb", "y": 180, "weight": 1},
+                {"model": "mcd_d_nether:block/warped_stem/dist2/shelf_fungus_bb", "y": 270, "weight": 1}
+            ]
+        },
+        {
+            "when": {"axis": "y", "distance": "1"},
+            "apply": [
+                {"model": "mcd_d_nether:block/warped_stem/roots", "weight": 1}
+            ]
+        }
+    ]
+}

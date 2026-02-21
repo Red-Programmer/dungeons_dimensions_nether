@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "axis=x,ashy=false": {
+      "model": "minecraft:block/basalt",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,ashy=false": {
+      "model": "minecraft:block/basalt"
+    },
+    "axis=z,ashy=false": {
+      "model": "minecraft:block/basalt",
+      "x": 90
+    },
+    "axis=x,ashy=true": {
+      "model": "mcd_d_nether:block/ashy_basalt",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,ashy=true": {
+      "model": "mcd_d_nether:block/ashy_basalt"
+    },
+    "axis=z,ashy=true": {
+      "model": "mcd_d_nether:block/ashy_basalt",
+      "x": 90
+    }
+  }
+}

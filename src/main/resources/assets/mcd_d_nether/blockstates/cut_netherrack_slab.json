@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mcd_d_nether:block/bricks/cut_netherrack_slab"
+    },
+    "type=double": {
+      "model": "mcd_d_nether:block/bricks/cut_netherrack"
+    },
+    "type=top": {
+      "model": "mcd_d_nether:block/bricks/cut_netherrack_slab_top"
+    }
+  }
+}

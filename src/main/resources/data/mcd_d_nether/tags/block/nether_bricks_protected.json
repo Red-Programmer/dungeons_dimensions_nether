@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:nether_bricks",
+    "minecraft:chiseled_nether_bricks",
+    "minecraft:nether_brick_fence",
+    "mcd_d_nether:nether_brick_pillar",
+    "mcd_d_nether:polished_netherrack",
+    "mcd_d_nether:chiseled_polished_netherrack",
+    "mcd_d_nether:inset_polished_netherrack",
+    "mcd_d_nether:inset_polished_blackstone",
+    "mcd_d_nether:inset_polished_netherrack"
+  ]
+}

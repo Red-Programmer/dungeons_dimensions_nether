@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mcd_d_nether:block/bricks/cut_blackstone_slab"
+    },
+    "type=double": {
+      "model": "mcd_d_nether:block/bricks/cut_blackstone"
+    },
+    "type=top": {
+      "model": "mcd_d_nether:block/bricks/cut_blackstone_slab_top"
+    }
+  }
+}

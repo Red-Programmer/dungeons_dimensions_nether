@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "mcd_d_nether:crimson_ivy",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fruit": "true"
+              }
+            }
+          ],
+          "name": "mcd_d_nether:crimson_ivy"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

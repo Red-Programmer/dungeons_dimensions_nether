@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "key": {
+    "x": [
+      "mcd_d_nether:nether_wart_fluff"
+    ]
+  },
+  "result": {
+    "id": "minecraft:nether_wart_block",
+    "count": 1
+  }
+}

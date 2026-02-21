@@ -1,0 +1,27 @@
+package net.redupro.mcd_d_nether.item;
+
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
+import net.redupro.mcd_d_nether.DungeonsDimensionsNether;
+
+
+public class ModItems {
+
+    private static Item register(String name) {
+        ResourceKey< Item > itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
+        return Registry.register(BuiltInRegistries.ITEM, itemKey, new Item(new Item.Properties().setId(itemKey)));
+    }
+    public static void registerModItems() {
+        DungeonsDimensionsNether.LOGGER.info("Register in Mod Blocks for" + DungeonsDimensionsNether.MOD_ID);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(fabricItemGroupEntries -> {
+
+        });
+    }
+
+}

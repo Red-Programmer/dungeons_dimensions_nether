@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "mcd_d_nether:dark_nether_bricks",
+  "result": {
+    "count": 1,
+    "id": "mcd_d_nether:dark_nether_brick_wall"
+  }
+}
