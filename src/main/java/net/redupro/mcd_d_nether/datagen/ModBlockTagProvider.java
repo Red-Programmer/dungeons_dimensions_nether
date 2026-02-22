@@ -15,18 +15,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
-        valueLookupBuilder(BlockTags.FENCES)
+        getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(ModBlocks.DARK_NETHER_BRICK_FENCE);
-        valueLookupBuilder(BlockTags.WALLS)
+        getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.DARK_NETHER_BRICK_WALL);
-        valueLookupBuilder(BlockTags.CLIMBABLE)
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
                 .add(ModBlocks.CRIMSON_IVY);
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.ASH);
-        valueLookupBuilder(BlockTags.INFINIBURN_NETHER).add(ModBlocks.ROUGH_NETHERRACK);
-        valueLookupBuilder(BlockTags.INFINIBURN_END).add(ModBlocks.ROUGH_NETHERRACK);
-        valueLookupBuilder(BlockTags.INFINIBURN_OVERWORLD).add(ModBlocks.ROUGH_NETHERRACK);
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+        getOrCreateTagBuilder(BlockTags.INFINIBURN_NETHER).add(ModBlocks.ROUGH_NETHERRACK);
+        getOrCreateTagBuilder(BlockTags.INFINIBURN_END).add(ModBlocks.ROUGH_NETHERRACK);
+        getOrCreateTagBuilder(BlockTags.INFINIBURN_OVERWORLD).add(ModBlocks.ROUGH_NETHERRACK);
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.CUT_BLACKSTONE)
                 .add(ModBlocks.CUT_BLACKSTONE_SLAB)
                 .add(ModBlocks.CUT_BLACKSTONE_STAIRS)
@@ -67,7 +67,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOLDY_CUT_RED_NETHERRACK)
                 .add(ModBlocks.ROUGH_NETHERRACK)
                 .add(ModBlocks.ASHY_BASALT);
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_HOE)
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.WARPED_WART_FLUFF)
                 .add(ModBlocks.NETHER_WART_FLUFF)
                 .add(ModBlocks.MIDNIGHT_WART_BLOCK)

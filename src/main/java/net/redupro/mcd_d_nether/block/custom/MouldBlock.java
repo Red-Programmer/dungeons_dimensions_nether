@@ -10,7 +10,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -79,19 +78,17 @@ public class MouldBlock extends TallRootsBlock {
 
     @Override
     protected BlockState updateShape(
-            BlockState state,
-            LevelReader world,
-            ScheduledTickAccess tickView,
-            BlockPos pos,
+            BlockState blockState,
             Direction direction,
-            BlockPos neighborPos,
-            BlockState neighborState,
-            RandomSource random
+            BlockState blockState2,
+            LevelAccessor levelAccessor,
+            BlockPos blockPos,
+            BlockPos blockPos2
     ) {
-        if (state.getValue(CAP)) {
-            return isPartOf(state, direction) && !neighborState.is(this) ? Blocks.AIR.defaultBlockState() : state;
+        if (blockState.getValue(CAP)) {
+            return isPartOf(blockState, direction) && !blockState2.is(this) ? Blocks.AIR.defaultBlockState() : blockState;
         } else {
-            return super.updateShape(state, world, tickView, pos, direction, neighborPos, neighborState, random);
+            return super.updateShape(blockState, direction, blockState2, levelAccessor, blockPos, blockPos2);
         }
     }
 

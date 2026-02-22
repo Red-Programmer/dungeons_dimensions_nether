@@ -12,7 +12,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -73,24 +72,22 @@ public class IvyBlock extends Block implements BonemealableBlock {
 
     @Override
     protected BlockState updateShape(
-            BlockState state,
-            LevelReader world,
-            ScheduledTickAccess tickView,
-            BlockPos pos,
+            BlockState blockState,
             Direction direction,
-            BlockPos neighborPos,
-            BlockState neighborState,
-            RandomSource random
+            BlockState blockState2,
+            LevelAccessor levelAccessor,
+            BlockPos blockPos,
+            BlockPos blockPos2
     ) {
-        Direction facing = state.getValue(FACING);
-        if ((state.getValue(IVY_PART).equals(IvyPart.LEFTB) || state.getValue(IVY_PART).equals(IvyPart.RIGHTB)) && !neighborState.is(this)) {
+        Direction facing = blockState.getValue(FACING);
+        if ((blockState.getValue(IVY_PART).equals(IvyPart.LEFTB) || blockState.getValue(IVY_PART).equals(IvyPart.RIGHTB)) && !blockState2.is(this)) {
             if (direction == facing.getCounterClockWise()) {
                 return Blocks.AIR.defaultBlockState();
             } else {
-                return state;
+                return blockState;
             }
         } else {
-            return state;
+            return blockState;
         }
     }
 

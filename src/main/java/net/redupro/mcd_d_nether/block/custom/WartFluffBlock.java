@@ -3,7 +3,6 @@ package net.redupro.mcd_d_nether.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -11,8 +10,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LevelEvent;
@@ -62,30 +61,28 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    protected boolean propagatesSkylightDown(BlockState state) {
+    protected boolean propagatesSkylightDown(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
         return true;
     }
 
     @Override
     protected BlockState updateShape(
-            BlockState state,
-            LevelReader world,
-            ScheduledTickAccess tickView,
-            BlockPos pos,
+            BlockState blockState,
             Direction direction,
-            BlockPos neighborPos,
-            BlockState neighborState,
-            RandomSource random
+            BlockState blockState2,
+            LevelAccessor levelAccessor,
+            BlockPos blockPos,
+            BlockPos blockPos2
     ) {
-        DoubleBlockHalf doubleBlockHalf = state.getValue(HALF);
-        if (direction == state.getValue(FACING) && doubleBlockHalf == DoubleBlockHalf.UPPER) {
+        DoubleBlockHalf doubleBlockHalf = blockState.getValue(HALF);
+        if (direction == blockState.getValue(FACING) && doubleBlockHalf == DoubleBlockHalf.UPPER) {
             return Blocks.AIR.defaultBlockState();
         } else if (direction.getAxis() != Direction.Axis.Y
                     || doubleBlockHalf == DoubleBlockHalf.LOWER != (direction == Direction.UP)
-                    || neighborState.is(this) && neighborState.getValue(HALF) != doubleBlockHalf) {
-                return doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canSurvive(world, pos)
+                    || blockState2.is(this) && blockState2.getValue(HALF) != doubleBlockHalf) {
+                return doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !blockState.canSurvive(levelAccessor, blockPos)
                         ? Blocks.AIR.defaultBlockState()
-                        : super.updateShape(state, world, tickView, pos, direction, neighborPos, neighborState, random);
+                        : super.updateShape(blockState, direction, blockState2, levelAccessor, blockPos, blockPos2);
             } else {
                 return Blocks.AIR.defaultBlockState();
             }
@@ -115,7 +112,7 @@ public class WartFluffBlock extends Block {
             } else {
                 hanging = world.getBlockState(blockPos.above().east()).isFaceSturdy(ctx.getLevel(), ctx.getClickedPos().above().east(), Direction.EAST);
             }
-            return blockPos.getY() > world.getMinY() && world.getBlockState(blockPos.below()).canBeReplaced(ctx) ? this.defaultBlockState().setValue(FACING, facing.getOpposite()).setValue(HANGING, hanging) : null;
+            return blockPos.getY() > world.getMinBuildHeight() && world.getBlockState(blockPos.below()).canBeReplaced(ctx) ? this.defaultBlockState().setValue(FACING, facing.getOpposite()).setValue(HANGING, hanging) : null;
         }
     }
 

@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    "mcd_d_nether:cut_blackstone",
-    "mcd_d_nether:nether_wart_fluff"
+    {
+      "item": "mcd_d_nether:cut_blackstone"
+    },
+    {
+      "item": "mcd_d_nether:nether_wart_fluff"
+    }
   ],
   "result": {
     "count": 1,

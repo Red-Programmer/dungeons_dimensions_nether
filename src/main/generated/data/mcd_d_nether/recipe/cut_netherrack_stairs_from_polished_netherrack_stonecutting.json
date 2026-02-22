@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "mcd_d_nether:polished_netherrack",
+  "ingredient": {
+    "item": "mcd_d_nether:polished_netherrack"
+  },
   "result": {
     "count": 1,
     "id": "mcd_d_nether:cut_netherrack_stairs"

@@ -3,7 +3,9 @@
   "category": "misc",
   "group": "red_dye",
   "ingredients": [
-    "mcd_d_nether:observer_orchids"
+    {
+      "item": "mcd_d_nether:observer_orchids"
+    }
   ],
   "result": {
     "count": 1,
