@@ -1,6 +1,5 @@
 package net.redupro.mcd_d_nether;
 
-import com.mojang.serialization.MapCodec;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -47,7 +46,6 @@ public class DungeonsDimensionsNether implements ModInitializer {
     @Override
 	public void onInitialize() {
         ModBlocks.registerModBlocks();
-        ModItems.registerModItems();
 
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.WARPED_STEM, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.WARPED_WART_BLOCK, RenderType.cutout());
@@ -96,8 +94,7 @@ public class DungeonsDimensionsNether implements ModInitializer {
         Registry.register(BuiltInRegistries.FEATURE, ASH_PATCH_ID, ASH_PATCH_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, FORTRESS_CAP_ID, FORTRESS_CAP_FEATURE);
 
-        Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "free_feature_pool_element" +
-                ""), (StructurePoolElementType<FreeFeaturePoolElement>) () -> FreeFeaturePoolElement.CODEC);
+        Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "free_feature_pool_element"), (StructurePoolElementType<FreeFeaturePoolElement>) () -> FreeFeaturePoolElement.CODEC);
 
     }
 }

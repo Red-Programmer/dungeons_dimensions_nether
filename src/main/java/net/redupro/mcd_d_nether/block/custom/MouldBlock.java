@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.redupro.mcd_d_nether.block.ModBlocks;
+import org.jetbrains.annotations.NotNull;
 
 public class MouldBlock extends TallRootsBlock {
     public static final BooleanProperty CAP = BooleanProperty.create("cap");
@@ -42,7 +43,7 @@ public class MouldBlock extends TallRootsBlock {
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction facing = state.getValue(FACING);
         boolean corner = state.getValue(CORNER);
         boolean edge = state.getValue(EDGE);
@@ -77,7 +78,7 @@ public class MouldBlock extends TallRootsBlock {
     }
 
     @Override
-    protected BlockState updateShape(
+    protected @NotNull BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,

@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.redupro.mcd_d_nether.block.Ashy;
 import net.redupro.mcd_d_nether.block.ModBlocks;
+import org.jetbrains.annotations.NotNull;
 
 
 public class BasaltBlock extends RotatedPillarBlock {
@@ -20,7 +21,7 @@ public class BasaltBlock extends RotatedPillarBlock {
     }
 
     @Override
-    protected BlockState updateShape(
+    protected @NotNull BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
