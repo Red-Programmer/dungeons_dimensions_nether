@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "mcd_d_nether:polished_netherrack",
-    "B": "minecraft:black_dye"
+    "#": {
+      "item": "mcd_d_nether:polished_netherrack"
+    },
+    "B": {
+      "item": "minecraft:black_dye"
+    }
   },
   "pattern": [
     "###",

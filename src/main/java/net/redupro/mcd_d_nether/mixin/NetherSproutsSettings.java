@@ -1,6 +1,8 @@
 package net.redupro.mcd_d_nether.mixin;
 
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.NetherSproutsBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -14,15 +16,17 @@ import org.spongepowered.asm.mixin.injection.Slice;
 @SuppressWarnings("UnresolvedMixinReference")
 @Mixin(Blocks.class)
 public class NetherSproutsSettings {
-    @ModifyArg(method = "<clinit>", at = @At(value = "INVOKE:LAST", target = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;"), slice=@Slice(to=@At(value = "FIELD", target = "Lnet/minecraft/world/level/block/Blocks;NETHER_SPROUTS:Lnet/minecraft/world/level/block/Block;", opcode = Opcodes.PUTSTATIC)))
-    private static BlockBehaviour.Properties redirectBlockConstructor(BlockBehaviour.Properties original) {
-        return BlockBehaviour.Properties.of()
-                .mapColor(MapColor.COLOR_CYAN)
-                .replaceable()
-                .noCollision()
-                .instabreak()
-                .sound(SoundType.NETHER_SPROUTS)
-                .offsetType(BlockBehaviour.OffsetType.XYZ)
-                .pushReaction(PushReaction.DESTROY);
+    @ModifyArg(method = "<clinit>", at = @At(value = "INVOKE:LAST", target = "Lnet/minecraft/world/level/block/Blocks;register(Ljava/lang/String;Lnet/minecraft/world/level/block/Block;)Lnet/minecraft/world/level/block/Block;"), slice=@Slice(to=@At(value = "FIELD", target = "Lnet/minecraft/world/level/block/Blocks;NETHER_SPROUTS:Lnet/minecraft/world/level/block/Block;", opcode = Opcodes.PUTSTATIC)))
+    private static Block redirectBlockConstructor(Block original) {
+        return new NetherSproutsBlock(
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_CYAN)
+                    .replaceable()
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.NETHER_SPROUTS)
+                    .offsetType(BlockBehaviour.OffsetType.XYZ)
+                    .pushReaction(PushReaction.DESTROY)
+        );
     }
 }

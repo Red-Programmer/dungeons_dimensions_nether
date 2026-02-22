@@ -2,11 +2,8 @@ package net.redupro.mcd_d_nether.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -24,19 +21,17 @@ public class BasaltBlock extends RotatedPillarBlock {
 
     @Override
     protected BlockState updateShape(
-            BlockState state,
-            LevelReader world,
-            ScheduledTickAccess tickView,
-            BlockPos pos,
+            BlockState blockState,
             Direction direction,
-            BlockPos neighborPos,
-            BlockState neighborState,
-            RandomSource random
+            BlockState blockState2,
+            LevelAccessor levelAccessor,
+            BlockPos blockPos,
+            BlockPos blockPos2
     ) {
-        if (world.getBlockState(pos.above()).is(ModBlocks.ASH)) {
-            return state.setValue(ASHY, true);
+        if (levelAccessor.getBlockState(blockPos.above()).is(ModBlocks.ASH)) {
+            return blockState.setValue(ASHY, true);
         }
-        return state;
+        return blockState;
     }
 
     @Override

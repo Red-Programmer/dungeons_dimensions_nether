@@ -3,8 +3,12 @@
   "category": "building",
   "group": "dark_nether_bricks",
   "key": {
-    "#": "minecraft:nether_bricks",
-    "B": "minecraft:black_dye"
+    "#": {
+      "item": "minecraft:nether_bricks"
+    },
+    "B": {
+      "item": "minecraft:black_dye"
+    }
   },
   "pattern": [
     "###",

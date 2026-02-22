@@ -4,7 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -19,8 +19,6 @@ import net.redupro.mcd_d_nether.block.custom.*;
 import net.redupro.mcd_d_nether.item.ModFoodComponents;
 import org.spongepowered.include.com.google.common.base.Function;
 
-import static net.minecraft.world.level.block.Blocks.flowerPotProperties;
-
 @SuppressWarnings("DataFlowIssue")
 public class ModBlocks {
     public static final Block WARPED_BLOSSOM = register(
@@ -32,7 +30,8 @@ public class ModBlocks {
     );
     public static final Block POTTED_WARPED_BLOSSOM = register(
             "potted_warped_blossom",
-            settings -> new FlowerPotBlock(WARPED_BLOSSOM, settings), flowerPotProperties(),
+            settings -> new FlowerPotBlock(WARPED_BLOSSOM, settings),
+            BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY),
             false,
             null
     );
@@ -529,14 +528,14 @@ public class ModBlocks {
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem, FoodProperties food) {
         ResourceKey<Block> blockKey = keyOfBlock(name);
-        Block block = blockFactory.apply(settings.setId(blockKey));
+        Block block = blockFactory.apply(settings);
         if (shouldRegisterItem) {
             ResourceKey<Item> itemKey = keyOfItem(name);
             BlockItem blockItem;
             if (food != null) {
-                blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).food(food));
+                blockItem = new BlockItem(block, new Item.Properties().food(food));
             } else {
-                blockItem = new BlockItem(block, new Item.Properties().setId(itemKey));
+                blockItem = new BlockItem(block, new Item.Properties());
             }
             Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
         }
@@ -545,24 +544,24 @@ public class ModBlocks {
     }
     private static Block registerStairsBlock(String name, Block base, boolean shouldRegisterItem) {
         ResourceKey<Block> blockKey = keyOfBlock(name);
-        StairBlock block = new StairBlock(base.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(base).setId(blockKey));
+        StairBlock block = new StairBlock(base.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(base));
         if (shouldRegisterItem) {
             ResourceKey<Item> itemKey = keyOfItem(name);
-            BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey));
+            BlockItem blockItem = new BlockItem(block, new Item.Properties());
             Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
         }
 
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
     private static ResourceKey<Block> keyOfBlock(String name) {
-        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
+        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
     }
     private static ResourceKey<Item> keyOfItem(String name) {
-        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
+        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
     }
 
     public static void registerModBlocks() {
-        DungeonsDimensionsNether.LOGGER.info("Register in Mod Blocks for" + DungeonsDimensionsNether.MOD_ID);
+        DungeonsDimensionsNether.LOGGER.info("Registering Mod Blocks for " + DungeonsDimensionsNether.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.accept(ModBlocks.WARPED_BLOSSOM);

@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:blackstone",
+  "ingredient": {
+    "item": "minecraft:blackstone"
+  },
   "result": {
     "count": 1,
     "id": "mcd_d_nether:inset_polished_blackstone"

@@ -3,7 +3,9 @@
   "category": "misc",
   "group": "orange_dye",
   "ingredients": [
-    "mcd_d_nether:warped_blossom"
+    {
+      "item": "mcd_d_nether:warped_blossom"
+    }
   ],
   "result": {
     "count": 1,

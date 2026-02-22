@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "mcd_d_nether:cut_blackstone",
+  "ingredient": {
+    "item": "mcd_d_nether:cut_blackstone"
+  },
   "result": {
     "count": 1,
     "id": "mcd_d_nether:spalling_cut_blackstone"
