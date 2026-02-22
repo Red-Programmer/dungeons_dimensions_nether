@@ -1,6 +1,5 @@
 package net.redupro.mcd_d_nether;
 
-import com.mojang.serialization.MapCodec;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -46,7 +45,6 @@ public class DungeonsDimensionsNether implements ModInitializer {
     @Override
 	public void onInitialize() {
         ModBlocks.registerModBlocks();
-        ModItems.registerModItems();
 
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.WARPED_STEM, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.WARPED_WART_BLOCK, RenderType.cutout());

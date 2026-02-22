@@ -27,6 +27,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.redupro.mcd_d_nether.block.Ivy;
 import net.redupro.mcd_d_nether.block.ModBlocks;
 import net.redupro.mcd_d_nether.block.enums.IvyPart;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class IvyBlock extends Block implements BonemealableBlock {
@@ -45,12 +46,12 @@ public class IvyBlock extends Block implements BonemealableBlock {
         this.registerDefaultState(defaultBlockState().setValue(IVY_PART, IvyPart.TIP).setValue(FACING, Direction.NORTH).setValue(FRUIT, false));
     }
     @Override
-    public MapCodec<IvyBlock> codec() {
+    public @NotNull MapCodec<IvyBlock> codec() {
         return CODEC;
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         return switch (direction) {
             case SOUTH -> SOUTH_SHAPE;
@@ -71,7 +72,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    protected BlockState updateShape(
+    protected @NotNull BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
@@ -167,7 +168,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+    protected @NotNull InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
         return Ivy.pickFruit(player, state, world, pos);
     }
 

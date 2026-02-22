@@ -5,7 +5,6 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.*;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.JigsawBlock;
@@ -16,6 +15,7 @@ import net.minecraft.world.level.levelgen.structure.pools.FeaturePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -25,7 +25,6 @@ public class FreeFeaturePoolElement extends FeaturePoolElement {
             instance -> instance.group(PlacedFeature.CODEC.fieldOf("feature").forGetter(freeFeaturePoolElement -> freeFeaturePoolElement.feature), projectionCodec())
                     .apply(instance, FreeFeaturePoolElement::new)
     );
-    private static final ResourceLocation DEFAULT_JIGSAW_NAME = ResourceLocation.withDefaultNamespace("wing");
     private Holder<PlacedFeature> feature;
     private @Nullable CompoundTag defaultJigsawNBT;
 
@@ -45,7 +44,7 @@ public class FreeFeaturePoolElement extends FeaturePoolElement {
     }
 
     @Override
-    public List<StructureTemplate.StructureBlockInfo> getShuffledJigsawBlocks(
+    public @NotNull List<StructureTemplate.StructureBlockInfo> getShuffledJigsawBlocks(
             StructureTemplateManager structureTemplateManager, BlockPos blockPos, Rotation rotation, RandomSource randomSource
     ) {
         List<StructureTemplate.StructureBlockInfo> list = Lists.<StructureTemplate.StructureBlockInfo>newArrayList();

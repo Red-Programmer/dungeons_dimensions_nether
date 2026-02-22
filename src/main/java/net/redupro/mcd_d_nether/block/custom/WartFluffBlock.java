@@ -3,7 +3,6 @@ package net.redupro.mcd_d_nether.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +24,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class WartFluffBlock extends Block {
@@ -45,12 +45,12 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    public MapCodec<WartFluffBlock> codec() {
+    public @NotNull MapCodec<WartFluffBlock> codec() {
         return CODEC;
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         return switch (direction) {
             case SOUTH -> NORTH_SHAPE;
@@ -66,7 +66,7 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    protected BlockState updateShape(
+    protected @NotNull BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
@@ -133,7 +133,7 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    public BlockState playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
+    public @NotNull BlockState playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
         if (!world.isClientSide()) {
             if (player.isCreative()) {
                 onBreakInCreative(world, pos, state, player);

@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class NetherWallFlower extends Block {
@@ -34,12 +35,12 @@ public class NetherWallFlower extends Block {
     }
 
     @Override
-    public MapCodec<NetherWallFlower> codec() {
+    public @NotNull MapCodec<NetherWallFlower> codec() {
         return CODEC;
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         return switch (direction) {
             case SOUTH -> NORTH_SHAPE;
@@ -55,7 +56,7 @@ public class NetherWallFlower extends Block {
     }
 
     @Override
-    protected BlockState updateShape(
+    protected @NotNull BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
