@@ -73,7 +73,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MIDNIGHT_WART_BLOCK)
                 .add(ModBlocks.MIDNIGHT_MOULD)
                 .add(ModBlocks.MOONLIGHT_MOULD);
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.WARPED_TRUNK);
     }
 }
