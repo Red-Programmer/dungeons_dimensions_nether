@@ -11,14 +11,14 @@ import net.minecraft.world.item.Item;
 import net.redupro.mcd_d_nether.DungeonsDimensionsNether;
 
 
-public class ModItems {
+public class McddnItems {
 
     private static Item register(String name) {
         ResourceKey< Item > itemKey = ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
         return Registry.register(BuiltInRegistries.ITEM, itemKey, new Item(new Item.Properties()));
     }
 
-    public static void registerModItems() {
+    public static void registerMcddnItems() {
         DungeonsDimensionsNether.LOGGER.info("Registering Mod Items for " + DungeonsDimensionsNether.MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(fabricItemGroupEntries -> {
 

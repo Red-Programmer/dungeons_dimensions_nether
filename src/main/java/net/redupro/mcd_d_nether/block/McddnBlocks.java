@@ -16,11 +16,11 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.redupro.mcd_d_nether.DungeonsDimensionsNether;
 import net.redupro.mcd_d_nether.block.custom.*;
-import net.redupro.mcd_d_nether.item.ModFoodComponents;
+import net.redupro.mcd_d_nether.item.McddnFoodComponents;
 import org.spongepowered.include.com.google.common.base.Function;
 
 @SuppressWarnings("DataFlowIssue")
-public class ModBlocks {
+public class McddnBlocks {
     public static final Block WARPED_BLOSSOM = register(
             "warped_blossom",
             RootsBlock::new,
@@ -215,7 +215,7 @@ public class ModBlocks {
             IvyBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS).lightLevel(Ivy.getLuminanceSupplier(14)),
             true,
-            ModFoodComponents.IVY_FRUIT
+            McddnFoodComponents.IVY_FRUIT
     );
     public static final Block MIDNIGHT_WART_BLOCK = register(
             "midnight_wart_block",
@@ -574,84 +574,84 @@ public class ModBlocks {
         return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
     }
 
-    public static void registerModBlocks() {
+    public static void registerMcddnBlocks() {
         DungeonsDimensionsNether.LOGGER.info("Registering Mod Blocks for " + DungeonsDimensionsNether.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.accept(ModBlocks.WARPED_BLOSSOM);
-            fabricItemGroupEntries.accept(ModBlocks.WARPED_WART_FLUFF);
-            fabricItemGroupEntries.accept(ModBlocks.NETHER_WART_FLUFF);
-            fabricItemGroupEntries.accept(ModBlocks.WARPED_STALK);
-            fabricItemGroupEntries.accept(ModBlocks.CRIMSON_STALK);
-            fabricItemGroupEntries.accept(ModBlocks.SHY_SUCCULENT);
-            fabricItemGroupEntries.accept(ModBlocks.MOONLIGHT_MILDEW);
-            fabricItemGroupEntries.accept(ModBlocks.MIDNIGHT_MILDEW);
-            fabricItemGroupEntries.accept(ModBlocks.FLUORESCENT_FLOWER);
-            fabricItemGroupEntries.accept(ModBlocks.FLUORESCENT_FIG);
-            fabricItemGroupEntries.accept(ModBlocks.FLUORESCENT_FUNGUS);
-            fabricItemGroupEntries.accept(ModBlocks.FEELER_FLOWER);
-            fabricItemGroupEntries.accept(ModBlocks.FROG_FLOWER);
-            fabricItemGroupEntries.accept(ModBlocks.FUNGAL_FERN);
-            fabricItemGroupEntries.accept(ModBlocks.SIPHON_STALK);
-            fabricItemGroupEntries.accept(ModBlocks.NETHER_WALL_FLOWER);
-            fabricItemGroupEntries.accept(ModBlocks.BLOODTHORN_BLOSSOM);
-            fabricItemGroupEntries.accept(ModBlocks.FLUORESCENT_FLOWER_INV);
-            fabricItemGroupEntries.accept(ModBlocks.GASEOUS_GLOB);
-            fabricItemGroupEntries.accept(ModBlocks.OBSERVER_ORCHIDS);
-            fabricItemGroupEntries.accept(ModBlocks.STOUTSHROOM);
-            fabricItemGroupEntries.accept(ModBlocks.RED_BRUSH);
-            fabricItemGroupEntries.accept(ModBlocks.TEAL_BRUSH);
-            fabricItemGroupEntries.accept(ModBlocks.MOONLIGHT_MOULD);
-            fabricItemGroupEntries.accept(ModBlocks.MIDNIGHT_MOULD);
-            fabricItemGroupEntries.accept(ModBlocks.CRIMSON_IVY);
-            fabricItemGroupEntries.accept(ModBlocks.MIDNIGHT_WART_BLOCK);
-            fabricItemGroupEntries.accept(ModBlocks.SPORANGIUM);
-            fabricItemGroupEntries.accept(ModBlocks.TALL_SPORANGIUM);
-            fabricItemGroupEntries.accept(ModBlocks.WARPED_FILAMENT);
-            fabricItemGroupEntries.accept(ModBlocks.CRIMSON_FILAMENT);
-            fabricItemGroupEntries.accept(ModBlocks.CRIMSON_SPROUTS);
-            fabricItemGroupEntries.accept(ModBlocks.ASH);
+            fabricItemGroupEntries.accept(McddnBlocks.WARPED_BLOSSOM);
+            fabricItemGroupEntries.accept(McddnBlocks.WARPED_WART_FLUFF);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHER_WART_FLUFF);
+            fabricItemGroupEntries.accept(McddnBlocks.WARPED_STALK);
+            fabricItemGroupEntries.accept(McddnBlocks.CRIMSON_STALK);
+            fabricItemGroupEntries.accept(McddnBlocks.SHY_SUCCULENT);
+            fabricItemGroupEntries.accept(McddnBlocks.MOONLIGHT_MILDEW);
+            fabricItemGroupEntries.accept(McddnBlocks.MIDNIGHT_MILDEW);
+            fabricItemGroupEntries.accept(McddnBlocks.FLUORESCENT_FLOWER);
+            fabricItemGroupEntries.accept(McddnBlocks.FLUORESCENT_FIG);
+            fabricItemGroupEntries.accept(McddnBlocks.FLUORESCENT_FUNGUS);
+            fabricItemGroupEntries.accept(McddnBlocks.FEELER_FLOWER);
+            fabricItemGroupEntries.accept(McddnBlocks.FROG_FLOWER);
+            fabricItemGroupEntries.accept(McddnBlocks.FUNGAL_FERN);
+            fabricItemGroupEntries.accept(McddnBlocks.SIPHON_STALK);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHER_WALL_FLOWER);
+            fabricItemGroupEntries.accept(McddnBlocks.BLOODTHORN_BLOSSOM);
+            fabricItemGroupEntries.accept(McddnBlocks.FLUORESCENT_FLOWER_INV);
+            fabricItemGroupEntries.accept(McddnBlocks.GASEOUS_GLOB);
+            fabricItemGroupEntries.accept(McddnBlocks.OBSERVER_ORCHIDS);
+            fabricItemGroupEntries.accept(McddnBlocks.STOUTSHROOM);
+            fabricItemGroupEntries.accept(McddnBlocks.RED_BRUSH);
+            fabricItemGroupEntries.accept(McddnBlocks.TEAL_BRUSH);
+            fabricItemGroupEntries.accept(McddnBlocks.MOONLIGHT_MOULD);
+            fabricItemGroupEntries.accept(McddnBlocks.MIDNIGHT_MOULD);
+            fabricItemGroupEntries.accept(McddnBlocks.CRIMSON_IVY);
+            fabricItemGroupEntries.accept(McddnBlocks.MIDNIGHT_WART_BLOCK);
+            fabricItemGroupEntries.accept(McddnBlocks.SPORANGIUM);
+            fabricItemGroupEntries.accept(McddnBlocks.TALL_SPORANGIUM);
+            fabricItemGroupEntries.accept(McddnBlocks.WARPED_FILAMENT);
+            fabricItemGroupEntries.accept(McddnBlocks.CRIMSON_FILAMENT);
+            fabricItemGroupEntries.accept(McddnBlocks.CRIMSON_SPROUTS);
+            fabricItemGroupEntries.accept(McddnBlocks.ASH);
         });
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.accept(ModBlocks.INSET_POLISHED_BLACKSTONE);
-            fabricItemGroupEntries.accept(ModBlocks.MOLDY_INSET_POLISHED_BLACKSTONE);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_BLACKSTONE);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_BLACKSTONE_SLAB);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_BLACKSTONE_STAIRS);
-            fabricItemGroupEntries.accept(ModBlocks.MOLDY_CUT_BLACKSTONE);
-            fabricItemGroupEntries.accept(ModBlocks.SPALLING_CUT_BLACKSTONE);
-            fabricItemGroupEntries.accept(ModBlocks.POLISHED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.POLISHED_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(ModBlocks.CHISELED_POLISHED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.NETHER_BRICK_PILLAR);
-            fabricItemGroupEntries.accept(ModBlocks.INSET_POLISHED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.MOLDY_INSET_POLISHED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_NETHERRACK_STAIRS);
-            fabricItemGroupEntries.accept(ModBlocks.MOLDY_CUT_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.SPALLING_CUT_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.SPALLING_NETHER_BRICKS);
-            fabricItemGroupEntries.accept(ModBlocks.POLISHED_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.POLISHED_RED_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(ModBlocks.CHISELED_POLISHED_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.RED_NETHER_BRICK_PILLAR);
-            fabricItemGroupEntries.accept(ModBlocks.INSET_POLISHED_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.MOLDY_INSET_POLISHED_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_RED_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(ModBlocks.CUT_RED_NETHERRACK_STAIRS);
-            fabricItemGroupEntries.accept(ModBlocks.MOLDY_CUT_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.SPALLING_CUT_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.SPALLING_RED_NETHER_BRICKS);
-            fabricItemGroupEntries.accept(ModBlocks.POLISHED_DARK_NETHERRACK);
-            fabricItemGroupEntries.accept(ModBlocks.POLISHED_DARK_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(ModBlocks.DARK_NETHER_BRICKS);
-            fabricItemGroupEntries.accept(ModBlocks.DARK_NETHER_BRICK_SLAB);
-            fabricItemGroupEntries.accept(ModBlocks.DARK_NETHER_BRICK_STAIRS);
-            fabricItemGroupEntries.accept(ModBlocks.DARK_NETHER_BRICK_FENCE);
-            fabricItemGroupEntries.accept(ModBlocks.DARK_NETHER_BRICK_WALL);
-            fabricItemGroupEntries.accept(ModBlocks.ROUGH_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.INSET_POLISHED_BLACKSTONE);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_INSET_POLISHED_BLACKSTONE);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_BLACKSTONE);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_BLACKSTONE_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_BLACKSTONE_STAIRS);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_CUT_BLACKSTONE);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_CUT_BLACKSTONE);
+            fabricItemGroupEntries.accept(McddnBlocks.POLISHED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.POLISHED_NETHERRACK_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.CHISELED_POLISHED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHER_BRICK_PILLAR);
+            fabricItemGroupEntries.accept(McddnBlocks.INSET_POLISHED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_INSET_POLISHED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_NETHERRACK_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_NETHERRACK_STAIRS);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_CUT_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_CUT_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_NETHER_BRICKS);
+            fabricItemGroupEntries.accept(McddnBlocks.POLISHED_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.POLISHED_RED_NETHERRACK_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.CHISELED_POLISHED_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.RED_NETHER_BRICK_PILLAR);
+            fabricItemGroupEntries.accept(McddnBlocks.INSET_POLISHED_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_INSET_POLISHED_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_RED_NETHERRACK_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.CUT_RED_NETHERRACK_STAIRS);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_CUT_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_CUT_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_RED_NETHER_BRICKS);
+            fabricItemGroupEntries.accept(McddnBlocks.POLISHED_DARK_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.POLISHED_DARK_NETHERRACK_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.DARK_NETHER_BRICKS);
+            fabricItemGroupEntries.accept(McddnBlocks.DARK_NETHER_BRICK_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.DARK_NETHER_BRICK_STAIRS);
+            fabricItemGroupEntries.accept(McddnBlocks.DARK_NETHER_BRICK_FENCE);
+            fabricItemGroupEntries.accept(McddnBlocks.DARK_NETHER_BRICK_WALL);
+            fabricItemGroupEntries.accept(McddnBlocks.ROUGH_NETHERRACK);
         });
     }
 }

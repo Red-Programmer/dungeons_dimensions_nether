@@ -6,7 +6,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.redupro.mcd_d_nether.DungeonsDimensionsNether;
 
-public class ModTags {
+public class McddnTags {
     public static class Blocks {
         public static final TagKey<Block> BLACKSTONE_TILES = createTag("blackstone_tiles");
 

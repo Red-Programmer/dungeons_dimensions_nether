@@ -6,8 +6,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 
-public class ModifiedHugeFungusFeatureConfig implements FeatureConfiguration {
-	public static final Codec<ModifiedHugeFungusFeatureConfig> CODEC = RecordCodecBuilder.create(
+public class McddnHugeFungusFeatureConfig implements FeatureConfiguration {
+	public static final Codec<McddnHugeFungusFeatureConfig> CODEC = RecordCodecBuilder.create(
 		instance -> instance.group(
 				BlockState.CODEC.fieldOf("valid_base_block").forGetter(config -> config.validBaseBlock),
 				BlockState.CODEC.fieldOf("stem_state").forGetter(config -> config.stemState),
@@ -19,7 +19,7 @@ public class ModifiedHugeFungusFeatureConfig implements FeatureConfiguration {
 				BlockState.CODEC.fieldOf("stem_state_layer_2").forGetter(config -> config.stemStateLayer2),
 				BlockState.CODEC.fieldOf("stem_state_layer_3").forGetter(config -> config.stemStateLayer3)
 			)
-			.apply(instance, ModifiedHugeFungusFeatureConfig::new)
+			.apply(instance, McddnHugeFungusFeatureConfig::new)
 	);
 	public final BlockState validBaseBlock;
 	public final BlockState stemState;
@@ -31,7 +31,7 @@ public class ModifiedHugeFungusFeatureConfig implements FeatureConfiguration {
 	public final BlockState stemStateLayer2;
 	public final BlockState stemStateLayer3;
 
-	public ModifiedHugeFungusFeatureConfig(
+	public McddnHugeFungusFeatureConfig(
 		BlockState validBaseBlock, BlockState stemState, BlockState hatState, BlockState decorationState, BlockPredicate replaceableBlocks, boolean planted, BlockState stemStateLayer1, BlockState stemStateLayer2, BlockState stemStateLayer3
 	) {
 		this.validBaseBlock = validBaseBlock;

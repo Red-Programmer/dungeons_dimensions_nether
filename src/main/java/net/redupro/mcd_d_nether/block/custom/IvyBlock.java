@@ -25,7 +25,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.redupro.mcd_d_nether.block.Ivy;
-import net.redupro.mcd_d_nether.block.ModBlocks;
+import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.enums.IvyPart;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -102,7 +102,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
 
         BlockPos wall = pos.relative(facing.getOpposite());
         BlockPos mutable = pos;
-        BlockState stemState = ModBlocks.CRIMSON_IVY.defaultBlockState().setValue(FACING, facing);
+        BlockState stemState = McddnBlocks.CRIMSON_IVY.defaultBlockState().setValue(FACING, facing);
         int height = random.nextIntBetweenInclusive(32, 48);
         while (world.getBlockState(wall).isFaceSturdy(world, wall, facing) && world.isEmptyBlock(mutable) && height > 0) {
             mutable = mutable.above();
@@ -133,7 +133,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
             } else {
                 world.setBlock(mutable, stemState.setValue(IVY_PART, IvyPart.ROOT), 2);
             }
-            if (world.getBlockState(mutable.relative(!toggle ? facing.getClockWise() : facing.getCounterClockWise())).is(ModBlocks.CRIMSON_IVY)) {
+            if (world.getBlockState(mutable.relative(!toggle ? facing.getClockWise() : facing.getCounterClockWise())).is(McddnBlocks.CRIMSON_IVY)) {
                 world.setBlock(mutable.relative(!toggle ? facing.getClockWise() : facing.getCounterClockWise()), Blocks.AIR.defaultBlockState(), 2);
             }
             return true;
@@ -151,7 +151,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
             if (world.getBlockState(pos.above().relative(facing.getOpposite())).isFaceSturdy(world, pos.above().relative(facing.getOpposite()), facing)) {
                 if (world.getBlockState(pos.above()).canBeReplaced()) {
                     world.setBlockAndUpdate(pos.above(), state);
-                    world.setBlockAndUpdate(pos, state.setValue(IVY_PART, world.getBlockState(pos.below()).is(ModBlocks.CRIMSON_IVY) ? IvyPart.STEM : IvyPart.ROOT));
+                    world.setBlockAndUpdate(pos, state.setValue(IVY_PART, world.getBlockState(pos.below()).is(McddnBlocks.CRIMSON_IVY) ? IvyPart.STEM : IvyPart.ROOT));
                 }
             }
         } else if (state.getValue(IVY_PART).equals(IvyPart.STEM)) {

@@ -22,7 +22,7 @@ public interface Ivy {
 
     static InteractionResult pickFruit(@Nullable Entity picker, BlockState state, Level world, BlockPos pos) {
         if ((Boolean)state.getValue(FRUIT)) {
-            Block.popResource(world, pos, new ItemStack(ModBlocks.CRIMSON_IVY, 1));
+            Block.popResource(world, pos, new ItemStack(McddnBlocks.CRIMSON_IVY, 1));
             float f = Mth.randomBetween(world.random, 0.8F, 1.2F);
             world.playSound(null, pos, SoundEvents.CAVE_VINES_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, f);
             BlockState blockState = state.setValue(FRUIT, false);
