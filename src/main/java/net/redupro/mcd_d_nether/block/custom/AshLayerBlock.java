@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.redupro.mcd_d_nether.block.ModBlocks;
+import net.redupro.mcd_d_nether.block.McddnBlocks;
 
 public class AshLayerBlock extends SnowLayerBlock {
     public AshLayerBlock(Properties properties) {
@@ -17,7 +17,7 @@ public class AshLayerBlock extends SnowLayerBlock {
     protected void onPlace(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState2, boolean bl) {
         if (level.getBlockState(blockPos.below()).is(Blocks.BASALT)) {
             if (level.getBlockState(blockPos.below()).getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y) {
-                level.setBlock(blockPos.below(), ModBlocks.ASHY_BASALT.defaultBlockState(), 2);
+                level.setBlock(blockPos.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
             }
         }
     }

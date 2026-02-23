@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.redupro.mcd_d_nether.block.ModBlocks;
+import net.redupro.mcd_d_nether.block.McddnBlocks;
 
 public class MouldBlock extends TallRootsBlock {
     public static final BooleanProperty CAP = BooleanProperty.create("cap");
@@ -100,7 +100,7 @@ public class MouldBlock extends TallRootsBlock {
         boolean corner = state.getValue(CORNER);
         boolean edge = state.getValue(EDGE);
         boolean upper = state.getValue(UPPER);
-        boolean moon = state.is(ModBlocks.MOONLIGHT_MOULD);
+        boolean moon = state.is(McddnBlocks.MOONLIGHT_MOULD);
         if (corner && edge) {
             return direction == Direction.UP && !moon || direction == Direction.DOWN  || direction == facing.getClockWise() || direction == facing.getOpposite();
         } else if (corner) {
@@ -128,7 +128,7 @@ public class MouldBlock extends TallRootsBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
-        boolean mouldType = this.defaultBlockState().is(ModBlocks.MOONLIGHT_MOULD);
+        boolean mouldType = this.defaultBlockState().is(McddnBlocks.MOONLIGHT_MOULD);
         if(checkArea(world, pos, mouldType) && !state.getValue(CAP) && state.getValue(HALF) == DoubleBlockHalf.UPPER) {
             world.setBlockAndUpdate(pos.above(), this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER).setValue(CAP, true));
             setLayer(world, pos, false, false);
@@ -142,9 +142,9 @@ public class MouldBlock extends TallRootsBlock {
             BlockPos spawn = validPos(world, pos);
             if (spawn != null) {
                 if (mouldType) {
-                    world.setBlockAndUpdate(spawn, ModBlocks.MOONLIGHT_MILDEW.defaultBlockState());
+                    world.setBlockAndUpdate(spawn, McddnBlocks.MOONLIGHT_MILDEW.defaultBlockState());
                 } else {
-                    world.setBlockAndUpdate(spawn, ModBlocks.MIDNIGHT_MILDEW.defaultBlockState());
+                    world.setBlockAndUpdate(spawn, McddnBlocks.MIDNIGHT_MILDEW.defaultBlockState());
                 }
             }
         }
@@ -194,13 +194,13 @@ public class MouldBlock extends TallRootsBlock {
     }
 
     public static boolean placeAt(LevelAccessor world, BlockState state, BlockPos pos) {
-        if (checkAreaAt(world, pos, state.is(ModBlocks.MOONLIGHT_MOULD))) {
+        if (checkAreaAt(world, pos, state.is(McddnBlocks.MOONLIGHT_MOULD))) {
             world.setBlock(pos.below(2), state.setValue(HALF, DoubleBlockHalf.LOWER), 2);
             world.setBlock(pos.below(), state.setValue(HALF, DoubleBlockHalf.UPPER), 2);
             world.setBlock(pos, state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(CAP, true), 2);
             setLayerAt(world, pos.below(), false, false, state);
             setLayerAt(world, pos, true, false, state);
-            if(state.is(ModBlocks.MOONLIGHT_MOULD)) {
+            if(state.is(McddnBlocks.MOONLIGHT_MOULD)) {
                 setLayerAt(world, pos.above(), false, true, state);
                 world.setBlock(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(CAP, true).setValue(FACING, Direction.DOWN), 2);
             }

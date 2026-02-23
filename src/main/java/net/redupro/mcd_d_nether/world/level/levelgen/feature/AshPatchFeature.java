@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.redupro.mcd_d_nether.block.ModBlocks;
+import net.redupro.mcd_d_nether.block.McddnBlocks;
 
 
 public class AshPatchFeature extends Feature<RandomPatchConfiguration> {
@@ -37,21 +37,21 @@ public class AshPatchFeature extends Feature<RandomPatchConfiguration> {
             z = random.nextInt(j) - random.nextInt(j);
             mutable = blockPos.offset(x, y, z);
             if (world.getBlockState(mutable.below()).is(Blocks.BASALT) && world.getBlockState(mutable).is(Blocks.AIR)) {
-                world.setBlock(mutable, ModBlocks.ASH.defaultBlockState(), 2);
-                world.setBlock(mutable.below(), ModBlocks.ASHY_BASALT.defaultBlockState(), 2);
+                world.setBlock(mutable, McddnBlocks.ASH.defaultBlockState(), 2);
+                world.setBlock(mutable.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 i += 1;
 
                 if (world.getBlockState(mutable.below().north()).is(Blocks.BASALT) && world.getBlockState(mutable.north()).is(Blocks.AIR)) {
-                    world.setBlock(mutable.below().north(), ModBlocks.ASHY_BASALT.defaultBlockState(), 2);
+                    world.setBlock(mutable.below().north(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 }
                 if (world.getBlockState(mutable.below().south()).is(Blocks.BASALT) && world.getBlockState(mutable.south()).is(Blocks.AIR)) {
-                    world.setBlock(mutable.below().south(), ModBlocks.ASHY_BASALT.defaultBlockState(), 2);
+                    world.setBlock(mutable.below().south(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 }
                 if (world.getBlockState(mutable.below().east()).is(Blocks.BASALT) && world.getBlockState(mutable.east()).is(Blocks.AIR)) {
-                    world.setBlock(mutable.below().east(), ModBlocks.ASHY_BASALT.defaultBlockState(), 2);
+                    world.setBlock(mutable.below().east(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 }
                 if (world.getBlockState(mutable.below().west()).is(Blocks.BASALT) && world.getBlockState(mutable.west()).is(Blocks.AIR)) {
-                    world.setBlock(mutable.below().west(), ModBlocks.ASHY_BASALT.defaultBlockState(), 2);
+                    world.setBlock(mutable.below().west(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 }
             }
         }

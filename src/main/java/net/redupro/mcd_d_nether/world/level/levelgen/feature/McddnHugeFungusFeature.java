@@ -16,24 +16,24 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.WeepingVinesFeature;
-import net.redupro.mcd_d_nether.block.ModBlocks;
+import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.custom.WartFluffBlock;
 
-public class ModifiedHugeFungusFeature extends Feature<ModifiedHugeFungusFeatureConfig> {
+public class McddnHugeFungusFeature extends Feature<McddnHugeFungusFeatureConfig> {
 	private static final float field_31507 = 0.06F;
 
-	public ModifiedHugeFungusFeature(Codec<ModifiedHugeFungusFeatureConfig> codec) {
+	public McddnHugeFungusFeature(Codec<McddnHugeFungusFeatureConfig> codec) {
 		super(codec);
 	}
 
 	@Override
-	public boolean place(FeaturePlaceContext<ModifiedHugeFungusFeatureConfig> context) {
+	public boolean place(FeaturePlaceContext<McddnHugeFungusFeatureConfig> context) {
 		WorldGenLevel structureWorldAccess = context.level();
 		BlockPos blockPos = context.origin();
 		RandomSource random = context.random();
 		ChunkGenerator chunkGenerator = context.chunkGenerator();
-		ModifiedHugeFungusFeatureConfig modifiedHugeFungusFeatureConfig = context.config();
-		Block block = modifiedHugeFungusFeatureConfig.validBaseBlock.getBlock();
+		McddnHugeFungusFeatureConfig mcddnHugeFungusFeatureConfig = context.config();
+		Block block = mcddnHugeFungusFeatureConfig.validBaseBlock.getBlock();
 		BlockPos blockPos2 = null;
 		BlockState blockState = structureWorldAccess.getBlockState(blockPos.below());
 		if (blockState.is(block)) {
@@ -48,22 +48,22 @@ public class ModifiedHugeFungusFeature extends Feature<ModifiedHugeFungusFeature
 				i *= 2;
 			}
 
-			if (!modifiedHugeFungusFeatureConfig.planted) {
+			if (!mcddnHugeFungusFeatureConfig.planted) {
 				int j = chunkGenerator.getGenDepth();
 				if (blockPos2.getY() + i + 1 >= j) {
 					return false;
 				}
 			}
 
-			boolean bl = !modifiedHugeFungusFeatureConfig.planted && random.nextFloat() < 0.06F;
+			boolean bl = !mcddnHugeFungusFeatureConfig.planted && random.nextFloat() < 0.06F;
 			structureWorldAccess.setBlock(blockPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_INVISIBLE);
-			this.generateStem(structureWorldAccess, random, modifiedHugeFungusFeatureConfig, blockPos2, i, bl);
-			this.generateHat(structureWorldAccess, random, modifiedHugeFungusFeatureConfig, blockPos2, i, bl);
+			this.generateStem(structureWorldAccess, random, mcddnHugeFungusFeatureConfig, blockPos2, i, bl);
+			this.generateHat(structureWorldAccess, random, mcddnHugeFungusFeatureConfig, blockPos2, i, bl);
 			return true;
 		}
 	}
 
-	private static boolean isReplaceable(WorldGenLevel world, BlockPos pos, ModifiedHugeFungusFeatureConfig config, boolean checkConfig) {
+	private static boolean isReplaceable(WorldGenLevel world, BlockPos pos, McddnHugeFungusFeatureConfig config, boolean checkConfig) {
 		if (world.isStateAtPosition(pos, BlockBehaviour.BlockStateBase::canBeReplaced)) {
 			return true;
 		} else {
@@ -71,7 +71,7 @@ public class ModifiedHugeFungusFeature extends Feature<ModifiedHugeFungusFeature
 		}
 	}
 
-	private void generateStem(WorldGenLevel world, RandomSource random, ModifiedHugeFungusFeatureConfig config, BlockPos pos, int stemHeight, boolean thickStem) {
+	private void generateStem(WorldGenLevel world, RandomSource random, McddnHugeFungusFeatureConfig config, BlockPos pos, int stemHeight, boolean thickStem) {
 		BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 		BlockState[] blockState = {config.stemStateLayer1, config.stemStateLayer2, config.stemStateLayer3, config.stemState};
 		int i = thickStem ? 1 : 0;
@@ -103,7 +103,7 @@ public class ModifiedHugeFungusFeature extends Feature<ModifiedHugeFungusFeature
 		}
 	}
 
-	private void generateHat(WorldGenLevel world, RandomSource random, ModifiedHugeFungusFeatureConfig config, BlockPos pos, int hatHeight, boolean thickStem) {
+	private void generateHat(WorldGenLevel world, RandomSource random, McddnHugeFungusFeatureConfig config, BlockPos pos, int hatHeight, boolean thickStem) {
 		BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 		boolean bl = config.hatState.is(Blocks.NETHER_WART_BLOCK);
 		int i = Math.min(random.nextInt(1 + hatHeight / 3) + 5, hatHeight);
@@ -151,7 +151,7 @@ public class ModifiedHugeFungusFeature extends Feature<ModifiedHugeFungusFeature
 	}
 
 	private void placeHatBlock(
-            LevelAccessor world, RandomSource random, ModifiedHugeFungusFeatureConfig config, BlockPos.MutableBlockPos pos, float decorationChance, float generationChance, float vineChance
+			LevelAccessor world, RandomSource random, McddnHugeFungusFeatureConfig config, BlockPos.MutableBlockPos pos, float decorationChance, float generationChance, float vineChance
 	) {
 		if (random.nextFloat() < decorationChance) {
 			this.setBlock(world, pos, config.decorationState);
@@ -163,15 +163,15 @@ public class ModifiedHugeFungusFeature extends Feature<ModifiedHugeFungusFeature
 		}
 	}
 
-	private void generateFluff(WorldGenLevel world, RandomSource random, ModifiedHugeFungusFeatureConfig config, BlockPos pos, int endHeight, int startHeight) {
+	private void generateFluff(WorldGenLevel world, RandomSource random, McddnHugeFungusFeatureConfig config, BlockPos pos, int endHeight, int startHeight) {
 		BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 		boolean fl1 = config.hatState.is(Blocks.WARPED_WART_BLOCK);
 		boolean fl2 = config.hatState.is(Blocks.NETHER_WART_BLOCK);
-		Block fluff = ModBlocks.WARPED_WART_FLUFF;
+		Block fluff = McddnBlocks.WARPED_WART_FLUFF;
 		float weight = 0.2F;
 		if (fl1 || fl2) {
 			if (fl2) {
-				fluff = ModBlocks.NETHER_WART_FLUFF;
+				fluff = McddnBlocks.NETHER_WART_FLUFF;
 				weight = 0.1F;
 			}
 			for (int x = -3; x < 4; x++) {

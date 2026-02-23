@@ -1,5 +1,5 @@
 {
-  "type": "mcd_d_nether:mod_huge_fungus",
+  "type": "mcd_d_nether:mcddn_huge_fungus",
   "config": {
     "decor_state": {
       "Name": "minecraft:shroomlight"

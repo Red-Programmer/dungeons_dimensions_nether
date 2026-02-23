@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.redupro.mcd_d_nether.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
 public class NetherWallFlower extends Block {
