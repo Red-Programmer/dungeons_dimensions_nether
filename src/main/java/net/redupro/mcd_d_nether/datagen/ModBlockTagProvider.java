@@ -65,12 +65,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOLDY_CUT_NETHERRACK)
                 .add(ModBlocks.MOLDY_INSET_POLISHED_RED_NETHERRACK)
                 .add(ModBlocks.MOLDY_CUT_RED_NETHERRACK)
-                .add(ModBlocks.ROUGH_NETHERRACK);
+                .add(ModBlocks.ROUGH_NETHERRACK)
+                .add(ModBlocks.ASHY_BASALT);
         valueLookupBuilder(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.WARPED_WART_FLUFF)
                 .add(ModBlocks.NETHER_WART_FLUFF)
                 .add(ModBlocks.MIDNIGHT_WART_BLOCK)
                 .add(ModBlocks.MIDNIGHT_MOULD)
                 .add(ModBlocks.MOONLIGHT_MOULD);
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.WARPED_TRUNK);
     }
 }

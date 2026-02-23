@@ -3,10 +3,8 @@
   "package": "net.redupro.mcd_d_nether.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "BasaltBlockConstructor",
     "JigsawPlacementPass",
-    "NetherSproutsSettings",
-    "WarpedStemConstructor"
+    "NetherSproutsSettings"
   ],
   "injectors": {
     "defaultRequire": 1

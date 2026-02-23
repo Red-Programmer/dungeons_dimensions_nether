@@ -4,7 +4,8 @@
 6c79d2fa89b4532e87fd82303e38255a361388a7 data/minecraft/tags/block/infiniburn_end.json
 6c79d2fa89b4532e87fd82303e38255a361388a7 data/minecraft/tags/block/infiniburn_nether.json
 6c79d2fa89b4532e87fd82303e38255a361388a7 data/minecraft/tags/block/infiniburn_overworld.json
+1bdfe2bfcb36a7478a3cd9d03f577a4ad2feaec5 data/minecraft/tags/block/mineable/axe.json
 f3bcd7a15244558a79f815c3b6003044269e8818 data/minecraft/tags/block/mineable/hoe.json
-98250e72c86dc696399f8e176c5a10b7ed5105cb data/minecraft/tags/block/mineable/pickaxe.json
+9bb4ae5f8eec4f2aecd52652328e22b57b932841 data/minecraft/tags/block/mineable/pickaxe.json
 6bf5988e803132ca0c1068cd36f0f41ea03b7b0b data/minecraft/tags/block/mineable/shovel.json
 2f7d8de22006fadfa768ad2a99a1f03da45b0353 data/minecraft/tags/block/walls.json

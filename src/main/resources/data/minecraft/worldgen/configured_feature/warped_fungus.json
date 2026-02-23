@@ -81,24 +81,21 @@
       }
     },
     "stem_state_layer_1": {
-      "Name": "minecraft:warped_stem",
+      "Name": "mcd_d_nether:warped_trunk",
       "Properties": {
-        "axis": "y",
-        "distance": "1"
+        "layer": "1"
       }
     },
     "stem_state_layer_2": {
-      "Name": "minecraft:warped_stem",
+      "Name": "mcd_d_nether:warped_trunk",
       "Properties": {
-        "axis": "y",
-        "distance": "2"
+        "layer": "2"
       }
     },
     "stem_state_layer_3": {
-      "Name": "minecraft:warped_stem",
+      "Name": "mcd_d_nether:warped_trunk",
       "Properties": {
-        "axis": "y",
-        "distance": "3"
+        "layer": "3"
       }
     },
     "valid_base_block": {

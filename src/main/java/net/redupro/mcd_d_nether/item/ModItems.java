@@ -18,7 +18,7 @@ public class ModItems {
         return Registry.register(BuiltInRegistries.ITEM, itemKey, new Item(new Item.Properties().setId(itemKey)));
     }
     public static void registerModItems() {
-        DungeonsDimensionsNether.LOGGER.info("Register in Mod Blocks for" + DungeonsDimensionsNether.MOD_ID);
+        DungeonsDimensionsNether.LOGGER.info("Registering Mod Items for " + DungeonsDimensionsNether.MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(fabricItemGroupEntries -> {
 
         });
