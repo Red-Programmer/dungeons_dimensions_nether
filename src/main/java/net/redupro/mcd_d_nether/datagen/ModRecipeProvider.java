@@ -204,6 +204,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .requires(ModBlocks.NETHER_WART_FLUFF.asItem())
                 .unlockedBy(getHasName(ModBlocks.NETHER_WART_FLUFF.asItem()), has(ModBlocks.NETHER_WART_FLUFF.asItem()))
                 .save(recipeOutput);
+        polishedBuilder(RecipeCategory.BUILDING_BLOCKS, Items.NETHER_WART_BLOCK, Ingredient.of(ModBlocks.NETHER_WART_FLUFF.asItem()));
+        polishedBuilder(RecipeCategory.BUILDING_BLOCKS, Items.WARPED_WART_BLOCK, Ingredient.of(ModBlocks.WARPED_WART_FLUFF.asItem()));
 
         //Dyes
         shapeless(RecipeCategory.MISC, Items.RED_DYE)

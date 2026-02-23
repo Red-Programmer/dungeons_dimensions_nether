@@ -519,9 +519,23 @@ public class ModBlocks {
     );
     public static final Block ASH = register(
             "ash",
-            SnowLayerBlock::new,
+            AshLayerBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW).mapColor(MapColor.COLOR_GRAY),
             true,
+            null
+    );
+    public static final Block ASHY_BASALT = register(
+            "ashy_basalt",
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT),
+            false,
+            null
+    );
+    public static final Block WARPED_TRUNK = register(
+            "warped_trunk",
+            WarpedTrunk::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_STEM),
+            false,
             null
     );
 

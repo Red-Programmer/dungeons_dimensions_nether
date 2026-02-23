@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -92,6 +93,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         add(ModBlocks.TALL_SPORANGIUM, block -> this.createSinglePropConditionTable(block, TallRootsBlock.HALF, DoubleBlockHalf.LOWER));
         add(ModBlocks.WARPED_FILAMENT, block -> this.createSinglePropConditionTable(block, TallRootsBlock.HALF, DoubleBlockHalf.LOWER));
         add(ModBlocks.CRIMSON_FILAMENT, block -> this.createSinglePropConditionTable(block, TallRootsBlock.HALF, DoubleBlockHalf.LOWER));
+        add(ModBlocks.ASHY_BASALT, createSingleItemTable(Items.BASALT));
+        add(ModBlocks.WARPED_TRUNK, createSingleItemTable(Items.WARPED_STEM));
         this.add(ModBlocks.RED_BRUSH, block -> this.createSinglePropConditionTable(block, QuadBrushBlock.QUADRANT, Quadrant.QUAD_1));
         this.add(ModBlocks.TEAL_BRUSH, block -> this.createSinglePropConditionTable(block, QuadBrushBlock.QUADRANT, Quadrant.QUAD_1));
         this.add(ModBlocks.CRIMSON_IVY, block -> this.customDropsWithProperty(block, block, IvyBlock.FRUIT, true));

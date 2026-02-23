@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-21T18:37:38.3344048	Dungeons Dimensions Nether/Block Loot Tables
+// 1.21.1	2026-02-23T08:04:45.5106945	Dungeons Dimensions Nether/Block Loot Tables
 9ac0598e29ec1ba8cc891555d73b07c897b2b377 data\mcd_d_nether\loot_table\blocks\midnight_mildew.json
 55254a9e976e47988cf087362e618ee8d556b7b5 data\mcd_d_nether\loot_table\blocks\dark_nether_brick_fence.json
 7ebbc2a427187bd312f0ebb30d1a39e015755b4d data\mcd_d_nether\loot_table\blocks\cut_netherrack_slab.json
@@ -28,12 +28,14 @@ a3b7d5761a6046d2f922b1ee07a16396173266ae data\mcd_d_nether\loot_table\blocks\cut
 c2556ade771fb7fc31edd13bfc2714e4429c8d4e data\mcd_d_nether\loot_table\blocks\spalling_cut_red_netherrack.json
 f88e52a611114f32317873dd0510035a9bebc260 data\mcd_d_nether\loot_table\blocks\fungal_fern.json
 4056dd2ca4eabc4756223fc1c06f6107ae7cf889 data\mcd_d_nether\loot_table\blocks\cut_blackstone_stairs.json
+437c0f88b937f1bf920322e39e62f10893d45b1e data\mcd_d_nether\loot_table\blocks\ashy_basalt.json
 5d6e7f9b66aa21ab2636332ae4757816bee08482 data\mcd_d_nether\loot_table\blocks\inset_polished_red_netherrack.json
 de1aecc7e0bc8a4d23dad48daa368fe162a14d26 data\mcd_d_nether\loot_table\blocks\teal_brush.json
 867ce8ffa5649a4d9559f160d0bf032da82abc88 data\mcd_d_nether\loot_table\blocks\gaseous_glob.json
 4b64f02ebea4cc93c8b6703ceff01c1dadf810ca data\mcd_d_nether\loot_table\blocks\cut_red_netherrack.json
 7dc613a75698ec4bf5d6f23f9f63a5a407550255 data\mcd_d_nether\loot_table\blocks\potted_warped_blossom.json
 9a103733abbe14028a9bdd46813534e1b864c790 data\mcd_d_nether\loot_table\blocks\stoutshroom.json
+93a7a99ce743e7c7492299b2202284cd2b65c7c9 data\mcd_d_nether\loot_table\blocks\warped_trunk.json
 047c651ee668477b82a327daa988353e139b9c2a data\mcd_d_nether\loot_table\blocks\shy_succulent.json
 b8ec5686775fb56a61f5e5da960d16adc162f4f0 data\mcd_d_nether\loot_table\blocks\chiseled_polished_netherrack.json
 e477af39b113ef4014bf2f18d59c9adbd55026a7 data\mcd_d_nether\loot_table\blocks\moldy_inset_polished_red_netherrack.json
