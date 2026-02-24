@@ -29,6 +29,7 @@ import net.redupro.mcd_d_nether.block.Ivy;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.enums.IvyPart;
 import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 public class IvyBlock extends Block implements BonemealableBlock {
     public static final EnumProperty<IvyPart> IVY_PART = EnumProperty.create("ivy_part", IvyPart.class);
@@ -170,7 +171,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+    protected @NonNull InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
         return Ivy.pickFruit(player, state, world, pos);
     }
 
