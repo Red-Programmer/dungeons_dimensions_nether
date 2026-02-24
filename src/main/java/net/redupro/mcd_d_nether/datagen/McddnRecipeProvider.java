@@ -205,11 +205,11 @@ public class McddnRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
                 .save(recipeOutput);
         polishedBuilder(RecipeCategory.BUILDING_BLOCKS, Items.NETHER_WART_BLOCK, Ingredient.of(McddnBlocks.NETHER_WART_FLUFF.asItem()))
-        .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
-                        .save(recipeOutput);
-                polishedBuilder(RecipeCategory.BUILDING_BLOCKS, Items.WARPED_WART_BLOCK, Ingredient.of(McddnBlocks.WARPED_WART_FLUFF.asItem()))
-                        .unlockedBy(getHasName(McddnBlocks.WARPED_WART_FLUFF.asItem()), has(McddnBlocks.WARPED_WART_FLUFF.asItem()))
-                        .save(recipeOutput);
+                .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
+                .save(recipeOutput);
+        polishedBuilder(RecipeCategory.BUILDING_BLOCKS, Items.WARPED_WART_BLOCK, Ingredient.of(McddnBlocks.WARPED_WART_FLUFF.asItem()))
+                .unlockedBy(getHasName(McddnBlocks.WARPED_WART_FLUFF.asItem()), has(McddnBlocks.WARPED_WART_FLUFF.asItem()))
+                .save(recipeOutput);
 
         //Dyes
         shapeless(RecipeCategory.MISC, Items.RED_DYE)
