@@ -213,7 +213,7 @@ public class McddnBlocks {
     public static final Block CRIMSON_IVY = register(
             "crimson_ivy",
             IvyBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS).lightLevel(Ivy.getLuminanceSupplier(14)),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.WEEPING_VINES).lightLevel(Ivy.getLuminanceSupplier(14)),
             true,
             McddnFoodComponents.IVY_FRUIT
     );
