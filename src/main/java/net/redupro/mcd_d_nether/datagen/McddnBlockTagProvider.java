@@ -15,18 +15,18 @@ public class McddnBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
-        valueLookupBuilder(BlockTags.FENCES)
+        getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(McddnBlocks.DARK_NETHER_BRICK_FENCE);
-        valueLookupBuilder(BlockTags.WALLS)
+        getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(McddnBlocks.DARK_NETHER_BRICK_WALL);
-        valueLookupBuilder(BlockTags.CLIMBABLE)
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
                 .add(McddnBlocks.CRIMSON_IVY);
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(McddnBlocks.ASH);
-        valueLookupBuilder(BlockTags.INFINIBURN_NETHER).add(McddnBlocks.ROUGH_NETHERRACK);
-        valueLookupBuilder(BlockTags.INFINIBURN_END).add(McddnBlocks.ROUGH_NETHERRACK);
-        valueLookupBuilder(BlockTags.INFINIBURN_OVERWORLD).add(McddnBlocks.ROUGH_NETHERRACK);
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+        getOrCreateTagBuilder(BlockTags.INFINIBURN_NETHER).add(McddnBlocks.ROUGH_NETHERRACK);
+        getOrCreateTagBuilder(BlockTags.INFINIBURN_END).add(McddnBlocks.ROUGH_NETHERRACK);
+        getOrCreateTagBuilder(BlockTags.INFINIBURN_OVERWORLD).add(McddnBlocks.ROUGH_NETHERRACK);
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(McddnBlocks.CUT_BLACKSTONE)
                 .add(McddnBlocks.CUT_BLACKSTONE_SLAB)
                 .add(McddnBlocks.CUT_BLACKSTONE_STAIRS)
@@ -67,13 +67,13 @@ public class McddnBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(McddnBlocks.MOLDY_CUT_RED_NETHERRACK)
                 .add(McddnBlocks.ROUGH_NETHERRACK)
                 .add(McddnBlocks.ASHY_BASALT);
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_HOE)
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
                 .add(McddnBlocks.WARPED_WART_FLUFF)
                 .add(McddnBlocks.NETHER_WART_FLUFF)
                 .add(McddnBlocks.MIDNIGHT_WART_BLOCK)
                 .add(McddnBlocks.MIDNIGHT_MOULD)
                 .add(McddnBlocks.MOONLIGHT_MOULD);
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(McddnBlocks.WARPED_TRUNK);
     }
 }
