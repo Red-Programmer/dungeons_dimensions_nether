@@ -4,7 +4,7 @@
 	"texture_size": [16, 32],
 	"textures": {
 		"2": "mcd_d_nether:block/nether_flowers",
-		"particle": "block/warped_wart_block"
+		"particle": "mcd_d_nether:block/nether_flowers_particle"
 	},
 	"elements": [
 		{

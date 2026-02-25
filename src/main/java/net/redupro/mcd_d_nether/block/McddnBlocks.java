@@ -149,7 +149,7 @@ public class McddnBlocks {
     );
     public static final Block BLOODTHORN_BLOSSOM = register(
             "bloodthorn_blossom",
-            RootsBlock::new,
+            BloodthornBlossomBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS),
             true,
             null
