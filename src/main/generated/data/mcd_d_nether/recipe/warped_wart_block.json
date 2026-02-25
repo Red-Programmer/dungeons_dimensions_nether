@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "S": "mcd_d_nether:warped_wart_fluff"
+    "S": {
+      "item": "mcd_d_nether:warped_wart_fluff"
+    }
   },
   "pattern": [
     "SS",

@@ -1,7 +1,7 @@
-// 1.21.1	2026-02-23T08:04:45.5096939	Dungeons Dimensions Nether/Tags for minecraft:block
+// 1.21.1	2026-02-24T17:51:09.974332	Dungeons Dimensions Nether/Tags for minecraft:block
 f3bcd7a15244558a79f815c3b6003044269e8818 data\minecraft\tags\block\mineable\hoe.json
-9bb4ae5f8eec4f2aecd52652328e22b57b932841 data\minecraft\tags\block\mineable\pickaxe.json
 1bdfe2bfcb36a7478a3cd9d03f577a4ad2feaec5 data\minecraft\tags\block\mineable\axe.json
+9bb4ae5f8eec4f2aecd52652328e22b57b932841 data\minecraft\tags\block\mineable\pickaxe.json
 97d97055c5bbd7e6d6706c2fd6986f1f8712cc27 data\minecraft\tags\block\fences.json
 2f7d8de22006fadfa768ad2a99a1f03da45b0353 data\minecraft\tags\block\walls.json
 6c79d2fa89b4532e87fd82303e38255a361388a7 data\minecraft\tags\block\infiniburn_overworld.json

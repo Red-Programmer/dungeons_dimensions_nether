@@ -29,7 +29,6 @@ import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.enums.IvyPart;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jspecify.annotations.NonNull;
 
 public class IvyBlock extends Block implements BonemealableBlock {
     public static final EnumProperty<IvyPart> IVY_PART = EnumProperty.create("ivy_part", IvyPart.class);
