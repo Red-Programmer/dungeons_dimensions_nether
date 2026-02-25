@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "JigsawPlacementPass",
-    "NetherSproutsSettings"
+    "NetherSproutsSettings",
+    "RootsBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

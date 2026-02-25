@@ -179,8 +179,8 @@ public class McddnHugeFungusFeature extends Feature<McddnHugeFungusFeatureConfig
 					for (int z = -3; z < 4; z++) {
 						mutable.setWithOffset(pos, x, y, z);
 						boolean bl = world.getBlockState(mutable.above()).is(config.hatState.getBlock());
-						if (random.nextFloat() < weight) {
-							if (world.getBlockState(mutable).is(config.hatState.getBlock())) {
+						if (world.getBlockState(mutable).is(config.hatState.getBlock())) {
+							if (random.nextFloat() < weight) {
 								if (world.getBlockState(mutable.north()).isAir() && world.getBlockState(mutable.north().below()).isAir() && z < 0) {
 									this.setBlock(world, mutable.north(), fluff.defaultBlockState().setValue(WartFluffBlock.FACING, Direction.SOUTH).setValue(WartFluffBlock.HANGING, bl).setValue(WartFluffBlock.HALF, DoubleBlockHalf.UPPER));
 									this.setBlock(world, mutable.north().below(), fluff.defaultBlockState().setValue(WartFluffBlock.FACING, Direction.SOUTH).setValue(WartFluffBlock.HALF, DoubleBlockHalf.LOWER));
@@ -194,6 +194,9 @@ public class McddnHugeFungusFeature extends Feature<McddnHugeFungusFeatureConfig
 									this.setBlock(world, mutable.west(), fluff.defaultBlockState().setValue(WartFluffBlock.FACING, Direction.EAST).setValue(WartFluffBlock.HANGING, bl).setValue(WartFluffBlock.HALF, DoubleBlockHalf.UPPER));
 									this.setBlock(world, mutable.west().below(), fluff.defaultBlockState().setValue(WartFluffBlock.FACING, Direction.EAST).setValue(WartFluffBlock.HALF, DoubleBlockHalf.LOWER));
 								}
+							}
+							if (fl1 && world.getBlockState(mutable.above()).isAir() && random.nextIntBetweenInclusive(1, 4) == 1) {
+								this.setBlock(world, mutable.above(), Blocks.WARPED_ROOTS.defaultBlockState());
 							}
 						}
 					}
