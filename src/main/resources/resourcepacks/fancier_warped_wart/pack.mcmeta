@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "Incompatible with vanilla shaders",
+    "pack_format": 94.1,
+    "supported_formats": {"min_inclusive": 15, "max_inclusive": 999},
+		"min_format": 15,
+		"max_format": 999
+    }
+  }
+}

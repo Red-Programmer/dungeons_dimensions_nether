@@ -2,13 +2,22 @@ package net.redupro.mcd_d_nether;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 
 public class DungeonsDimensionsNetherClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        FabricLoader.getInstance().getModContainer(DungeonsDimensionsNether.MOD_ID).ifPresent(modContainer -> {
+            ResourceManagerHelper.registerBuiltinResourcePack(ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "fancier_warped_wart"), modContainer, Component.translatable("Fancier Warped Wart"), ResourcePackActivationType.NORMAL);
+        });
+
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.WARPED_TRUNK, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.WARPED_WART_BLOCK, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.WARPED_BLOSSOM, RenderType.cutout());
