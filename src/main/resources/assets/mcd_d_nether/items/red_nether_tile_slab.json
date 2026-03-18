@@ -2,6 +2,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "mcd_d_nether:block/bricks/red_nether_tile_slab"
+    "model": "mcd_d_nether:item/red_nether_tile_slab"
   }
 }
