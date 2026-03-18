@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "mcd_d_nether:block/bricks/chiseled_polished_netherrack"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "mcd_d_nether:block/bricks/cut_blackstone",
-    "side": "mcd_d_nether:block/bricks/cut_blackstone",
-    "top": "mcd_d_nether:block/bricks/cut_blackstone"
-  }
-}

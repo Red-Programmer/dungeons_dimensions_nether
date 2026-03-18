@@ -25,190 +25,181 @@ public class McddnBlocks {
             "warped_blossom",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block POTTED_WARPED_BLOSSOM = register(
             "potted_warped_blossom",
             settings -> new FlowerPotBlock(WARPED_BLOSSOM, settings),
             BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY),
-            false,
-            null
+            false
     );
     public static final Block WARPED_WART_FLUFF = register(
             "warped_wart_fluff",
             WartFluffBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.TWISTING_VINES),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(Blocks.TWISTING_VINES).replaceable(),
+            true
+    );
+    public static final Block WARPING_VINES = register(
+            "warping_vines",
+            WarpingVinesBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.WEEPING_VINES).mapColor(MapColor.COLOR_CYAN),
+            true
+    );
+    public static final Block WARPING_VINES_PLANT = register(
+            "warping_vines_plant",
+            WarpingVinesPlantBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.WEEPING_VINES).mapColor(MapColor.COLOR_CYAN),
+            false
+    );
+    public static final Block WARPED_WART_HANGING = register(
+            "warped_wart_hanging",
+            WartHangingBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.TWISTING_VINES).replaceable(),
+            false
     );
     public static final Block NETHER_WART_FLUFF = register(
             "nether_wart_fluff",
             WartFluffBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.WEEPING_VINES),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(Blocks.WEEPING_VINES).replaceable(),
+            true
     );
     public static final Block CRIMSON_SPROUTS = register(
             "crimson_sprouts",
             NetherSproutsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_SPROUTS).mapColor(MapColor.NETHER),
-            true,
-            null
+            true
     );
     public static final Block WARPED_STALK = register(
             "warped_stalk",
             TallRootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block CRIMSON_STALK = register(
             "crimson_stalk",
             TallRootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block SHY_SUCCULENT = register(
             "shy_succulent",
             SucculentBlock::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).instabreak().sound(SoundType.FUNGUS).pushReaction(PushReaction.DESTROY).dynamicShape(),
-            true,
-            null
+            true
     );
     public static final Block MOONLIGHT_MILDEW = register(
             "moonlight_mildew",
             MildewBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block MIDNIGHT_MILDEW = register(
             "midnight_mildew",
             MildewBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block FLUORESCENT_FLOWER = register(
             "fluorescent_flower",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block FLUORESCENT_FIG = register(
             "fluorescent_fig",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block FLUORESCENT_FUNGUS = register(
             "fluorescent_fungus",
             GlobBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS).lightLevel(state -> 7),
-            true,
-            null
+            true
     );
     public static final Block FEELER_FLOWER = register(
             "feeler_flower",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block FROG_FLOWER = register(
             "frog_flower",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block FUNGAL_FERN = register(
             "fungal_fern",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block SIPHON_STALK = register(
             "siphon_stalk",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block NETHER_WALL_FLOWER = register(
             "nether_wall_flower",
             NetherWallFlower::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block BLOODTHORN_BLOSSOM = register(
             "bloodthorn_blossom",
             BloodthornBlossomBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block FLUORESCENT_FLOWER_INV = register(
             "fluorescent_flower_inv",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block GASEOUS_GLOB = register(
             "gaseous_glob",
             GlobBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block OBSERVER_ORCHIDS = register(
             "observer_orchids",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS).lightLevel(state -> 7),
-            true,
-            null
+            true
     );
     public static final Block STOUTSHROOM = register(
             "stoutshroom",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block RED_BRUSH = register(
             "red_brush",
             QuadBrushBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block TEAL_BRUSH = register(
             "teal_brush",
             QuadBrushBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
-            true,
-            null
+            true
     );
     public static final Block MOONLIGHT_MOULD = register(
             "moonlight_mould",
             MouldBlock::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).strength(1.0F).sound(SoundType.WART_BLOCK).pushReaction(PushReaction.DESTROY),
-            true,
-            null
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).strength(1.0F).sound(SoundType.WART_BLOCK).pushReaction(PushReaction.DESTROY).noOcclusion(),
+            true
     );
     public static final Block MIDNIGHT_MOULD = register(
             "midnight_mould",
             MouldBlock::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(1.0F).sound(SoundType.WART_BLOCK).pushReaction(PushReaction.DESTROY),
-            true,
-            null
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(1.0F).sound(SoundType.WART_BLOCK).pushReaction(PushReaction.DESTROY).noOcclusion(),
+            true
     );
     public static final Block CRIMSON_IVY = register(
             "crimson_ivy",
@@ -221,233 +212,219 @@ public class McddnBlocks {
             "midnight_wart_block",
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_WART_BLOCK).mapColor(MapColor.COLOR_PURPLE),
-            true,
-            null
+            true
     );
     public static final Block SPORANGIUM = register(
             "sporangium",
             RootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block TALL_SPORANGIUM = register(
             "tall_sporangium",
             TallRootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block WARPED_FILAMENT = register(
             "warped_filament",
             TallRootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
-            true,
-            null
+            true
     );
     public static final Block CRIMSON_FILAMENT = register(
             "crimson_filament",
             TallRootsBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS),
-            true,
-            null
+            true
     );
-    public static final Block CUT_BLACKSTONE = register(
+    public static final Block BLACKSTONE_TILES = register(
+            "blackstone_tiles",
             "cut_blackstone",
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_BLACKSTONE_BRICKS),
-            true,
-            null
-    );
-    public static final Block CUT_BLACKSTONE_SLAB = register(
-            "cut_blackstone_slab",
-            SlabBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_BLACKSTONE),
-            true,
-            null
-    );
-    public static final Block CUT_BLACKSTONE_STAIRS = registerStairsBlock(
-            "cut_blackstone_stairs",
-            CUT_BLACKSTONE,
             true
     );
-    public static final Block INSET_POLISHED_BLACKSTONE = register(
+    public static final Block BLACKSTONE_TILE_SLAB = register(
+            "blackstone_tile_slab",
+            "cut_blackstone_slab",
+            SlabBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(BLACKSTONE_TILES),
+            true
+    );
+    public static final Block BLACKSTONE_TILES_STAIRS = registerStairsBlock(
+            "blackstone_tile_stairs",
+            "cut_blackstone_stairs",
+            BLACKSTONE_TILES,
+            true
+    );
+    public static final Block ORNATE_BLACKSTONE_TILES = register(
+            "ornate_blackstone_tiles",
             "inset_polished_blackstone",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_BLACKSTONE),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(BLACKSTONE_TILES),
+            true
     );
-    public static final Block SPALLING_CUT_BLACKSTONE = register(
+    public static final Block SPALLING_BLACKSTONE_TILES = register(
+            "spalling_blackstone_tiles",
             "spalling_cut_blackstone",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_BLACKSTONE),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(BLACKSTONE_TILES),
+            true
     );
     public static final Block NETHER_BRICK_PILLAR = register(
             "nether_brick_pillar",
             RotatedPillarBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS),
-            true,
-            null
+            true
     );
-    public static final Block CUT_NETHERRACK = register(
+    public static final Block NETHER_TILES = register(
+            "nether_tiles",
             "cut_netherrack",
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_BLACKSTONE_BRICKS).mapColor(MapColor.NETHER),
-            true,
-            null
-    );
-    public static final Block CUT_NETHERRACK_SLAB = register(
-            "cut_netherrack_slab",
-            SlabBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
-    );
-    public static final Block CUT_NETHERRACK_STAIRS = registerStairsBlock(
-            "cut_netherrack_stairs",
-            CUT_NETHERRACK,
             true
     );
-    public static final Block CHISELED_POLISHED_NETHERRACK = register(
+    public static final Block NETHER_TILE_SLAB = register(
+            "nether_tile_slab",
+            "cut_netherrack_slab",
+            SlabBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
+    );
+    public static final Block NETHER_TILE_STAIRS = registerStairsBlock(
+            "nether_tile_stairs",
+            "cut_netherrack_stairs",
+            NETHER_TILES,
+            true
+    );
+    public static final Block ORNATE_POLISHED_NETHERRACK = register(
+            "ornate_polished_netherrack",
             "chiseled_polished_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
-    public static final Block INSET_POLISHED_NETHERRACK = register(
+    public static final Block ORNATE_NETHER_TILES = register(
+            "ornate_nether_tiles",
             "inset_polished_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block SPALLING_NETHER_BRICKS = register(
             "spalling_nether_bricks",
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS),
-            true,
-            null
+            true
     );
-    public static final Block SPALLING_CUT_NETHERRACK = register(
+    public static final Block SPALLING_NETHER_TILES = register(
+            "spalling_nether_tiles",
             "spalling_cut_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block RED_NETHER_BRICK_PILLAR = register(
             "red_nether_brick_pillar",
             RotatedPillarBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.RED_NETHER_BRICKS),
-            true,
-            null
-    );
-    public static final Block CUT_RED_NETHERRACK = register(
-            "cut_red_netherrack",
-            Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
-    );
-    public static final Block CUT_RED_NETHERRACK_SLAB = register(
-            "cut_red_netherrack_slab",
-            SlabBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
-    );
-    public static final Block CUT_RED_NETHERRACK_STAIRS = registerStairsBlock(
-            "cut_red_netherrack_stairs",
-            CUT_NETHERRACK,
             true
     );
-    public static final Block CHISELED_POLISHED_RED_NETHERRACK = register(
+    public static final Block RED_NETHER_TILES = register(
+            "red_nether_tiles",
+            "cut_red_netherrack",
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
+    );
+    public static final Block RED_NETHER_TILE_SLAB = register(
+            "red_nether_tile_slab",
+            "cut_red_netherrack_slab",
+            SlabBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
+    );
+    public static final Block RED_NETHER_TILE_STAIRS = registerStairsBlock(
+            "red_nether_tile_stairs",
+            "cut_red_netherrack_stairs",
+            NETHER_TILES,
+            true
+    );
+    public static final Block ORNATE_POLISHED_RED_NETHERRACK = register(
+            "ornate_polished_red_netherrack",
             "chiseled_polished_red_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
-    public static final Block INSET_POLISHED_RED_NETHERRACK = register(
+    public static final Block ORNATE_RED_NETHER_TILES = register(
+            "ornate_red_nether_tiles",
             "inset_polished_red_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block SPALLING_RED_NETHER_BRICKS = register(
             "spalling_red_nether_bricks",
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS),
-            true,
-            null
+            true
     );
-    public static final Block SPALLING_CUT_RED_NETHERRACK = register(
+    public static final Block SPALLING_RED_NETHER_TILES = register(
+            "spalling_red_nether_tiles",
             "spalling_cut_red_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block POLISHED_NETHERRACK = register(
             "polished_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block POLISHED_NETHERRACK_SLAB = register(
             "polished_netherrack_slab",
             SlabBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block POLISHED_RED_NETHERRACK = register(
             "polished_red_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block POLISHED_RED_NETHERRACK_SLAB = register(
             "polished_red_netherrack_slab",
             SlabBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block POLISHED_DARK_NETHERRACK = register(
             "polished_dark_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block POLISHED_DARK_NETHERRACK_SLAB = register(
             "polished_dark_netherrack_slab",
             SlabBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block DARK_NETHER_BRICKS = register(
             "dark_nether_bricks",
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS),
-            true,
-            null
+            true
     );
     public static final Block DARK_NETHER_BRICK_SLAB = register(
             "dark_nether_brick_slab",
             SlabBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS),
-            true,
-            null
+            true
     );
     public static final Block DARK_NETHER_BRICK_STAIRS = registerStairsBlock(
             "dark_nether_brick_stairs",
@@ -458,99 +435,119 @@ public class McddnBlocks {
             "dark_nether_brick_fence",
             FenceBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS),
-            true,
-            null
+            true
     );
     public static final Block DARK_NETHER_BRICK_WALL = register(
             "dark_nether_brick_wall",
             WallBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICKS),
-            true,
-            null
+            true
     );
-    public static final Block MOLDY_INSET_POLISHED_BLACKSTONE = register(
+    public static final Block MOLDY_ORNATE_BLACKSTONE_TILES = register(
+            "moldy_ornate_blackstone_tiles",
             "moldy_inset_polished_blackstone",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_BLACKSTONE),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(BLACKSTONE_TILES),
+            true
     );
-    public static final Block MOLDY_CUT_BLACKSTONE = register(
+    public static final Block MOLDY_BLACKSTONE_TILES = register(
+            "moldy_blackstone_tiles",
             "moldy_cut_blackstone",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_BLACKSTONE),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(BLACKSTONE_TILES),
+            true
     );
-    public static final Block MOLDY_INSET_POLISHED_NETHERRACK = register(
+    public static final Block MOLDY_ORNATE_NETHER_TILES = register(
+            "moldy_ornate_nether_tiles",
             "moldy_inset_polished_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
-    public static final Block MOLDY_CUT_NETHERRACK = register(
+    public static final Block MOLDY_NETHER_TILES = register(
+            "moldy_nether_tiles",
             "moldy_cut_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
-    public static final Block MOLDY_INSET_POLISHED_RED_NETHERRACK = register(
+    public static final Block MOLDY_ORNATE_RED_NETHER_TILES = register(
+            "moldy_ornate_red_nether_tiles",
             "moldy_inset_polished_red_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
-    public static final Block MOLDY_CUT_RED_NETHERRACK = register(
+    public static final Block MOLDY_RED_NETHER_TILES = register(
+            "moldy_red_nether_tiles",
             "moldy_cut_red_netherrack",
             Block::new,
-            BlockBehaviour.Properties.ofFullCopy(CUT_NETHERRACK),
-            true,
-            null
+            BlockBehaviour.Properties.ofFullCopy(NETHER_TILES),
+            true
     );
     public static final Block ROUGH_NETHERRACK = register(
             "rough_netherrack",
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERRACK),
-            true,
-            null
+            true
     );
     public static final Block ASH = register(
             "ash",
             AshLayerBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW).mapColor(MapColor.COLOR_GRAY),
-            true,
-            null
+            true
     );
     public static final Block ASHY_BASALT = register(
             "ashy_basalt",
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT),
-            false,
-            null
+            false
     );
     public static final Block WARPED_TRUNK = register(
             "warped_trunk",
             WarpedTrunk::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_STEM),
-            false,
-            null
+            false
     );
 
 
+    private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
+        ResourceKey<Block> blockKey = keyOfBlock(name);
+        Block block = blockFactory.apply(settings);
+        if (shouldRegisterItem) {
+            ResourceKey<Item> itemKey = keyOfItem(name);
+            BlockItem blockItem;
+            blockItem = new BlockItem(block, new Item.Properties());
+            Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
+        }
+
+        return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
+    }
+    private static Block register(String name, String alias, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
+        ResourceKey<Block> blockKey = keyOfBlock(name);
+        Block block = blockFactory.apply(settings);
+        ResourceLocation blockId = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name);
+        ResourceLocation blockAlias = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, alias);
+        if (shouldRegisterItem) {
+            ResourceKey<Item> itemKey = keyOfItem(name);
+            BlockItem blockItem;
+            blockItem = new BlockItem(block, new Item.Properties());
+            ResourceLocation itemId = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name);
+            ResourceLocation itemAlias = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, alias);
+            Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
+            BuiltInRegistries.ITEM.addAlias(itemAlias, itemId);
+        }
+        BuiltInRegistries.BLOCK.addAlias(blockAlias, blockId);
+        return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
+
+    }
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem, FoodProperties food) {
         ResourceKey<Block> blockKey = keyOfBlock(name);
         Block block = blockFactory.apply(settings);
         if (shouldRegisterItem) {
             ResourceKey<Item> itemKey = keyOfItem(name);
             BlockItem blockItem;
-            if (food != null) {
-                blockItem = new BlockItem(block, new Item.Properties().food(food));
-            } else {
-                blockItem = new BlockItem(block, new Item.Properties());
-            }
+            blockItem = new BlockItem(block, new Item.Properties().food(food));
             Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
         }
 
@@ -567,6 +564,22 @@ public class McddnBlocks {
 
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
+    private static Block registerStairsBlock(String name, String alias, Block base, boolean shouldRegisterItem) {
+        ResourceKey<Block> blockKey = keyOfBlock(name);
+        StairBlock block = new StairBlock(base.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(base));
+        ResourceLocation blockId = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name);
+        ResourceLocation blockAlias = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, alias);
+        if (shouldRegisterItem) {
+            ResourceKey<Item> itemKey = keyOfItem(name);
+            BlockItem blockItem = new BlockItem(block, new Item.Properties());
+            ResourceLocation itemId = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name);
+            ResourceLocation itemAlias = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, alias);
+            BuiltInRegistries.ITEM.addAlias(itemAlias, itemId);
+            Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
+        }
+        BuiltInRegistries.BLOCK.addAlias(blockAlias, blockId);
+        return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
+    }
     private static ResourceKey<Block> keyOfBlock(String name) {
         return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
     }
@@ -581,6 +594,7 @@ public class McddnBlocks {
             fabricItemGroupEntries.accept(McddnBlocks.WARPED_BLOSSOM);
             fabricItemGroupEntries.accept(McddnBlocks.WARPED_WART_FLUFF);
             fabricItemGroupEntries.accept(McddnBlocks.NETHER_WART_FLUFF);
+            fabricItemGroupEntries.accept(McddnBlocks.WARPING_VINES);
             fabricItemGroupEntries.accept(McddnBlocks.WARPED_STALK);
             fabricItemGroupEntries.accept(McddnBlocks.CRIMSON_STALK);
             fabricItemGroupEntries.accept(McddnBlocks.SHY_SUCCULENT);
@@ -613,36 +627,36 @@ public class McddnBlocks {
             fabricItemGroupEntries.accept(McddnBlocks.ASH);
         });
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.accept(McddnBlocks.INSET_POLISHED_BLACKSTONE);
-            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_INSET_POLISHED_BLACKSTONE);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_BLACKSTONE);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_BLACKSTONE_SLAB);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_BLACKSTONE_STAIRS);
-            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_CUT_BLACKSTONE);
-            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_CUT_BLACKSTONE);
+            fabricItemGroupEntries.accept(McddnBlocks.ORNATE_BLACKSTONE_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_ORNATE_BLACKSTONE_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.BLACKSTONE_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.BLACKSTONE_TILE_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.BLACKSTONE_TILES_STAIRS);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_BLACKSTONE_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_BLACKSTONE_TILES);
             fabricItemGroupEntries.accept(McddnBlocks.POLISHED_NETHERRACK);
             fabricItemGroupEntries.accept(McddnBlocks.POLISHED_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(McddnBlocks.CHISELED_POLISHED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.ORNATE_POLISHED_NETHERRACK);
             fabricItemGroupEntries.accept(McddnBlocks.NETHER_BRICK_PILLAR);
-            fabricItemGroupEntries.accept(McddnBlocks.INSET_POLISHED_NETHERRACK);
-            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_INSET_POLISHED_NETHERRACK);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_NETHERRACK);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_NETHERRACK_STAIRS);
-            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_CUT_NETHERRACK);
-            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_CUT_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.ORNATE_NETHER_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_ORNATE_NETHER_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHER_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHER_TILE_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHER_TILE_STAIRS);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_NETHER_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_NETHER_TILES);
             fabricItemGroupEntries.accept(McddnBlocks.SPALLING_NETHER_BRICKS);
             fabricItemGroupEntries.accept(McddnBlocks.POLISHED_RED_NETHERRACK);
             fabricItemGroupEntries.accept(McddnBlocks.POLISHED_RED_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(McddnBlocks.CHISELED_POLISHED_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.ORNATE_POLISHED_RED_NETHERRACK);
             fabricItemGroupEntries.accept(McddnBlocks.RED_NETHER_BRICK_PILLAR);
-            fabricItemGroupEntries.accept(McddnBlocks.INSET_POLISHED_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_INSET_POLISHED_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_RED_NETHERRACK_SLAB);
-            fabricItemGroupEntries.accept(McddnBlocks.CUT_RED_NETHERRACK_STAIRS);
-            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_CUT_RED_NETHERRACK);
-            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_CUT_RED_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.ORNATE_RED_NETHER_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_ORNATE_RED_NETHER_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.RED_NETHER_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.RED_NETHER_TILE_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.RED_NETHER_TILE_STAIRS);
+            fabricItemGroupEntries.accept(McddnBlocks.MOLDY_RED_NETHER_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_RED_NETHER_TILES);
             fabricItemGroupEntries.accept(McddnBlocks.SPALLING_RED_NETHER_BRICKS);
             fabricItemGroupEntries.accept(McddnBlocks.POLISHED_DARK_NETHERRACK);
             fabricItemGroupEntries.accept(McddnBlocks.POLISHED_DARK_NETHERRACK_SLAB);

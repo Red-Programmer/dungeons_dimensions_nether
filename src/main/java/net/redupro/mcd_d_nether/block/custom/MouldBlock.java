@@ -166,18 +166,22 @@ public class MouldBlock extends TallRootsBlock {
             layerCount = 3;
         }
         for (int i = 0; i < layerCount; i++) {
-            check = check && world.getBlockState(mutable.north()).canBeReplaced();
-            check = check && world.getBlockState(mutable.east()).canBeReplaced();
-            check = check && world.getBlockState(mutable.south()).canBeReplaced();
-            check = check && world.getBlockState(mutable.west()).canBeReplaced();
-            check = check && world.getBlockState(mutable.north().west()).canBeReplaced();
-            check = check && world.getBlockState(mutable.east().north()).canBeReplaced();
-            check = check && world.getBlockState(mutable.south().east()).canBeReplaced();
-            check = check && world.getBlockState(mutable.west().south()).canBeReplaced();
+            check = check && isReplaceable(world.getBlockState(mutable.north()));
+            check = check && isReplaceable(world.getBlockState(mutable.east()));
+            check = check && isReplaceable(world.getBlockState(mutable.south()));
+            check = check && isReplaceable(world.getBlockState(mutable.west()));
+            check = check && isReplaceable(world.getBlockState(mutable.north().west()));
+            check = check && isReplaceable(world.getBlockState(mutable.east().north()));
+            check = check && isReplaceable(world.getBlockState(mutable.south().east()));
+            check = check && isReplaceable(world.getBlockState(mutable.west().south()));
             mutable = mutable.above();
         }
         return check;
     }
+    private boolean isReplaceable(BlockState state) {
+        return state.canBeReplaced() && state.getFluidState().isEmpty();
+    }
+
 
     public BlockPos validPos(ServerLevel world, BlockPos pos) {
         for (int i = 0; i < 4; i++) {

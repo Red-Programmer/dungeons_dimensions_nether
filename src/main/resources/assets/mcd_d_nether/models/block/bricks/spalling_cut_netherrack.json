@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "mcd_d_nether:block/bricks/spalling_cut_netherrack"
-  }
-}

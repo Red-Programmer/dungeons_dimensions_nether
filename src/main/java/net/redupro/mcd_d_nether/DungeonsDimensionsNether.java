@@ -29,6 +29,8 @@ public class DungeonsDimensionsNether implements ModInitializer {
     public static final ResourceLocation GASEOUS_GLOB_PATCH_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "gaseous_glob_patch");
     public static final ResourceLocation ASH_PATCH_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "ash_patch");
     public static final ResourceLocation FORTRESS_CAP_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "fortress_cap");
+    public static final ResourceLocation BIG_FORTRESS_CAP_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "big_fortress_cap");
+    public static final ResourceLocation WARPING_VINES_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "warping_vines");
 
     public static final McddnHugeFungusFeature MCDDN_HUGE_FUNGUS_FEATURE = new McddnHugeFungusFeature(McddnHugeFungusFeatureConfig.CODEC);
     public static final SimpleStackedFeature SIMPLE_STACKED_FEATURE = new SimpleStackedFeature(SimpleRandomFeatureConfiguration.CODEC);
@@ -38,6 +40,8 @@ public class DungeonsDimensionsNether implements ModInitializer {
     public static final GaseousGlobPatchFeature GASEOUS_GLOB_PATCH_FEATURE = new GaseousGlobPatchFeature(RandomPatchConfiguration.CODEC);
     public static final AshPatchFeature ASH_PATCH_FEATURE = new AshPatchFeature(RandomPatchConfiguration.CODEC);
     public static final FortressCapFeature FORTRESS_CAP_FEATURE = new FortressCapFeature(NoneFeatureConfiguration.CODEC);
+    public static final BigFortressCapFeature BIG_FORTRESS_CAP_FEATURE = new BigFortressCapFeature(NoneFeatureConfiguration.CODEC);
+    public static final WarpingVinesFeature WARPING_VINES_FEATURE = new WarpingVinesFeature(NoneFeatureConfiguration.CODEC);
 
 
     @Override
@@ -58,6 +62,8 @@ public class DungeonsDimensionsNether implements ModInitializer {
         Registry.register(BuiltInRegistries.FEATURE, GASEOUS_GLOB_PATCH_ID, GASEOUS_GLOB_PATCH_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, ASH_PATCH_ID, ASH_PATCH_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, FORTRESS_CAP_ID, FORTRESS_CAP_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, BIG_FORTRESS_CAP_ID, BIG_FORTRESS_CAP_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, WARPING_VINES_ID, WARPING_VINES_FEATURE);
 
         Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "free_feature_pool_element"), (StructurePoolElementType<FreeFeaturePoolElement>) () -> FreeFeaturePoolElement.CODEC);
 

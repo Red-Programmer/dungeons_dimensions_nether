@@ -3,6 +3,8 @@
   "package": "net.redupro.mcd_d_nether.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BasaltColumnsFeatureMixin",
+    "BlockBehaviourMixin",
     "JigsawPlacementPass",
     "NetherSproutsSettings",
     "RootsBlockMixin"
@@ -12,5 +14,7 @@
   },
   "overwrites": {
     "requireAnnotations": true
-	}
+  },
+  "mixinextras": {
+    "minVersion": "0.5.0"}
 }

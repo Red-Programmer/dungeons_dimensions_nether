@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.injection.At;
 @Debug(export = true)
 @Mixin(targets = "net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement$Placer")
 public class JigsawPlacementPass {
-
     @WrapOperation(method = "tryPlacingChildren", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/shapes/Shapes;joinIsNotEmpty(Lnet/minecraft/world/phys/shapes/VoxelShape;Lnet/minecraft/world/phys/shapes/VoxelShape;Lnet/minecraft/world/phys/shapes/BooleanOp;)Z"))
     public boolean joinIsNotEmpty(VoxelShape first, VoxelShape second, BooleanOp op, Operation<Boolean> original, @Local(ordinal = 1) StructurePoolElement targetElement){
         if (targetElement instanceof FreeFeaturePoolElement){

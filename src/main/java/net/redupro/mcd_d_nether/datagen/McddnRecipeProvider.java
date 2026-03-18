@@ -22,40 +22,41 @@ public class McddnRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void buildRecipes(RecipeOutput recipeOutput) {
-        //Polished Blackstone
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE.asItem(), Items.POLISHED_BLACKSTONE);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE_SLAB.asItem(), Items.POLISHED_BLACKSTONE, 2);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE_STAIRS.asItem(), Items.POLISHED_BLACKSTONE);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE.asItem(), Items.BLACKSTONE);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE_SLAB.asItem(), Items.BLACKSTONE, 2);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE_STAIRS.asItem(), Items.BLACKSTONE);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE_SLAB.asItem(), McddnBlocks.CUT_BLACKSTONE.asItem(), 2);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE_STAIRS.asItem(), McddnBlocks.CUT_BLACKSTONE.asItem());
-        slabBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_BLACKSTONE_SLAB.asItem(), Ingredient.of(McddnBlocks.CUT_BLACKSTONE.asItem()))
-                .unlockedBy(getHasName(McddnBlocks.CUT_BLACKSTONE.asItem()), has(McddnBlocks.CUT_BLACKSTONE.asItem()))
-                .save(recipeOutput);
-        stairBuilder(McddnBlocks.CUT_BLACKSTONE_STAIRS.asItem(), Ingredient.of(McddnBlocks.CUT_BLACKSTONE.asItem()))
-                .unlockedBy(getHasName(McddnBlocks.CUT_BLACKSTONE.asItem()), has(McddnBlocks.CUT_BLACKSTONE.asItem()))
-                .save(recipeOutput);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.SPALLING_CUT_BLACKSTONE.asItem(), McddnBlocks.CUT_BLACKSTONE.asItem());
-        shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_CUT_BLACKSTONE.asItem())
-                .requires(McddnBlocks.CUT_BLACKSTONE.asItem())
-                .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
-                .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
-                .save(recipeOutput);
-        shaped(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.INSET_POLISHED_BLACKSTONE.asItem(), 2)
-                .pattern("# ")
-                .pattern(" #")
-                .define('#', Items.POLISHED_BLACKSTONE)
-                .unlockedBy(getHasName(Items.POLISHED_BLACKSTONE), has(Items.POLISHED_BLACKSTONE))
-                .save(recipeOutput);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.INSET_POLISHED_BLACKSTONE.asItem(), Items.BLACKSTONE);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.INSET_POLISHED_BLACKSTONE.asItem(), Items.POLISHED_BLACKSTONE);
-        shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_INSET_POLISHED_BLACKSTONE.asItem())
-                .requires(McddnBlocks.INSET_POLISHED_BLACKSTONE.asItem())
-                .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
-                .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
-                .save(recipeOutput);
+                //Polished Blackstone
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILES.asItem(), Items.POLISHED_BLACKSTONE);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILE_SLAB.asItem(), Items.POLISHED_BLACKSTONE, 2);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILES_STAIRS.asItem(), Items.POLISHED_BLACKSTONE);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILES.asItem(), Items.BLACKSTONE);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILE_SLAB.asItem(), Items.BLACKSTONE, 2);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILES_STAIRS.asItem(), Items.BLACKSTONE);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILE_SLAB.asItem(), McddnBlocks.BLACKSTONE_TILES.asItem(), 2);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILES_STAIRS.asItem(), McddnBlocks.BLACKSTONE_TILES.asItem());
+                slabBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.BLACKSTONE_TILE_SLAB.asItem(), Ingredient.of(McddnBlocks.BLACKSTONE_TILES.asItem()))
+                        .unlockedBy(getHasName(McddnBlocks.BLACKSTONE_TILES.asItem()), has(McddnBlocks.BLACKSTONE_TILES.asItem()))
+                        .save(recipeOutput);
+                stairBuilder(McddnBlocks.BLACKSTONE_TILES_STAIRS.asItem(), Ingredient.of(McddnBlocks.BLACKSTONE_TILES.asItem()))
+                        .unlockedBy(getHasName(McddnBlocks.BLACKSTONE_TILES.asItem()), has(McddnBlocks.BLACKSTONE_TILES.asItem()))
+                        .save(recipeOutput);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.SPALLING_BLACKSTONE_TILES.asItem(), McddnBlocks.BLACKSTONE_TILES.asItem());
+                shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_BLACKSTONE_TILES.asItem())
+                        .requires(McddnBlocks.BLACKSTONE_TILES.asItem())
+                        .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
+                        .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
+                        .save(recipeOutput);
+                shaped(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_BLACKSTONE_TILES.asItem(), 2)
+                        .pattern("##")
+                        .pattern("##")
+                        .define('#', McddnBlocks.BLACKSTONE_TILE_SLAB.asItem())
+                        .unlockedBy(getHasName(McddnBlocks.BLACKSTONE_TILE_SLAB.asItem()), has(McddnBlocks.BLACKSTONE_TILE_SLAB.asItem()))
+                        .save(recipeOutput);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_BLACKSTONE_TILES.asItem(), Items.BLACKSTONE);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_BLACKSTONE_TILES.asItem(), Items.POLISHED_BLACKSTONE);
+                stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_BLACKSTONE_TILES.asItem(), McddnBlocks.BLACKSTONE_TILES.asItem());
+                shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_ORNATE_BLACKSTONE_TILES.asItem())
+                        .requires(McddnBlocks.ORNATE_BLACKSTONE_TILES.asItem())
+                        .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
+                        .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
+                        .save(recipeOutput);
 
         //Polished Netherrack
         polishedBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.POLISHED_NETHERRACK.asItem(), Ingredient.of(Items.NETHERRACK))
@@ -64,42 +65,46 @@ public class McddnRecipeProvider extends FabricRecipeProvider {
         slabBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.POLISHED_NETHERRACK_SLAB.asItem(), Ingredient.of(McddnBlocks.POLISHED_NETHERRACK.asItem()))
                 .unlockedBy(getHasName(McddnBlocks.POLISHED_NETHERRACK.asItem()), has(McddnBlocks.POLISHED_NETHERRACK.asItem()))
                 .save(recipeOutput);
-        chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CHISELED_POLISHED_NETHERRACK.asItem(), Ingredient.of(McddnBlocks.POLISHED_NETHERRACK_SLAB))
+        shaped(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_POLISHED_NETHERRACK.asItem(), 2)
+                        .pattern("##")
+                        .pattern("##")
+                        .define('#', McddnBlocks.POLISHED_NETHERRACK_SLAB.asItem())
                 .unlockedBy(getHasName(McddnBlocks.POLISHED_NETHERRACK_SLAB), has(McddnBlocks.POLISHED_NETHERRACK_SLAB))
                 .save(recipeOutput);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.POLISHED_NETHERRACK_SLAB.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CHISELED_POLISHED_NETHERRACK.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
-        shaped(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.INSET_POLISHED_NETHERRACK.asItem(), 2)
-                .pattern("# ")
-                .pattern(" #")
-                .define('#', McddnBlocks.POLISHED_NETHERRACK.asItem())
-                .unlockedBy(getHasName(McddnBlocks.POLISHED_NETHERRACK.asItem()), has(McddnBlocks.POLISHED_NETHERRACK.asItem()))
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_POLISHED_NETHERRACK.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
+        shaped(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_NETHER_TILES.asItem(), 2)
+                .pattern("# #")
+                .pattern(" ##")
+                .define('#', McddnBlocks.NETHER_TILE_SLAB.asItem())
+                .unlockedBy(getHasName(McddnBlocks.NETHER_TILE_SLAB.asItem()), has(McddnBlocks.NETHER_TILE_SLAB.asItem()))
                 .save(recipeOutput);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.INSET_POLISHED_NETHERRACK.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
-        shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_INSET_POLISHED_NETHERRACK.asItem())
-                .requires(McddnBlocks.INSET_POLISHED_NETHERRACK.asItem())
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_NETHER_TILES.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_NETHER_TILES.asItem(), McddnBlocks.NETHER_TILES.asItem());
+                shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_ORNATE_NETHER_TILES.asItem())
+                .requires(McddnBlocks.ORNATE_NETHER_TILES.asItem())
                 .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
                 .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
                 .save(recipeOutput);
-        polishedBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_NETHERRACK.asItem(), Ingredient.of(McddnBlocks.POLISHED_NETHERRACK.asItem()))
+        polishedBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.NETHER_TILES.asItem(), Ingredient.of(McddnBlocks.POLISHED_NETHERRACK.asItem()))
                 .unlockedBy(getHasName(McddnBlocks.POLISHED_NETHERRACK.asItem()), has(McddnBlocks.POLISHED_NETHERRACK.asItem()))
                 .save(recipeOutput);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_NETHERRACK.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
-        shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_CUT_NETHERRACK.asItem())
-                .requires(McddnBlocks.CUT_NETHERRACK.asItem())
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.NETHER_TILES.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
+        shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_NETHER_TILES.asItem())
+                .requires(McddnBlocks.NETHER_TILES.asItem())
                 .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
                 .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
                 .save(recipeOutput);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.SPALLING_CUT_NETHERRACK.asItem(), McddnBlocks.CUT_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_NETHERRACK_SLAB.asItem(), McddnBlocks.CUT_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_NETHERRACK_SLAB.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_NETHERRACK_STAIRS.asItem(), McddnBlocks.CUT_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_NETHERRACK_STAIRS.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
-        slabBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_NETHERRACK_SLAB.asItem(), Ingredient.of(McddnBlocks.CUT_NETHERRACK.asItem()))
-                .unlockedBy(getHasName(McddnBlocks.CUT_NETHERRACK.asItem()), has(McddnBlocks.CUT_NETHERRACK.asItem()))
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.SPALLING_NETHER_TILES.asItem(), McddnBlocks.NETHER_TILES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.NETHER_TILE_SLAB.asItem(), McddnBlocks.NETHER_TILES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.NETHER_TILE_SLAB.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.NETHER_TILE_STAIRS.asItem(), McddnBlocks.NETHER_TILES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.NETHER_TILE_STAIRS.asItem(), McddnBlocks.POLISHED_NETHERRACK.asItem());
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.NETHER_TILE_SLAB.asItem(), Ingredient.of(McddnBlocks.NETHER_TILES.asItem()))
+                .unlockedBy(getHasName(McddnBlocks.NETHER_TILES.asItem()), has(McddnBlocks.NETHER_TILES.asItem()))
                 .save(recipeOutput);
-        stairBuilder(McddnBlocks.CUT_NETHERRACK_STAIRS.asItem(), Ingredient.of(McddnBlocks.CUT_NETHERRACK.asItem()))
-                .unlockedBy(getHasName(McddnBlocks.CUT_NETHERRACK.asItem()), has(McddnBlocks.CUT_NETHERRACK.asItem()))
+        stairBuilder(McddnBlocks.NETHER_TILE_STAIRS.asItem(), Ingredient.of(McddnBlocks.NETHER_TILES.asItem()))
+                .unlockedBy(getHasName(McddnBlocks.NETHER_TILES.asItem()), has(McddnBlocks.NETHER_TILES.asItem()))
                 .save(recipeOutput);
 
         //Polished Red Netherrack
@@ -113,42 +118,46 @@ public class McddnRecipeProvider extends FabricRecipeProvider {
         slabBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.POLISHED_RED_NETHERRACK_SLAB.asItem(), Ingredient.of(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()))
                 .unlockedBy(getHasName(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()), has(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()))
                 .save(recipeOutput);
-        chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CHISELED_POLISHED_RED_NETHERRACK.asItem(), Ingredient.of(McddnBlocks.POLISHED_RED_NETHERRACK_SLAB))
+        shaped(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_POLISHED_RED_NETHERRACK.asItem(), 2)
+                        .pattern("##")
+                        .pattern("##")
+                        .define('#', McddnBlocks.POLISHED_RED_NETHERRACK_SLAB.asItem())
                 .unlockedBy(getHasName(McddnBlocks.POLISHED_RED_NETHERRACK_SLAB), has(McddnBlocks.POLISHED_RED_NETHERRACK_SLAB))
                 .save(recipeOutput);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.POLISHED_RED_NETHERRACK_SLAB.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CHISELED_POLISHED_RED_NETHERRACK.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
-        shaped(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.INSET_POLISHED_RED_NETHERRACK.asItem(), 2)
-                .pattern("# ")
-                .pattern(" #")
-                .define('#', McddnBlocks.POLISHED_RED_NETHERRACK.asItem())
-                .unlockedBy(getHasName(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()), has(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()))
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_POLISHED_RED_NETHERRACK.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
+        shaped(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_RED_NETHER_TILES.asItem(), 2)
+                .pattern("# #")
+                .pattern(" ##")
+                .define('#', McddnBlocks.RED_NETHER_TILE_SLAB.asItem())
+                .unlockedBy(getHasName(McddnBlocks.RED_NETHER_TILE_SLAB.asItem()), has(McddnBlocks.RED_NETHER_TILE_SLAB.asItem()))
                 .save(recipeOutput);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.INSET_POLISHED_RED_NETHERRACK.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
-        shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_INSET_POLISHED_RED_NETHERRACK.asItem())
-                .requires(McddnBlocks.INSET_POLISHED_RED_NETHERRACK.asItem())
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_RED_NETHER_TILES.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ORNATE_RED_NETHER_TILES.asItem(), McddnBlocks.RED_NETHER_TILES.asItem());
+                shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_ORNATE_RED_NETHER_TILES.asItem())
+                .requires(McddnBlocks.ORNATE_RED_NETHER_TILES.asItem())
                 .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
                 .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
                 .save(recipeOutput);
-        polishedBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_RED_NETHERRACK.asItem(), Ingredient.of(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()))
+        polishedBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.RED_NETHER_TILES.asItem(), Ingredient.of(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()))
                 .unlockedBy(getHasName(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()), has(McddnBlocks.POLISHED_RED_NETHERRACK.asItem()))
                 .save(recipeOutput);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_RED_NETHERRACK.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
-        shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_CUT_RED_NETHERRACK.asItem())
-                .requires(McddnBlocks.CUT_RED_NETHERRACK.asItem())
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.RED_NETHER_TILES.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
+        shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.MOLDY_RED_NETHER_TILES.asItem())
+                .requires(McddnBlocks.RED_NETHER_TILES.asItem())
                 .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
                 .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
                 .save(recipeOutput);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.SPALLING_CUT_RED_NETHERRACK.asItem(), McddnBlocks.CUT_RED_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_RED_NETHERRACK_SLAB.asItem(), McddnBlocks.CUT_RED_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_RED_NETHERRACK_SLAB.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_RED_NETHERRACK_STAIRS.asItem(), McddnBlocks.CUT_RED_NETHERRACK.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_RED_NETHERRACK_STAIRS.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
-        slabBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.CUT_RED_NETHERRACK_SLAB.asItem(), Ingredient.of(McddnBlocks.CUT_RED_NETHERRACK.asItem()))
-                .unlockedBy(getHasName(McddnBlocks.CUT_RED_NETHERRACK.asItem()), has(McddnBlocks.CUT_RED_NETHERRACK.asItem()))
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.SPALLING_RED_NETHER_TILES.asItem(), McddnBlocks.RED_NETHER_TILES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.RED_NETHER_TILE_SLAB.asItem(), McddnBlocks.RED_NETHER_TILES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.RED_NETHER_TILE_SLAB.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.RED_NETHER_TILE_STAIRS.asItem(), McddnBlocks.RED_NETHER_TILES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, McddnBlocks.RED_NETHER_TILE_STAIRS.asItem(), McddnBlocks.POLISHED_RED_NETHERRACK.asItem());
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.RED_NETHER_TILE_SLAB.asItem(), Ingredient.of(McddnBlocks.RED_NETHER_TILES.asItem()))
+                .unlockedBy(getHasName(McddnBlocks.RED_NETHER_TILES.asItem()), has(McddnBlocks.RED_NETHER_TILES.asItem()))
                 .save(recipeOutput);
-        stairBuilder(McddnBlocks.CUT_RED_NETHERRACK_STAIRS.asItem(), Ingredient.of(McddnBlocks.CUT_RED_NETHERRACK.asItem()))
-                .unlockedBy(getHasName(McddnBlocks.CUT_RED_NETHERRACK.asItem()), has(McddnBlocks.CUT_RED_NETHERRACK.asItem()))
+        stairBuilder(McddnBlocks.RED_NETHER_TILE_STAIRS.asItem(), Ingredient.of(McddnBlocks.RED_NETHER_TILES.asItem()))
+                .unlockedBy(getHasName(McddnBlocks.RED_NETHER_TILES.asItem()), has(McddnBlocks.RED_NETHER_TILES.asItem()))
                 .save(recipeOutput);
 
         //Polished Dark Netherrack
@@ -200,7 +209,7 @@ public class McddnRecipeProvider extends FabricRecipeProvider {
 
 
         shapeless(RecipeCategory.BUILDING_BLOCKS, McddnBlocks.ROUGH_NETHERRACK.asItem())
-                .requires(McddnBlocks.ROUGH_NETHERRACK.asItem())
+                .requires(Items.NETHERRACK)
                 .requires(McddnBlocks.NETHER_WART_FLUFF.asItem())
                 .unlockedBy(getHasName(McddnBlocks.NETHER_WART_FLUFF.asItem()), has(McddnBlocks.NETHER_WART_FLUFF.asItem()))
                 .save(recipeOutput);
