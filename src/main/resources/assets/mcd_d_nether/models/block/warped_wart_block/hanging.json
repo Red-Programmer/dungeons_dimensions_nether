@@ -4,7 +4,7 @@
 	"texture_size": [48, 64],
 	"textures": {
 		"8": "mcd_d_nether:block/warped_wart_atlas",
-		"particle": "mcd_d_nether:block/warped_wart_atlas"
+		"particle": "block/warped_wart_block"
 	},
 	"elements": [
 		{
