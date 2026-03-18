@@ -21,7 +21,7 @@ import org.spongepowered.include.com.google.common.base.Function;
 
 import static net.minecraft.world.level.block.Blocks.flowerPotProperties;
 
-//@SuppressWarnings("DataFlowIssue")
+@SuppressWarnings("DataFlowIssue")
 public class McddnBlocks {
     public static final Block WARPED_BLOSSOM = register(
             "warped_blossom",
