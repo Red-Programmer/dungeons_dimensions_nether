@@ -6,7 +6,20 @@
         {
           "location_predicate": {
             "predicate_type": "minecraft:tag_match",
-            "tag": "mcd_d_nether:cut_blackstone"
+            "tag": "mcd_d_nether:inlaid_blackstone_tiles"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:tag_match",
+            "tag": "mcd_d_nether:nether_tiles"
+          },
+          "output_state": {
+            "Name": "mcd_d_nether:moldy_inset_polished_blackstone"
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:tag_match",
+            "tag": "mcd_d_nether:blackstone_tiles"
           },
           "input_predicate": {
             "predicate_type": "minecraft:block_match",
@@ -19,7 +32,7 @@
         {
           "location_predicate": {
             "predicate_type": "minecraft:tag_match",
-            "tag": "mcd_d_nether:cut_blackstone"
+            "tag": "mcd_d_nether:blackstone_tiles"
           },
           "input_predicate": {
             "predicate_type": "minecraft:block_match",
@@ -32,7 +45,7 @@
         {
           "location_predicate": {
             "predicate_type": "minecraft:tag_match",
-            "tag": "mcd_d_nether:cut_blackstone"
+            "tag": "mcd_d_nether:blackstone_tiles"
           },
           "input_predicate": {
             "predicate_type": "minecraft:block_match",
@@ -44,28 +57,15 @@
         },
         {
           "location_predicate": {
-            "predicate_type": "minecraft:tag_match",
-            "tag": "mcd_d_nether:inset_polished_blackstone"
+            "predicate_type": "minecraft:always_true"
           },
           "input_predicate": {
-            "predicate_type": "minecraft:tag_match",
-            "tag": "mcd_d_nether:cut_netherrack"
+            "predicate_type": "minecraft:random_block_match",
+            "block": "minecraft:crimson_roots",
+            "probability": 0.3
           },
           "output_state": {
-            "Name": "mcd_d_nether:moldy_inset_polished_blackstone"
-          }
-        },
-        {
-          "location_predicate": {
-            "predicate_type": "minecraft:tag_match",
-            "tag": "mcd_d_nether:inset_polished_blackstone"
-          },
-          "input_predicate": {
-            "predicate_type": "minecraft:block_match",
-            "block": "mcd_d_nether:rough_netherrack"
-          },
-          "output_state": {
-            "Name": "minecraft:blackstone"
+            "Name": "mcd_d_nether:crimson_sprouts"
           }
         }
       ]

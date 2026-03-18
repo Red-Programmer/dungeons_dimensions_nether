@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "mcd_d_nether:block/bricks/cut_red_netherrack",
-    "side": "mcd_d_nether:block/bricks/cut_red_netherrack",
-    "top": "mcd_d_nether:block/bricks/cut_red_netherrack"
-  }
-}

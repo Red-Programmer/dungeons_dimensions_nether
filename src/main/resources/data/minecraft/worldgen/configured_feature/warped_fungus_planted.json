@@ -71,7 +71,8 @@
         "minecraft:small_dripleaf",
         "mcd_d_nether:warped_wart_fluff",
         "mcd_d_nether:warped_stalk",
-        "mcd_d_nether:warped_blossom"
+        "mcd_d_nether:warped_blossom",
+        "mcd_d_nether:warped_wart_hanging"
       ]
     },
     "stem_state": {

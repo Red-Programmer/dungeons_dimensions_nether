@@ -195,8 +195,13 @@ public class McddnHugeFungusFeature extends Feature<McddnHugeFungusFeatureConfig
 									this.setBlock(world, mutable.west().below(), fluff.defaultBlockState().setValue(WartFluffBlock.FACING, Direction.EAST).setValue(WartFluffBlock.HALF, DoubleBlockHalf.LOWER));
 								}
 							}
-							if (fl1 && world.getBlockState(mutable.above()).isAir() && random.nextIntBetweenInclusive(1, 4) == 1) {
-								this.setBlock(world, mutable.above(), Blocks.WARPED_ROOTS.defaultBlockState());
+							if (fl1) {
+								if (world.getBlockState(mutable.above()).isAir() && random.nextIntBetweenInclusive(1, 4) == 1) {
+									this.setBlock(world, mutable.above(), Blocks.WARPED_ROOTS.defaultBlockState());
+								}
+								if (world.getBlockState(mutable.below()).isAir() || world.getBlockState(mutable.below()).is(Blocks.WARPED_ROOTS)) {
+									this.setBlock(world, mutable.below(), McddnBlocks.WARPED_WART_HANGING.defaultBlockState());
+								}
 							}
 						}
 					}

@@ -9,6 +9,9 @@ import net.redupro.mcd_d_nether.DungeonsDimensionsNether;
 public class McddnTags {
     public static class Blocks {
         public static final TagKey<Block> BLACKSTONE_TILES = createTag("blackstone_tiles");
+        public static final TagKey<Block> ORNATE_BLACKSTONE_TILES = createTag("inlaid_blackstone_tiles");
+        public static final TagKey<Block> NETHER_TILES = createTag("nether_tiles");
+        public static final TagKey<Block> BASALT_CANNOT_PLACE_ON = createTag("basalt_cannot_place_on");
 
         private static TagKey<Block> createTag(String id) {
             return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, id));

@@ -15,11 +15,13 @@ public class DungeonsDimensionsNetherClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         FabricLoader.getInstance().getModContainer(DungeonsDimensionsNether.MOD_ID).ifPresent(modContainer -> {
-            ResourceLoader.registerBuiltinPack(Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "fancier_warped_wart"), modContainer, Component.translatable("Fancier Warped Wart"), PackActivationType.NORMAL);
+            ResourceLoader.registerBuiltinPack(Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "custom_fortress"), modContainer, Component.translatable("Custom Nether Fortress"), PackActivationType.DEFAULT_ENABLED);
         });
 
         BlockRenderLayerMap.putBlock(McddnBlocks.WARPED_TRUNK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(Blocks.WARPED_WART_BLOCK, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(McddnBlocks.WARPED_WART_HANGING, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(McddnBlocks.WARPING_VINES, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(McddnBlocks.WARPING_VINES_PLANT, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(McddnBlocks.WARPED_BLOSSOM, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(McddnBlocks.POTTED_WARPED_BLOSSOM, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(McddnBlocks.WARPED_WART_FLUFF, ChunkSectionLayer.CUTOUT);

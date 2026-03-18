@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "mcd_d_nether:ornate_blackstone_tiles",
+    "mcd_d_nether:nether_wart_fluff"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mcd_d_nether:moldy_ornate_blackstone_tiles"
+  }
+}

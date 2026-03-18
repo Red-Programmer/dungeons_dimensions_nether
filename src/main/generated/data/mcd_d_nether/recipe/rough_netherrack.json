@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    "mcd_d_nether:rough_netherrack",
+    "minecraft:netherrack",
     "mcd_d_nether:nether_wart_fluff"
   ],
   "result": {

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "mcd_d_nether:cut_netherrack",
-  "result": {
-    "count": 1,
-    "id": "mcd_d_nether:cut_netherrack_slab"
-  }
-}

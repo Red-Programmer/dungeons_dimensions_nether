@@ -1,11 +1,12 @@
 // 1.21.11	-999999999-01-01T00:00:00	Dungeons Dimensions Nether/Tags for minecraft:block
-6d5d8f6ca50b99b7af0c9fa60eb1b70459b8d0b5 data/minecraft/tags/block/climbable.json
+aa9629a5c73a1b59c459deee83083188433b2052 data/minecraft/tags/block/climbable.json
 97d97055c5bbd7e6d6706c2fd6986f1f8712cc27 data/minecraft/tags/block/fences.json
 6c79d2fa89b4532e87fd82303e38255a361388a7 data/minecraft/tags/block/infiniburn_end.json
 6c79d2fa89b4532e87fd82303e38255a361388a7 data/minecraft/tags/block/infiniburn_nether.json
 6c79d2fa89b4532e87fd82303e38255a361388a7 data/minecraft/tags/block/infiniburn_overworld.json
 1bdfe2bfcb36a7478a3cd9d03f577a4ad2feaec5 data/minecraft/tags/block/mineable/axe.json
 f3bcd7a15244558a79f815c3b6003044269e8818 data/minecraft/tags/block/mineable/hoe.json
-9bb4ae5f8eec4f2aecd52652328e22b57b932841 data/minecraft/tags/block/mineable/pickaxe.json
+38124bafcaef3716c76e9a7a083114265b582a1f data/minecraft/tags/block/mineable/pickaxe.json
 6bf5988e803132ca0c1068cd36f0f41ea03b7b0b data/minecraft/tags/block/mineable/shovel.json
+6c79d2fa89b4532e87fd82303e38255a361388a7 data/minecraft/tags/block/nether_carver_replaceables.json
 2f7d8de22006fadfa768ad2a99a1f03da45b0353 data/minecraft/tags/block/walls.json

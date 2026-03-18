@@ -32,6 +32,24 @@
 		{
 			"weight": 1,
 			"element": {
+				"location": "mcd_d_nether:nether_fortress/big_1",
+				"processors": "mcd_d_nether:nether_fortress_protected",
+				"projection": "rigid",
+				"element_type": "single_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "mcd_d_nether:nether_fortress/big_2",
+				"processors": "mcd_d_nether:nether_fortress_protected",
+				"projection": "rigid",
+				"element_type": "single_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
 				"location": "mcd_d_nether:nether_fortress/three_way_room",
 				"processors": "mcd_d_nether:nether_fortress_protected",
 				"projection": "rigid",

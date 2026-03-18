@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "mcd_d_nether:polished_red_netherrack",
+  "result": {
+    "count": 1,
+    "id": "mcd_d_nether:red_nether_tile_slab"
+  }
+}
