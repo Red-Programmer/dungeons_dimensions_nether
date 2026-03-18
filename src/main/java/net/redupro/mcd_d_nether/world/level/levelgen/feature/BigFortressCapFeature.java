@@ -33,17 +33,17 @@ public class BigFortressCapFeature extends Feature<NoneFeatureConfiguration> {
             return false;
         }
 
-        corner = blockPos.above(9).offset(direction.getCounterClockWise().getUnitVec3i().multiply(4));
+        corner = blockPos.above(9).offset(direction.getCounterClockWise().getNormal().multiply(4));
         if (patchMode) {
             for (var j = 0; j < 4; j++) {
                 BlockState blockState = j == 0 || j == 3 ? McddnBlocks.POLISHED_NETHERRACK.defaultBlockState() : Blocks.NETHER_BRICKS.defaultBlockState();
                 drawLine(level, corner.above(j), blockState, direction.getClockWise(), 9);
             }
         } else if (!bigNeighbor) {
-            corner = corner.below(10).offset(direction.getOpposite().getUnitVec3i());
+            corner = corner.below(10).offset(direction.getOpposite().getNormal());
             drawLine(level, corner, McddnBlocks.POLISHED_NETHERRACK.defaultBlockState(), direction.getClockWise(), 9);
-            corner = corner.above().offset(direction.getCounterClockWise().getUnitVec3i().multiply(2));
-            if (level.getBlockState(blockPos.below(2).offset(direction.getOpposite().getUnitVec3i())).is(Blocks.CHISELED_NETHER_BRICKS)) {
+            corner = corner.above().offset(direction.getCounterClockWise().getNormal().multiply(2));
+            if (level.getBlockState(blockPos.below(2).offset(direction.getOpposite().getNormal())).is(Blocks.CHISELED_NETHER_BRICKS)) {
                 for (var j = 0; j < 5; j++) {
                     BlockState blockState = j == 4 ? McddnBlocks.POLISHED_NETHERRACK.defaultBlockState() : Blocks.NETHER_BRICKS.defaultBlockState();
                     drawLine(level, corner.above(j), blockState, direction.getClockWise(), 15);
@@ -55,7 +55,7 @@ public class BigFortressCapFeature extends Feature<NoneFeatureConfiguration> {
 
     private void drawLine(WorldGenLevel level, BlockPos blockPos, BlockState blockState, Direction direction, int length) {
         for (var i = 0; i < length; i++) {
-            this.setBlock(level, blockPos.offset(direction.getUnitVec3i().multiply(i)), blockState);
+            this.setBlock(level, blockPos.offset(direction.getNormal().multiply(i)), blockState);
         }
     }
 

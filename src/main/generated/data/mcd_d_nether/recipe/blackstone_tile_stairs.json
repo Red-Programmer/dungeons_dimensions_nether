@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "mcd_d_nether:cut_blackstone"
+      "item": "mcd_d_nether:blackstone_tiles"
     }
   },
   "pattern": [
@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "mcd_d_nether:cut_blackstone_stairs"
+    "id": "mcd_d_nether:blackstone_tile_stairs"
   }
 }

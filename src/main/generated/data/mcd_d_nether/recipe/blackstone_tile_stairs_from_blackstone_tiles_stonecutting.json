@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "mcd_d_nether:blackstone_tiles",
+  "ingredient": {
+    "item": "mcd_d_nether:blackstone_tiles"
+  },
   "result": {
     "count": 1,
     "id": "mcd_d_nether:blackstone_tile_stairs"

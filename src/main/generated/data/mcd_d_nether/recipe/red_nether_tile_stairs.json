@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "mcd_d_nether:cut_red_netherrack"
+      "item": "mcd_d_nether:red_nether_tiles"
     }
   },
   "pattern": [
@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "mcd_d_nether:cut_red_netherrack_stairs"
+    "id": "mcd_d_nether:red_nether_tile_stairs"
   }
 }

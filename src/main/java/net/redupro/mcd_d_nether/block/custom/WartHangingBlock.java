@@ -2,10 +2,8 @@ package net.redupro.mcd_d_nether.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,17 +26,15 @@ public class WartHangingBlock extends Block {
 
     @Override
     protected BlockState updateShape(
-            BlockState state,
-            LevelReader world,
-            ScheduledTickAccess tickView,
-            BlockPos pos,
+            BlockState blockState,
             Direction direction,
-            BlockPos neighborPos,
-            BlockState neighborState,
-            RandomSource random
+            BlockState blockState2,
+            LevelAccessor levelAccessor,
+            BlockPos blockPos,
+            BlockPos blockPos2
     ) {
-        if(world.getBlockState(pos.above()).is(Blocks.WARPED_WART_BLOCK)) {
-            return state;
+        if(levelAccessor.getBlockState(blockPos.above()).is(Blocks.WARPED_WART_BLOCK)) {
+            return blockState;
         } else {
             return Blocks.AIR.defaultBlockState();
         }

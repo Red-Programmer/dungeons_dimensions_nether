@@ -3,7 +3,7 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "mcd_d_nether:rough_netherrack"
+      "item": "minecraft:netherrack"
     },
     {
       "item": "mcd_d_nether:nether_wart_fluff"

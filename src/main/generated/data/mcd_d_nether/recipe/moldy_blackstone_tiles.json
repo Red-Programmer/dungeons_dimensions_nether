@@ -3,7 +3,7 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "mcd_d_nether:cut_netherrack"
+      "item": "mcd_d_nether:blackstone_tiles"
     },
     {
       "item": "mcd_d_nether:nether_wart_fluff"
@@ -11,6 +11,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "mcd_d_nether:moldy_cut_netherrack"
+    "id": "mcd_d_nether:moldy_blackstone_tiles"
   }
 }
