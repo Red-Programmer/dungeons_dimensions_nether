@@ -12,8 +12,8 @@ import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.custom.NetherWallFlower;
 
 
-public class NetherWallFlowerPatchFeature extends Feature<RandomPatchConfiguration> {
-    public NetherWallFlowerPatchFeature(Codec<RandomPatchConfiguration> codec) {
+public class NetherWallFlowerFeature extends Feature<RandomPatchConfiguration> {
+    public NetherWallFlowerFeature(Codec<RandomPatchConfiguration> codec) {
         super(codec);
     }
 

@@ -12,8 +12,8 @@ import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.custom.GlobBlock;
 
 
-public class GaseousGlobPatchFeature extends Feature<RandomPatchConfiguration> {
-    public GaseousGlobPatchFeature(Codec<RandomPatchConfiguration> codec) {
+public class GaseousGlobFeature extends Feature<RandomPatchConfiguration> {
+    public GaseousGlobFeature(Codec<RandomPatchConfiguration> codec) {
         super(codec);
     }
 

@@ -36,9 +36,9 @@ public class DungeonsDimensionsNether implements ModInitializer {
     public static final SimpleStackedFeature SIMPLE_STACKED_FEATURE = new SimpleStackedFeature(SimpleRandomFeatureConfiguration.CODEC);
     public static final AdvancedBlockFeature ADVANCED_BLOCK_FEATURE = new AdvancedBlockFeature(AdvancedBlockFeatureConfig.CODEC);
     public static final CrimsonIvyFeature CRIMSON_IVY_FEATURE = new CrimsonIvyFeature(NoneFeatureConfiguration.CODEC);
-    public static final NetherWallFlowerPatchFeature NETHER_WALL_FLOWER_PATCH_FEATURE = new NetherWallFlowerPatchFeature(RandomPatchConfiguration.CODEC);
-    public static final GaseousGlobPatchFeature GASEOUS_GLOB_PATCH_FEATURE = new GaseousGlobPatchFeature(RandomPatchConfiguration.CODEC);
-    public static final AshPatchFeature ASH_PATCH_FEATURE = new AshPatchFeature(RandomPatchConfiguration.CODEC);
+    public static final NetherWallFlowerFeature NETHER_WALL_FLOWER_PATCH_FEATURE = new NetherWallFlowerFeature(RandomPatchConfiguration.CODEC);
+    public static final GaseousGlobFeature GASEOUS_GLOB_PATCH_FEATURE = new GaseousGlobFeature(RandomPatchConfiguration.CODEC);
+    public static final AshFeature ASH_PATCH_FEATURE = new AshFeature(RandomPatchConfiguration.CODEC);
     public static final FortressCapFeature FORTRESS_CAP_FEATURE = new FortressCapFeature(NoneFeatureConfiguration.CODEC);
     public static final BigFortressCapFeature BIG_FORTRESS_CAP_FEATURE = new BigFortressCapFeature(NoneFeatureConfiguration.CODEC);
     public static final WarpingVinesFeature WARPING_VINES_FEATURE = new WarpingVinesFeature(NoneFeatureConfiguration.CODEC);

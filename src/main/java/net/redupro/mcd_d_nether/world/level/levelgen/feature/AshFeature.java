@@ -11,8 +11,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 
 
-public class AshPatchFeature extends Feature<RandomPatchConfiguration> {
-    public AshPatchFeature(Codec<RandomPatchConfiguration> codec) {
+public class AshFeature extends Feature<RandomPatchConfiguration> {
+    public AshFeature(Codec<RandomPatchConfiguration> codec) {
         super(codec);
     }
 

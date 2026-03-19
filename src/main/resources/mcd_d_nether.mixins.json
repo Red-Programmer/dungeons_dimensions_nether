@@ -7,7 +7,7 @@
     "BlockBehaviourMixin",
     "JigsawPlacementPass",
     "NetherSproutsSettings",
-    "RootsBlockMixin"
+    "NetherRootsBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
