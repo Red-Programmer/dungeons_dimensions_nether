@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "mcd_d_nether",
-	"version": "1.1.1",
+	"version": "${version}",
 	"name": "Dungeons Dimensions Nether",
 	"description": "Makes the nether more detailed like in Minecraft Dungeons!",
 	"authors": [
