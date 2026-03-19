@@ -2,7 +2,10 @@ package net.redupro.mcd_d_nether.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SnowLayerBlock;
@@ -20,5 +23,9 @@ public class AshLayerBlock extends SnowLayerBlock {
                 level.setBlock(blockPos.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
             }
         }
+    }
+    @Override
+    protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
+
     }
 }
