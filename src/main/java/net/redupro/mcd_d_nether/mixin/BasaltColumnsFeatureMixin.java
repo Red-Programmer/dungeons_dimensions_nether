@@ -8,8 +8,10 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.BasaltColumnsFeature;
+import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.util.McddnTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,6 +22,12 @@ public class BasaltColumnsFeatureMixin {
     private static boolean isPlaceInTag(boolean original, LevelAccessor levelAccessor, int i, BlockPos.MutableBlockPos mutableBlockPos) {
         BlockState blockState = levelAccessor.getBlockState(mutableBlockPos.move(Direction.DOWN));
         return original && !blockState.is(McddnTags.Blocks.BASALT_CANNOT_PLACE_ON);
+    }
+
+    @ModifyReturnValue(method = "isAirOrLavaOcean", at = @At("RETURN:LAST"))
+    private static boolean isAsh(boolean original, LevelAccessor levelAccessor, int i, BlockPos blockPos) {
+        BlockState blockState = levelAccessor.getBlockState(blockPos);
+        return original || blockState.is(McddnBlocks.ASH) || blockState.is(McddnBlocks.ASHY_BASALT);
     }
 
     @Definition(id = "contains", method = "Lcom/google/common/collect/ImmutableList;contains(Ljava/lang/Object;)Z")
