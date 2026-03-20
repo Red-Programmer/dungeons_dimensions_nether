@@ -5,6 +5,7 @@
   "mixins": [
     "BasaltColumnsFeatureMixin",
     "BlockBehaviourMixin",
+    "DeltaFeatureMixin",
     "JigsawPlacementPass",
     "NetherSproutsSettings"
   ],
