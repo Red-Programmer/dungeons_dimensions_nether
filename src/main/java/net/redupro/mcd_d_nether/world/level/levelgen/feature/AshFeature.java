@@ -22,7 +22,7 @@ public class AshFeature extends Feature<NoneFeatureConfiguration> {
         WorldGenLevel world = context.level();
 
         int i = 0;
-        if (world.getBlockState(blockPos.below()).is(Blocks.BASALT) && world.getBlockState(blockPos).is(Blocks.AIR)) {
+        if ((world.getBlockState(blockPos.below()).is(Blocks.BASALT) || (world.getBlockState(blockPos.below()).is(McddnBlocks.ASHY_BASALT))) && world.getBlockState(blockPos).is(Blocks.AIR)) {
             world.setBlock(blockPos, McddnBlocks.ASH.defaultBlockState(), 2);
             world.setBlock(blockPos.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
             i += 1;

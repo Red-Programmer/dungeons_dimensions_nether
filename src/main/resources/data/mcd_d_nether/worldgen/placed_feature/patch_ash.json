@@ -20,8 +20,8 @@
       "type": "minecraft:random_offset",
       "xz_spread": {
         "type": "minecraft:trapezoid",
-        "max": 5,
-        "min": -5,
+        "max": 3,
+        "min": -3,
         "plateau": 0
       },
       "y_spread": {
