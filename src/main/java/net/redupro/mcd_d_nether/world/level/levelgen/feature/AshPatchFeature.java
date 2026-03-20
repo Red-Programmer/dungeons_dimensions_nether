@@ -37,7 +37,7 @@ public class AshPatchFeature extends Feature<RandomPatchConfiguration> {
             y = random.nextInt(k) - random.nextInt(k);
             z = random.nextInt(j) - random.nextInt(j);
             mutable = blockPos.offset(x, y, z);
-            if (world.getBlockState(mutable.below()).is(Blocks.BASALT) && world.getBlockState(mutable).is(Blocks.AIR)) {
+            if ((world.getBlockState(mutable.below()).is(Blocks.BASALT) || (world.getBlockState(mutable.below()).is(McddnBlocks.ASHY_BASALT))) && world.getBlockState(mutable).is(Blocks.AIR)) {
                 world.setBlock(mutable, McddnBlocks.ASH.defaultBlockState(), 2);
                 world.setBlock(mutable.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 i += 1;

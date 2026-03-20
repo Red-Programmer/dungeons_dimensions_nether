@@ -18,13 +18,16 @@
           "type": "minecraft:block_predicate_filter",
           "predicate": {
             "type": "minecraft:matching_blocks",
-            "blocks": "minecraft:basalt"
+            "blocks": [
+              "minecraft:basalt",
+              "mcd_d_nether:ashy_basalt"
+            ]
           }
         }
       ]
     },
     "tries": 64,
-    "xz_spread": 5,
+    "xz_spread": 3,
     "y_spread": 5
   }
 }
