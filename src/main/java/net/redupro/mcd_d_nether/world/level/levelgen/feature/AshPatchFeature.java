@@ -3,6 +3,7 @@ package net.redupro.mcd_d_nether.world.level.levelgen.feature;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -36,25 +37,26 @@ public class AshPatchFeature extends Feature<RandomPatchConfiguration> {
             y = random.nextInt(k) - random.nextInt(k);
             z = random.nextInt(j) - random.nextInt(j);
             mutable = blockPos.offset(x, y, z);
-            if (world.getBlockState(mutable.below()).is(Blocks.BASALT) && world.getBlockState(mutable).is(Blocks.AIR)) {
+            if ((world.getBlockState(mutable.below()).is(Blocks.BASALT) || (world.getBlockState(mutable.below()).is(McddnBlocks.ASHY_BASALT))) && world.getBlockState(mutable).is(Blocks.AIR)) {
                 world.setBlock(mutable, McddnBlocks.ASH.defaultBlockState(), 2);
                 world.setBlock(mutable.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 i += 1;
 
-                if (world.getBlockState(mutable.below().north()).is(Blocks.BASALT) && world.getBlockState(mutable.north()).is(Blocks.AIR)) {
+                if (world.getBlockState(mutable.below().north()).is(Blocks.BASALT) && world.getBlockState(mutable.north()).is(Blocks.AIR) && new ChunkPos(blockPos).equals(new ChunkPos(blockPos.north()))) {
                     world.setBlock(mutable.below().north(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 }
-                if (world.getBlockState(mutable.below().south()).is(Blocks.BASALT) && world.getBlockState(mutable.south()).is(Blocks.AIR)) {
+                if (world.getBlockState(mutable.below().south()).is(Blocks.BASALT) && world.getBlockState(mutable.south()).is(Blocks.AIR) && new ChunkPos(blockPos).equals(new ChunkPos(blockPos.south()))) {
                     world.setBlock(mutable.below().south(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 }
-                if (world.getBlockState(mutable.below().east()).is(Blocks.BASALT) && world.getBlockState(mutable.east()).is(Blocks.AIR)) {
+                if (world.getBlockState(mutable.below().east()).is(Blocks.BASALT) && world.getBlockState(mutable.east()).is(Blocks.AIR) && new ChunkPos(blockPos).equals(new ChunkPos(blockPos.east()))) {
                     world.setBlock(mutable.below().east(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 }
-                if (world.getBlockState(mutable.below().west()).is(Blocks.BASALT) && world.getBlockState(mutable.west()).is(Blocks.AIR)) {
+                if (world.getBlockState(mutable.below().west()).is(Blocks.BASALT) && world.getBlockState(mutable.west()).is(Blocks.AIR) && new ChunkPos(blockPos).equals(new ChunkPos(blockPos.west()))) {
                     world.setBlock(mutable.below().west(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
                 }
             }
         }
+
         return i > 0;
     }
 }

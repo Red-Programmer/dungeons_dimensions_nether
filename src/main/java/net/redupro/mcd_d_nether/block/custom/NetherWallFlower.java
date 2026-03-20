@@ -103,7 +103,7 @@ public class NetherWallFlower extends Block {
     }
 
     public static boolean placeAt(LevelAccessor world, BlockState state, BlockPos pos) {
-        if (pos.getX() >> 4 == new ChunkPos(pos.relative(state.getValue(FACING))).x && pos.getZ() >> 4 == new ChunkPos(pos.relative(state.getValue(FACING))).z) {
+        if (new ChunkPos(pos).equals(new ChunkPos(pos.relative(state.getValue(FACING))))) {
             if (world.getBlockState(pos).is(Blocks.AIR) && !world.getBlockState(pos.below()).isCollisionShapeFullBlock(world, pos.below())) {
                 if (world.getBlockState(pos.relative(state.getValue(FACING))).is(Blocks.NETHERRACK) || world.getBlockState(pos.relative(state.getValue(FACING))).is(Blocks.WARPED_NYLIUM)) {
                     if (world.getBlockState(pos.below()) == state ||
