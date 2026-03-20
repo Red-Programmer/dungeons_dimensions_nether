@@ -5,41 +5,33 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.custom.NetherWallFlower;
 
 
-public class NetherWallFlowerFeature extends Feature<RandomPatchConfiguration> {
-    public NetherWallFlowerFeature(Codec<RandomPatchConfiguration> codec) {
+public class NetherWallFlowerFeature extends Feature<NoneFeatureConfiguration> {
+    public NetherWallFlowerFeature(Codec<NoneFeatureConfiguration> codec) {
         super(codec);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<RandomPatchConfiguration> context) {
-        RandomPatchConfiguration randomPatchFeatureConfig = context.config();
-        RandomSource random = context.random();
+    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         BlockPos blockPos = context.origin();
+        RandomSource random = context.random();
         WorldGenLevel structureWorldAccess = context.level();
 
         int i = 0;
-        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
-        int j = randomPatchFeatureConfig.xzSpread() + 1;
-        int k = randomPatchFeatureConfig.ySpread() + 1;
-        int x;
-        int y;
-        int z;
 
-        for (int l = 0; l < randomPatchFeatureConfig.tries(); l++) {
-            x = random.nextInt(j) - random.nextInt(j);
-            y = random.nextInt(k) - random.nextInt(k);
-            z = random.nextInt(j) - random.nextInt(j);
-            i += NetherWallFlower.placeAt(structureWorldAccess, McddnBlocks.NETHER_WALL_FLOWER.defaultBlockState().setValue(NetherWallFlower.FACING, Direction.NORTH), blockPos.offset(x, y, z + 1)) ? 1 : 0;
-            i += NetherWallFlower.placeAt(structureWorldAccess, McddnBlocks.NETHER_WALL_FLOWER.defaultBlockState().setValue(NetherWallFlower.FACING, Direction.SOUTH), blockPos.offset(x, y, z - 1)) ? 1 : 0;
-            i += NetherWallFlower.placeAt(structureWorldAccess, McddnBlocks.NETHER_WALL_FLOWER.defaultBlockState().setValue(NetherWallFlower.FACING, Direction.WEST), blockPos.offset(x + 1, y, z)) ? 1 : 0;
-            i += NetherWallFlower.placeAt(structureWorldAccess, McddnBlocks.NETHER_WALL_FLOWER.defaultBlockState().setValue(NetherWallFlower.FACING, Direction.EAST), blockPos.offset(x - 1, y, z)) ? 1 : 0;
+        i += NetherWallFlower.placeAt(structureWorldAccess, McddnBlocks.NETHER_WALL_FLOWER.defaultBlockState().setValue(NetherWallFlower.FACING, Direction.NORTH), blockPos.south()) ? 1 : 0;
+        i += NetherWallFlower.placeAt(structureWorldAccess, McddnBlocks.NETHER_WALL_FLOWER.defaultBlockState().setValue(NetherWallFlower.FACING, Direction.SOUTH), blockPos.north()) ? 1 : 0;
+        i += NetherWallFlower.placeAt(structureWorldAccess, McddnBlocks.NETHER_WALL_FLOWER.defaultBlockState().setValue(NetherWallFlower.FACING, Direction.WEST), blockPos.east()) ? 1 : 0;
+        i += NetherWallFlower.placeAt(structureWorldAccess, McddnBlocks.NETHER_WALL_FLOWER.defaultBlockState().setValue(NetherWallFlower.FACING, Direction.EAST), blockPos.west()) ? 1 : 0;
+        if (i > 0 && random.nextFloat() > 0.75 && structureWorldAccess.getBlockState(blockPos).is(Blocks.WARPED_NYLIUM) && structureWorldAccess.getBlockState(blockPos.above()).isAir()) {
+            structureWorldAccess.setBlock(blockPos.above(), McddnBlocks.FUNGAL_FERN.defaultBlockState(), 2);
         }
 
         return i > 0;

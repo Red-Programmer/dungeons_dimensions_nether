@@ -27,7 +27,7 @@ public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos blockPos = featurePlaceContext.origin();
         RandomSource random = featurePlaceContext.random();
         BlockPos corner;
-        ChunkPos chunkPos = new ChunkPos(blockPos);
+        ChunkPos chunkPos = ChunkPos.containing(blockPos);
         Direction direction = getDirection(level, blockPos, chunkPos);
         if (direction == null || level.getBlockState(blockPos.below()).is(McddnTags.Blocks.BLACKSTONE_TILES)) {
             return false;
@@ -119,17 +119,17 @@ public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
             return Direction.NORTH;
         } else if (level.getBlockState(blockPos.below().west()).is(McddnTags.Blocks.BLACKSTONE_TILES)) {
             return Direction.EAST;
-        } else if ( !chunkPos.equals(new ChunkPos(blockPos.north())) ^ !chunkPos.equals(new ChunkPos(blockPos.east())) ^ !chunkPos.equals(new ChunkPos(blockPos.south())) ^ !chunkPos.equals(new ChunkPos(blockPos.west()))){
-            if ( !chunkPos.equals(new ChunkPos(blockPos.north())) ){
+        } else if ( !chunkPos.equals(ChunkPos.containing(blockPos.north())) ^ !chunkPos.equals(ChunkPos.containing(blockPos.east())) ^ !chunkPos.equals(ChunkPos.containing(blockPos.south())) ^ !chunkPos.equals(ChunkPos.containing(blockPos.west()))){
+            if ( !chunkPos.equals(ChunkPos.containing(blockPos.north())) ){
                 return Direction.SOUTH;
-            } else if ( !chunkPos.equals(new ChunkPos(blockPos.east())) ){
+            } else if ( !chunkPos.equals(ChunkPos.containing(blockPos.east())) ){
                 return Direction.WEST;
-            } else if ( !chunkPos.equals(new ChunkPos(blockPos.south())) ){
+            } else if ( !chunkPos.equals(ChunkPos.containing(blockPos.south())) ){
                 return Direction.NORTH;
             } else {
                 return Direction.EAST;
             }
-        } else if (!chunkPos.equals(new ChunkPos(blockPos.north())) && !chunkPos.equals(new ChunkPos(blockPos.east()))) {
+        } else if (!chunkPos.equals(ChunkPos.containing(blockPos.north())) && !chunkPos.equals(ChunkPos.containing(blockPos.east()))) {
             if (level.getBlockState(blockPos.south(4)).isAir()) {
                 return Direction.SOUTH;
             } else if (level.getBlockState(blockPos.west(4)).isAir()) {
@@ -137,7 +137,7 @@ public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
             } else {
                 return null;
             }
-        } else if (!chunkPos.equals(new ChunkPos(blockPos.east())) && !chunkPos.equals(new ChunkPos(blockPos.south()))) {
+        } else if (!chunkPos.equals(ChunkPos.containing(blockPos.east())) && !chunkPos.equals(ChunkPos.containing(blockPos.south()))) {
             if (level.getBlockState(blockPos.west(4)).isAir()) {
                 return Direction.WEST;
             } else if (level.getBlockState(blockPos.north(4)).isAir()) {
@@ -145,7 +145,7 @@ public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
             } else {
                 return null;
             }
-        } else if (!chunkPos.equals(new ChunkPos(blockPos.south())) && !chunkPos.equals(new ChunkPos(blockPos.west()))) {
+        } else if (!chunkPos.equals(ChunkPos.containing(blockPos.south())) && !chunkPos.equals(ChunkPos.containing(blockPos.west()))) {
             if (level.getBlockState(blockPos.north(4)).isAir()) {
                 return Direction.NORTH;
             } else if (level.getBlockState(blockPos.east(4)).isAir()) {
@@ -153,7 +153,7 @@ public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
             } else {
                 return null;
             }
-        } else if (!chunkPos.equals(new ChunkPos(blockPos.west())) && !chunkPos.equals(new ChunkPos(blockPos.north()))) {
+        } else if (!chunkPos.equals(ChunkPos.containing(blockPos.west())) && !chunkPos.equals(ChunkPos.containing(blockPos.north()))) {
             if (level.getBlockState(blockPos.east(4)).isAir()) {
                 return Direction.EAST;
             } else if (level.getBlockState(blockPos.south(4)).isAir()) {

@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "mcd_d_nether:polished_red_netherrack",
   "result": {
-    "count": 1,
     "id": "mcd_d_nether:ornate_red_nether_tiles"
   }
 }

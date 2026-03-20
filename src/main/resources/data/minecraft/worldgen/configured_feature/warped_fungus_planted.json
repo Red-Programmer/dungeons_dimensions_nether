@@ -72,7 +72,9 @@
         "mcd_d_nether:warped_wart_fluff",
         "mcd_d_nether:warped_stalk",
         "mcd_d_nether:warped_blossom",
-        "mcd_d_nether:warped_wart_hanging"
+        "mcd_d_nether:warped_wart_hanging",
+        "mcd_d_nether:midnight_mould",
+        "mcd_d_nether:moonlight_mould"
       ]
     },
     "stem_state": {

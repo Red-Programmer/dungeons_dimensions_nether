@@ -1,13 +1,12 @@
 {
   "required": true,
   "package": "net.redupro.mcd_d_nether.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_25",
   "mixins": [
     "BasaltColumnsFeatureMixin",
     "BlockBehaviourMixin",
     "JigsawPlacementPass",
-    "NetherSproutsSettings",
-    "NetherRootsBlockMixin"
+    "NetherSproutsSettings"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,11 +1,12 @@
 package net.redupro.mcd_d_nether.block;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -25,7 +26,7 @@ import static net.minecraft.world.level.block.Blocks.flowerPotProperties;
 public class McddnBlocks {
     public static final Block WARPED_BLOSSOM = register(
             "warped_blossom",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
             true
     );
@@ -84,31 +85,31 @@ public class McddnBlocks {
     );
     public static final Block SHY_SUCCULENT = register(
             "shy_succulent",
-            SucculentBlock::new,
+            p -> new SucculentBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).instabreak().sound(SoundType.FUNGUS).pushReaction(PushReaction.DESTROY).dynamicShape(),
             true
     );
     public static final Block MOONLIGHT_MILDEW = register(
             "moonlight_mildew",
-            MildewBlock::new,
+            p -> new MildewBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
             true
     );
     public static final Block MIDNIGHT_MILDEW = register(
             "midnight_mildew",
-            MildewBlock::new,
+            p -> new MildewBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
             true
     );
     public static final Block FLUORESCENT_FLOWER = register(
             "fluorescent_flower",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS),
             true
     );
     public static final Block FLUORESCENT_FIG = register(
             "fluorescent_fig",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
             true
     );
@@ -120,25 +121,25 @@ public class McddnBlocks {
     );
     public static final Block FEELER_FLOWER = register(
             "feeler_flower",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
             true
     );
     public static final Block FROG_FLOWER = register(
             "frog_flower",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
             true
     );
     public static final Block FUNGAL_FERN = register(
             "fungal_fern",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
             true
     );
     public static final Block SIPHON_STALK = register(
             "siphon_stalk",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_FUNGUS),
             true
     );
@@ -150,13 +151,13 @@ public class McddnBlocks {
     );
     public static final Block BLOODTHORN_BLOSSOM = register(
             "bloodthorn_blossom",
-            BloodthornBlossomBlock::new,
+            p -> new BloodthornBlossomBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS),
             true
     );
     public static final Block FLUORESCENT_FLOWER_INV = register(
             "fluorescent_flower_inv",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
             true
     );
@@ -168,13 +169,13 @@ public class McddnBlocks {
     );
     public static final Block OBSERVER_ORCHIDS = register(
             "observer_orchids",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS).lightLevel(state -> 7),
             true
     );
     public static final Block STOUTSHROOM = register(
             "stoutshroom",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS),
             true
     );
@@ -217,7 +218,7 @@ public class McddnBlocks {
     );
     public static final Block SPORANGIUM = register(
             "sporangium",
-            RootsBlock::new,
+            p -> new NetherRootsBlock(BlockTags.SUPPORTS_WARPED_ROOTS, p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_ROOTS),
             true
     );
@@ -591,7 +592,7 @@ public class McddnBlocks {
     public static void registerMcddnBlocks() {
         DungeonsDimensionsNether.LOGGER.info("Registering Mod Blocks for " + DungeonsDimensionsNether.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(fabricItemGroupEntries -> {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.accept(McddnBlocks.WARPED_BLOSSOM);
             fabricItemGroupEntries.accept(McddnBlocks.WARPED_WART_FLUFF);
             fabricItemGroupEntries.accept(McddnBlocks.NETHER_WART_FLUFF);
@@ -627,7 +628,7 @@ public class McddnBlocks {
             fabricItemGroupEntries.accept(McddnBlocks.CRIMSON_SPROUTS);
             fabricItemGroupEntries.accept(McddnBlocks.ASH);
         });
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.accept(McddnBlocks.ORNATE_BLACKSTONE_TILES);
             fabricItemGroupEntries.accept(McddnBlocks.MOLDY_ORNATE_BLACKSTONE_TILES);
             fabricItemGroupEntries.accept(McddnBlocks.BLACKSTONE_TILES);

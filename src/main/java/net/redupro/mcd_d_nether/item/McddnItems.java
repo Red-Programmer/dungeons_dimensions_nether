@@ -1,6 +1,6 @@
 package net.redupro.mcd_d_nether.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -19,7 +19,7 @@ public class McddnItems {
     }
     public static void registerMcddnItems() {
         DungeonsDimensionsNether.LOGGER.info("Registering Mod Items for " + DungeonsDimensionsNether.MOD_ID);
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(fabricItemGroupEntries -> {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(fabricItemGroupEntries -> {
 
         });
     }

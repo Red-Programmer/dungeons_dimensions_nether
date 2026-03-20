@@ -1,15 +1,16 @@
 package net.redupro.mcd_d_nether.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 
 import java.util.concurrent.CompletableFuture;
 
-public class McddnBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-    public McddnBlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+public class McddnBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
+    public McddnBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
@@ -29,6 +30,7 @@ public class McddnBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.INFINIBURN_END).add(McddnBlocks.ROUGH_NETHERRACK);
         valueLookupBuilder(BlockTags.INFINIBURN_OVERWORLD).add(McddnBlocks.ROUGH_NETHERRACK);
         valueLookupBuilder(BlockTags.NETHER_CARVER_REPLACEABLES).add(McddnBlocks.ROUGH_NETHERRACK);
+        valueLookupBuilder(BlockTags.SUPPORTS_WARPED_ROOTS).add(Blocks.WARPED_WART_BLOCK).add(Blocks.NETHER_WART_BLOCK);
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(McddnBlocks.BLACKSTONE_TILES)
                 .add(McddnBlocks.BLACKSTONE_TILE_SLAB)

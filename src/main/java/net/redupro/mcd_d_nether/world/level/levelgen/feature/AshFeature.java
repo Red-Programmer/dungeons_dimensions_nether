@@ -2,58 +2,42 @@ package net.redupro.mcd_d_nether.world.level.levelgen.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 
 
-public class AshFeature extends Feature<RandomPatchConfiguration> {
-    public AshFeature(Codec<RandomPatchConfiguration> codec) {
+public class AshFeature extends Feature<NoneFeatureConfiguration> {
+    public AshFeature(Codec<NoneFeatureConfiguration> codec) {
         super(codec);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<RandomPatchConfiguration> context) {
-        RandomPatchConfiguration randomPatchFeatureConfig = context.config();
-        RandomSource random = context.random();
+    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         BlockPos blockPos = context.origin();
         WorldGenLevel world = context.level();
 
         int i = 0;
-        BlockPos mutable;
-        int j = randomPatchFeatureConfig.xzSpread() + 1;
-        int k = randomPatchFeatureConfig.ySpread() + 1;
-        int x;
-        int y;
-        int z;
+        if (world.getBlockState(blockPos.below()).is(Blocks.BASALT) && world.getBlockState(blockPos).is(Blocks.AIR)) {
+            world.setBlock(blockPos, McddnBlocks.ASH.defaultBlockState(), 2);
+            world.setBlock(blockPos.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
+            i += 1;
 
-        for (int l = 0; l < randomPatchFeatureConfig.tries(); l++) {
-            x = random.nextInt(j) - random.nextInt(j);
-            y = random.nextInt(k) - random.nextInt(k);
-            z = random.nextInt(j) - random.nextInt(j);
-            mutable = blockPos.offset(x, y, z);
-            if (world.getBlockState(mutable.below()).is(Blocks.BASALT) && world.getBlockState(mutable).is(Blocks.AIR)) {
-                world.setBlock(mutable, McddnBlocks.ASH.defaultBlockState(), 2);
-                world.setBlock(mutable.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
-                i += 1;
-
-                if (world.getBlockState(mutable.below().north()).is(Blocks.BASALT) && world.getBlockState(mutable.north()).is(Blocks.AIR) && new ChunkPos(blockPos).equals(new ChunkPos(blockPos.north()))) {
-                    world.setBlock(mutable.below().north(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
-                }
-                if (world.getBlockState(mutable.below().south()).is(Blocks.BASALT) && world.getBlockState(mutable.south()).is(Blocks.AIR) && new ChunkPos(blockPos).equals(new ChunkPos(blockPos.south()))) {
-                    world.setBlock(mutable.below().south(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
-                }
-                if (world.getBlockState(mutable.below().east()).is(Blocks.BASALT) && world.getBlockState(mutable.east()).is(Blocks.AIR) && new ChunkPos(blockPos).equals(new ChunkPos(blockPos.east()))) {
-                    world.setBlock(mutable.below().east(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
-                }
-                if (world.getBlockState(mutable.below().west()).is(Blocks.BASALT) && world.getBlockState(mutable.west()).is(Blocks.AIR) && new ChunkPos(blockPos).equals(new ChunkPos(blockPos.west()))) {
-                    world.setBlock(mutable.below().west(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
-                }
+            if (world.getBlockState(blockPos.below().north()).is(Blocks.BASALT) && world.getBlockState(blockPos.north()).is(Blocks.AIR) && ChunkPos.containing(blockPos).equals(ChunkPos.containing(blockPos.north()))) {
+                world.setBlock(blockPos.below().north(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
+            }
+            if (world.getBlockState(blockPos.below().south()).is(Blocks.BASALT) && world.getBlockState(blockPos.south()).is(Blocks.AIR) && ChunkPos.containing(blockPos).equals(ChunkPos.containing(blockPos.south()))) {
+                world.setBlock(blockPos.below().south(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
+            }
+            if (world.getBlockState(blockPos.below().east()).is(Blocks.BASALT) && world.getBlockState(blockPos.east()).is(Blocks.AIR) && ChunkPos.containing(blockPos).equals(ChunkPos.containing(blockPos.east()))) {
+                world.setBlock(blockPos.below().east(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
+            }
+            if (world.getBlockState(blockPos.below().west()).is(Blocks.BASALT) && world.getBlockState(blockPos.west()).is(Blocks.AIR) && ChunkPos.containing(blockPos).equals(ChunkPos.containing(blockPos.west()))) {
+                world.setBlock(blockPos.below().west(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
             }
         }
 

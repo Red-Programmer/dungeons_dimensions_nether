@@ -69,7 +69,9 @@
         "minecraft:big_dripleaf",
         "minecraft:big_dripleaf_stem",
         "minecraft:small_dripleaf",
-        "mcd_d_nether:warped_wart_hanging"
+        "mcd_d_nether:warped_wart_hanging",
+        "mcd_d_nether:midnight_mould",
+        "mcd_d_nether:moonlight_mould"
       ]
     },
     "stem_state": {

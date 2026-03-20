@@ -2,7 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "mcd_d_nether:nether_tiles",
   "result": {
-    "count": 1,
     "id": "mcd_d_nether:nether_tile_slab"
   }
 }
