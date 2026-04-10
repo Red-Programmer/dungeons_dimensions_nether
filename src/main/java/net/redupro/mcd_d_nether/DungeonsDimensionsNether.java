@@ -2,16 +2,19 @@ package net.redupro.mcd_d_nether;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElementType;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.custom.*;
-import net.redupro.mcd_d_nether.item.McddnItems;
 import net.redupro.mcd_d_nether.world.level.levelgen.feature.*;
 import net.redupro.mcd_d_nether.world.level.levelgen.structure.pools.FreeFeaturePoolElement;
 import org.slf4j.Logger;
@@ -47,6 +50,8 @@ public class DungeonsDimensionsNether implements ModInitializer {
     @Override
 	public void onInitialize() {
         McddnBlocks.registerMcddnBlocks();
+
+        ResourceManagerHelper.registerBuiltinResourcePack(ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "custom_fortress"), FabricLoader.getInstance().getModContainer(DungeonsDimensionsNether.MOD_ID).orElseThrow(), Component.translatable("Custom Nether Fortress"), ResourcePackActivationType.DEFAULT_ENABLED);
 
         Registry.register(BuiltInRegistries.BLOCK_TYPE, "wart_fluff", WartFluffBlock.CODEC);
         Registry.register(BuiltInRegistries.BLOCK_TYPE, "nether_wall_flower", NetherWallFlower.CODEC);
