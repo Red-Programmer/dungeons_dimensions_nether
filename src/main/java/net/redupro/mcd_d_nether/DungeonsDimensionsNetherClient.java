@@ -13,10 +13,6 @@ import net.redupro.mcd_d_nether.block.McddnBlocks;
 public class DungeonsDimensionsNetherClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        FabricLoader.getInstance().getModContainer(DungeonsDimensionsNether.MOD_ID).ifPresent(modContainer -> {
-            ResourceLoader.registerBuiltinPack(Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "custom_fortress"), modContainer, Component.translatable("Custom Nether Fortress"), PackActivationType.DEFAULT_ENABLED);
-        });
-
         BlockRenderLayerMap.putBlock(McddnBlocks.WARPED_TRUNK, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(McddnBlocks.WARPED_WART_HANGING, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(McddnBlocks.WARPING_VINES, ChunkSectionLayer.CUTOUT);
