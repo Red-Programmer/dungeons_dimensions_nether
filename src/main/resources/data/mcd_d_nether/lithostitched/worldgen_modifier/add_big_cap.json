@@ -1,0 +1,18 @@
+{
+  "type": "lithostitched:add_template_pool_elements",
+  "template_pools": "mcd_d_nether:big_cap",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "lithostitched:delegating",
+        "delegate": {
+          "element_type": "minecraft:feature_pool_element",
+          "projection": "rigid",
+          "feature": "mcd_d_nether:big_fortress_cap"
+        },
+        "allow_bounding_box_collisions": true
+      }
+    }
+  ]
+}

@@ -71,7 +71,16 @@
   "item.mcd_d_nether.moldy_nether_tiles": "Moldy Nether Tiles",
   "item.mcd_d_nether.moldy_ornate_red_nether_tiles": "Moldy Ornate Red Nether Tiles",
   "item.mcd_d_nether.moldy_red_nether_tiles": "Moldy Red Nether Tiles",
+  "item.mcd_d_nether.basalt_tiles": "Basalt Tiles",
+  "item.mcd_d_nether.basalt_tile_slab": "Basalt Tile Slab",
+  "item.mcd_d_nether.basalt_tile_stairs": "Basalt Tile Stairs",
+  "item.mcd_d_nether.gilded_basalt_tiles": "Gilded Basalt Tiles",
+  "item.mcd_d_nether.spalling_basalt_tiles": "Spalling Basalt Tiles",
   "item.mcd_d_nether.rough_netherrack": "Rough Netherrack",
   "item.mcd_d_nether.ash": "Ash",
-  "item.mcd_d_nether.warping_vines": "Warping Vines"
+  "item.mcd_d_nether.warping_vines": "Warping Vines",
+  "item.mcd_d_nether.bone_fence": "Bone Fence",
+  "item.mcd_d_nether.netherite_bars": "Netherite Bars",
+  "item.mcd_d_nether.netherite_chain": "Netherite Chain",
+  "item.mcd_d_nether.netherite_spike": "Netherite Spike"
 }

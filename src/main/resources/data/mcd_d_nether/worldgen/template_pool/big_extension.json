@@ -86,15 +86,6 @@
 		{
 			"weight": 10,
 			"element": {
-				"location": "mcd_d_nether:nether_fortress/loot_room_b",
-				"processors": "mcd_d_nether:nether_fortress_protected",
-				"projection": "rigid",
-				"element_type": "single_pool_element"
-			}
-		},
-		{
-			"weight": 10,
-			"element": {
 				"location": "mcd_d_nether:nether_fortress/loot_room_c",
 				"processors": "mcd_d_nether:nether_fortress_protected",
 				"projection": "rigid",
@@ -114,24 +105,6 @@
 			"weight": 10,
 			"element": {
 				"location": "mcd_d_nether:nether_fortress/spawner_room_b",
-				"processors": "mcd_d_nether:nether_fortress_protected",
-				"projection": "rigid",
-				"element_type": "single_pool_element"
-			}
-		},
-		{
-			"weight": 10,
-			"element": {
-				"location": "mcd_d_nether:nether_fortress/spawner_room_c",
-				"processors": "mcd_d_nether:nether_fortress_protected",
-				"projection": "rigid",
-				"element_type": "single_pool_element"
-			}
-		},
-		{
-			"weight": 10,
-			"element": {
-				"location": "mcd_d_nether:nether_fortress/spawner_room_d",
 				"processors": "mcd_d_nether:nether_fortress_protected",
 				"projection": "rigid",
 				"element_type": "single_pool_element"

@@ -510,6 +510,59 @@ public class McddnBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_STEM),
             false
     );
+    public static final Block BONE_FENCE = register(
+            "bone_fence",
+            FenceBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BONE_BLOCK),
+            true
+    );
+    public static final Block BASALT_TILES = register(
+            "basalt_tiles",
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_BASALT),
+            true
+    );
+    public static final Block BASALT_TILE_SLAB = register(
+            "basalt_tile_slab",
+            SlabBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(BASALT_TILES),
+            true
+    );
+    public static final Block BASALT_TILE_STAIRS = registerStairsBlock(
+            "basalt_tile_stairs",
+            BASALT_TILES,
+            true
+    );
+    public static final Block GILDED_BASALT_TILES = register(
+            "gilded_basalt_tiles",
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(BASALT_TILES).sound(SoundType.GILDED_BLACKSTONE),
+            true
+    );
+    public static final Block SPALLING_BASALT_TILES = register(
+            "spalling_basalt_tiles",
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(BASALT_TILES),
+            true
+    );
+    public static final Block NETHERITE_BARS = register(
+            "netherite_bars",
+            IronBarsBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS).sound(SoundType.NETHERITE_BLOCK),
+            true
+    );
+    public static final Block NETHERITE_CHAIN = register(
+            "netherite_chain",
+            NetheriteChainBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_CHAIN).sound(SoundType.NETHERITE_BLOCK),
+            true
+    );
+    public static final Block NETHERITE_SPIKE = register(
+            "netherite_spike",
+            SpikeBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(NETHERITE_BARS),
+            true
+    );
 
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
@@ -666,7 +719,16 @@ public class McddnBlocks {
             fabricItemGroupEntries.accept(McddnBlocks.DARK_NETHER_BRICK_STAIRS);
             fabricItemGroupEntries.accept(McddnBlocks.DARK_NETHER_BRICK_FENCE);
             fabricItemGroupEntries.accept(McddnBlocks.DARK_NETHER_BRICK_WALL);
+            fabricItemGroupEntries.accept(McddnBlocks.BASALT_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.BASALT_TILE_SLAB);
+            fabricItemGroupEntries.accept(McddnBlocks.BASALT_TILE_STAIRS);
+            fabricItemGroupEntries.accept(McddnBlocks.GILDED_BASALT_TILES);
+            fabricItemGroupEntries.accept(McddnBlocks.SPALLING_BASALT_TILES);
             fabricItemGroupEntries.accept(McddnBlocks.ROUGH_NETHERRACK);
+            fabricItemGroupEntries.accept(McddnBlocks.BONE_FENCE);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHERITE_BARS);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHERITE_SPIKE);
+            fabricItemGroupEntries.accept(McddnBlocks.NETHERITE_CHAIN);
         });
     }
 }

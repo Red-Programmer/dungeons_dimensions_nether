@@ -2,6 +2,7 @@ package net.redupro.mcd_d_nether.world.level.levelgen.structure.pools;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.*;
 import net.minecraft.data.worldgen.Pools;
 import net.minecraft.nbt.CompoundTag;
@@ -49,6 +50,7 @@ public class FreeFeaturePoolElement extends FeaturePoolElement {
     public @NotNull List<StructureTemplate.JigsawBlockInfo> getShuffledJigsawBlocks(
             StructureTemplateManager structureTemplateManager, BlockPos blockPos, Rotation rotation, RandomSource randomSource
     ) {
+        if (FabricLoader.getInstance().isModLoaded("lithostitched")) return List.of();
         return List.of(
                 StructureTemplate.JigsawBlockInfo.of(
                         new StructureTemplate.StructureBlockInfo(
