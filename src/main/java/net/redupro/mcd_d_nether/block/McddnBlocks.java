@@ -34,6 +34,17 @@ public class McddnBlocks {
             settings -> new FlowerPotBlock(WARPED_BLOSSOM, settings), flowerPotProperties(),
             false
     );
+    public static final Block CRIMSON_SPROUTS = register(
+            "crimson_sprouts",
+            NetherSproutsBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_SPROUTS).mapColor(MapColor.NETHER),
+            true
+    );
+    public static final Block POTTED_CRIMSON_SPROUTS = register(
+            "potted_crimson_sprouts",
+            settings -> new FlowerPotBlock(CRIMSON_SPROUTS, settings), flowerPotProperties(),
+            false
+    );
     public static final Block WARPED_WART_FLUFF = register(
             "warped_wart_fluff",
             WartFluffBlock::new,
@@ -62,12 +73,6 @@ public class McddnBlocks {
             "nether_wart_fluff",
             WartFluffBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.WEEPING_VINES).replaceable(),
-            true
-    );
-    public static final Block CRIMSON_SPROUTS = register(
-            "crimson_sprouts",
-            NetherSproutsBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_SPROUTS).mapColor(MapColor.NETHER),
             true
     );
     public static final Block WARPED_STALK = register(

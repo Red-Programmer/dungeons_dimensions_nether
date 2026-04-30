@@ -34,6 +34,12 @@
     "mcd_d_nether:spalling_cut_netherrack",
     "mcd_d_nether:spalling_cut_red_netherrack",
     "mcd_d_nether:spalling_nether_bricks",
-    "mcd_d_nether:spalling_red_nether_bricks"
+    "mcd_d_nether:spalling_red_nether_bricks",
+    "mcd_d_nether:crimson_sprouts",
+    "minecraft:fire",
+    "minecraft:crimson_roots",
+    "minecraft:polished_blackstone_slab",
+    "minecraft:polished_blackstone_wall",
+    "minecraft:polished_blackstone_brick_wall"
   ]
 }

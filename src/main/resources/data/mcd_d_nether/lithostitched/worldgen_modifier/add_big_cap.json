@@ -7,11 +7,12 @@
       "element": {
         "element_type": "lithostitched:delegating",
         "delegate": {
-          "element_type": "minecraft:feature_pool_element",
+          "element_type": "mcd_d_nether:free_feature_pool_element",
           "projection": "rigid",
           "feature": "mcd_d_nether:big_fortress_cap"
         },
-        "allow_bounding_box_collisions": true
+        "allow_bounding_box_collisions": true,
+        "other_pieces_can_intersect": true
       }
     }
   ]

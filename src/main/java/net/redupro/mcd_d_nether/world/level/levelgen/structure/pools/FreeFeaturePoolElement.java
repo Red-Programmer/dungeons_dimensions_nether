@@ -50,7 +50,6 @@ public class FreeFeaturePoolElement extends FeaturePoolElement {
     public @NotNull List<StructureTemplate.JigsawBlockInfo> getShuffledJigsawBlocks(
             StructureTemplateManager structureTemplateManager, BlockPos blockPos, Rotation rotation, RandomSource randomSource
     ) {
-        if (FabricLoader.getInstance().isModLoaded("lithostitched")) return List.of();
         return List.of(
                 StructureTemplate.JigsawBlockInfo.of(
                         new StructureTemplate.StructureBlockInfo(
