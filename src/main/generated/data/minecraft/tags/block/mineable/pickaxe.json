@@ -39,6 +39,12 @@
     "mcd_d_nether:moldy_ornate_red_nether_tiles",
     "mcd_d_nether:moldy_red_nether_tiles",
     "mcd_d_nether:rough_netherrack",
-    "mcd_d_nether:ashy_basalt"
+    "mcd_d_nether:ashy_basalt",
+    "mcd_d_nether:bone_fence",
+    "mcd_d_nether:basalt_tiles",
+    "mcd_d_nether:basalt_tile_slab",
+    "mcd_d_nether:basalt_tile_stairs",
+    "mcd_d_nether:gilded_basalt_tiles",
+    "mcd_d_nether:spalling_basalt_tiles"
   ]
 }

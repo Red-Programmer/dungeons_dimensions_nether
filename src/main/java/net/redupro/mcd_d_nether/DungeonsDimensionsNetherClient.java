@@ -41,5 +41,9 @@ public class DungeonsDimensionsNetherClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.WARPED_FILAMENT, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.CRIMSON_FILAMENT, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.CRIMSON_SPROUTS, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.BONE_FENCE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.NETHERITE_BARS, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.NETHERITE_CHAIN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.NETHERITE_SPIKE, RenderType.cutout());
     }
 }

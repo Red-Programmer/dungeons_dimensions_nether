@@ -11,6 +11,7 @@ public class McddnTags {
         public static final TagKey<Block> BLACKSTONE_TILES = createTag("blackstone_tiles");
         public static final TagKey<Block> ORNATE_BLACKSTONE_TILES = createTag("inlaid_blackstone_tiles");
         public static final TagKey<Block> BASALT_CANNOT_PLACE_ON = createTag("basalt_cannot_place_on");
+        public static final TagKey<Block> VENT_REPLACEABLES = createTag("vent_replaceables");
 
         private static TagKey<Block> createTag(String id) {
             return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, id));

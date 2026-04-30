@@ -1,0 +1,19 @@
+{
+  "type": "lithostitched:add_template_pool_elements",
+  "template_pools": "mcd_d_nether:cap",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "lithostitched:delegating",
+        "delegate": {
+          "element_type": "mcd_d_nether:free_feature_pool_element",
+          "projection": "rigid",
+          "feature": "mcd_d_nether:fortress_cap"
+        },
+        "allow_bounding_box_collisions": true,
+        "other_pieces_can_intersect": true
+      }
+    }
+  ]
+}
