@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "mcd_d_nether:basalt_tiles",
+  "ingredient": {
+    "item": "mcd_d_nether:basalt_tiles"
+  },
   "result": {
     "count": 1,
     "id": "mcd_d_nether:basalt_tile_stairs"

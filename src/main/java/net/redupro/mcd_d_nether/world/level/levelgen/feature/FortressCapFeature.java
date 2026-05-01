@@ -158,7 +158,7 @@ public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
         drawLine(level, blockPos.above(2), top, direction, 2);
     }
     private void placeBaseWall(WorldGenLevel level, BlockPos blockPos, Direction direction, RandomSource random){
-        BlockPos corner = blockPos.below(3).offset(direction.getOpposite().getNormal()).offset(direction.getCounterClockWise().getUnitVec3i().multiply(4));
+        BlockPos corner = blockPos.below(3).offset(direction.getOpposite().getNormal()).offset(direction.getCounterClockWise().getNormal().multiply(4));
         for (var j = 0; j < 16; j++) {
             BlockState blockState = j == 0 || j == 7 || j == 12 || j == 15 ? McddnBlocks.POLISHED_NETHERRACK.defaultBlockState() : Blocks.NETHER_BRICKS.defaultBlockState();
             drawLine(level, corner.above(j), blockState, direction.getClockWise(), 9);

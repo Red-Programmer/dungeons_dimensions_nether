@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "mcd_d_nether:basalt_tiles",
-    "G": "minecraft:gold_ingot"
+    "#": {
+      "item": "mcd_d_nether:basalt_tiles"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
   },
   "pattern": [
     "###",

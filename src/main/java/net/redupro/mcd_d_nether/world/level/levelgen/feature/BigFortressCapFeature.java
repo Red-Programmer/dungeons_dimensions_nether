@@ -42,10 +42,10 @@ public class BigFortressCapFeature extends Feature<NoneFeatureConfiguration> {
             drawLine(level, corner.below(), Blocks.NETHER_BRICKS.defaultBlockState(), direction.getClockWise(), 9);
             drawLine(level, corner.below(2), McddnBlocks.POLISHED_NETHERRACK.defaultBlockState(), direction.getClockWise(), 9);
             drawLine(level, corner.below(9), McddnBlocks.NETHER_BRICK_PILLAR.defaultBlockState(), Direction.UP, 7);
-            drawLine(level, corner.below(9).offset(direction.getClockWise().getUnitVec3i().multiply(8)), McddnBlocks.NETHER_BRICK_PILLAR.defaultBlockState(), Direction.UP, 7);
+            drawLine(level, corner.below(9).offset(direction.getClockWise().getNormal().multiply(8)), McddnBlocks.NETHER_BRICK_PILLAR.defaultBlockState(), Direction.UP, 7);
             this.setBlock(level, corner.below(2), McddnBlocks.ORNATE_POLISHED_NETHERRACK.defaultBlockState());
-            this.setBlock(level, corner.below(2).offset(direction.getClockWise().getUnitVec3i().multiply(8)), McddnBlocks.ORNATE_POLISHED_NETHERRACK.defaultBlockState());
-            this.setBlock(level, corner.below(2).offset(direction.getClockWise().getUnitVec3i().multiply(4)), Blocks.CHISELED_NETHER_BRICKS.defaultBlockState());
+            this.setBlock(level, corner.below(2).offset(direction.getClockWise().getNormal().multiply(8)), McddnBlocks.ORNATE_POLISHED_NETHERRACK.defaultBlockState());
+            this.setBlock(level, corner.below(2).offset(direction.getClockWise().getNormal().multiply(4)), Blocks.CHISELED_NETHER_BRICKS.defaultBlockState());
         } else if (!bigNeighbor) {
             corner = corner.below(10).offset(direction.getOpposite().getNormal());
             drawLine(level, corner, McddnBlocks.POLISHED_NETHERRACK.defaultBlockState(), direction.getClockWise(), 9);

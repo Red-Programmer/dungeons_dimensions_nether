@@ -41,7 +41,8 @@ public class McddnBlocks {
     );
     public static final Block POTTED_CRIMSON_SPROUTS = register(
             "potted_crimson_sprouts",
-            settings -> new FlowerPotBlock(CRIMSON_SPROUTS, settings), flowerPotProperties(),
+            settings -> new FlowerPotBlock(CRIMSON_SPROUTS, settings),
+            BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY),
             false
     );
     public static final Block WARPED_WART_FLUFF = register(
@@ -558,7 +559,7 @@ public class McddnBlocks {
     public static final Block NETHERITE_CHAIN = register(
             "netherite_chain",
             NetheriteChainBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_CHAIN).sound(SoundType.NETHERITE_BLOCK),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CHAIN).sound(SoundType.NETHERITE_BLOCK),
             true
     );
     public static final Block NETHERITE_SPIKE = register(
