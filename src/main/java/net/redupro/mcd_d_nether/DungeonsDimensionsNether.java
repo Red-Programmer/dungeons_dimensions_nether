@@ -34,6 +34,7 @@ public class DungeonsDimensionsNether implements ModInitializer {
     public static final Identifier FORTRESS_CAP_ID = Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "fortress_cap");
     public static final Identifier BIG_FORTRESS_CAP_ID = Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "big_fortress_cap");
     public static final Identifier WARPING_VINES_ID = Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "warping_vines");
+    public static final Identifier VENT_ID = Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "vent");
 
     public static final McddnHugeFungusFeature MCDDN_HUGE_FUNGUS_FEATURE = new McddnHugeFungusFeature(McddnHugeFungusFeatureConfig.CODEC);
     public static final SimpleStackedFeature SIMPLE_STACKED_FEATURE = new SimpleStackedFeature(SimpleRandomFeatureConfiguration.CODEC);
@@ -45,6 +46,7 @@ public class DungeonsDimensionsNether implements ModInitializer {
     public static final FortressCapFeature FORTRESS_CAP_FEATURE = new FortressCapFeature(NoneFeatureConfiguration.CODEC);
     public static final BigFortressCapFeature BIG_FORTRESS_CAP_FEATURE = new BigFortressCapFeature(NoneFeatureConfiguration.CODEC);
     public static final WarpingVinesFeature WARPING_VINES_FEATURE = new WarpingVinesFeature(NoneFeatureConfiguration.CODEC);
+    public static final VentFeature VENT_FEATURE = new VentFeature(VentFeatureConfig.CODEC);
 
 
     @Override
@@ -70,6 +72,7 @@ public class DungeonsDimensionsNether implements ModInitializer {
         Registry.register(BuiltInRegistries.FEATURE, FORTRESS_CAP_ID, FORTRESS_CAP_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, BIG_FORTRESS_CAP_ID, BIG_FORTRESS_CAP_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, WARPING_VINES_ID, WARPING_VINES_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, VENT_ID, VENT_FEATURE);
 
         Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, Identifier.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "free_feature_pool_element"), (StructurePoolElementType<FreeFeaturePoolElement>) () -> FreeFeaturePoolElement.CODEC);
     }

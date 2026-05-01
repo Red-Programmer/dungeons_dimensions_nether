@@ -17,7 +17,8 @@ public class McddnBlockTagProvider extends FabricTagsProvider.BlockTagsProvider 
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
         valueLookupBuilder(BlockTags.FENCES)
-                .add(McddnBlocks.DARK_NETHER_BRICK_FENCE);
+                .add(McddnBlocks.DARK_NETHER_BRICK_FENCE)
+                .add(McddnBlocks.BONE_FENCE);
         valueLookupBuilder(BlockTags.WALLS)
                 .add(McddnBlocks.DARK_NETHER_BRICK_WALL);
         valueLookupBuilder(BlockTags.CLIMBABLE)
@@ -26,6 +27,7 @@ public class McddnBlockTagProvider extends FabricTagsProvider.BlockTagsProvider 
                 .add(McddnBlocks.WARPING_VINES_PLANT);
         valueLookupBuilder(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(McddnBlocks.ASH);
+        valueLookupBuilder(BlockTags.GUARDED_BY_PIGLINS).add(McddnBlocks.GILDED_BASALT_TILES);
         valueLookupBuilder(BlockTags.INFINIBURN_NETHER).add(McddnBlocks.ROUGH_NETHERRACK);
         valueLookupBuilder(BlockTags.INFINIBURN_END).add(McddnBlocks.ROUGH_NETHERRACK);
         valueLookupBuilder(BlockTags.INFINIBURN_OVERWORLD).add(McddnBlocks.ROUGH_NETHERRACK);
@@ -71,7 +73,13 @@ public class McddnBlockTagProvider extends FabricTagsProvider.BlockTagsProvider 
                 .add(McddnBlocks.MOLDY_ORNATE_RED_NETHER_TILES)
                 .add(McddnBlocks.MOLDY_RED_NETHER_TILES)
                 .add(McddnBlocks.ROUGH_NETHERRACK)
-                .add(McddnBlocks.ASHY_BASALT);
+                .add(McddnBlocks.ASHY_BASALT)
+                .add(McddnBlocks.BONE_FENCE)
+                .add(McddnBlocks.BASALT_TILES)
+                .add(McddnBlocks.BASALT_TILE_SLAB)
+                .add(McddnBlocks.BASALT_TILE_STAIRS)
+                .add(McddnBlocks.GILDED_BASALT_TILES)
+                .add(McddnBlocks.SPALLING_BASALT_TILES);
         valueLookupBuilder(BlockTags.MINEABLE_WITH_HOE)
                 .add(McddnBlocks.WARPED_WART_FLUFF)
                 .add(McddnBlocks.NETHER_WART_FLUFF)

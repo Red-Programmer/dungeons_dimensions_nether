@@ -28,7 +28,9 @@
     "water_color": "#3f76e4"
   },
   "features": [
-    [],
+    [
+      "mcd_d_nether:small_vent"
+    ],
     [],
     [],
     [],

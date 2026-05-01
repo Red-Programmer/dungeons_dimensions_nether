@@ -85,7 +85,14 @@ public class McddnLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(McddnBlocks.MOLDY_ORNATE_RED_NETHER_TILES);
         dropSelf(McddnBlocks.MOLDY_RED_NETHER_TILES);
         dropSelf(McddnBlocks.ROUGH_NETHERRACK);
+        dropSelf(McddnBlocks.BONE_FENCE);
+        dropSelf(McddnBlocks.BASALT_TILES);
+        add(McddnBlocks.BASALT_TILE_SLAB, createSlabItemTable(McddnBlocks.BASALT_TILE_SLAB));
+        dropSelf(McddnBlocks.BASALT_TILE_STAIRS);
+        dropSelf(McddnBlocks.GILDED_BASALT_TILES);
+        dropSelf(McddnBlocks.SPALLING_BASALT_TILES);
         add(McddnBlocks.POTTED_WARPED_BLOSSOM, createPotFlowerItemTable(McddnBlocks.WARPED_BLOSSOM));
+        add(McddnBlocks.POTTED_CRIMSON_SPROUTS, createPotFlowerItemTable(McddnBlocks.CRIMSON_SPROUTS));
         add(McddnBlocks.WARPED_STALK, block -> this.createSinglePropConditionTable(block, TallRootsBlock.HALF, DoubleBlockHalf.LOWER));
         add(McddnBlocks.CRIMSON_STALK, block -> this.createSinglePropConditionTable(block, TallRootsBlock.HALF, DoubleBlockHalf.LOWER));
         add(McddnBlocks.WARPED_WART_FLUFF, block -> this.createSinglePropConditionTable(block, WartFluffBlock.HALF, DoubleBlockHalf.LOWER));
