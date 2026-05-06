@@ -6,14 +6,14 @@
         {
           "location_predicate": {
             "predicate_type": "minecraft:tag_match",
-            "tag": "mcd_d_nether:inlaid_blackstone_tiles"
+            "tag": "mcd_d_nether:ornate_blackstone_tiles"
           },
           "input_predicate": {
             "predicate_type": "minecraft:tag_match",
             "tag": "mcd_d_nether:nether_tiles"
           },
           "output_state": {
-            "Name": "mcd_d_nether:moldy_inset_polished_blackstone"
+            "Name": "mcd_d_nether:moldy_ornate_blackstone_tiles"
           }
         },
         {
@@ -23,10 +23,10 @@
           },
           "input_predicate": {
             "predicate_type": "minecraft:block_match",
-            "block": "mcd_d_nether:moldy_cut_netherrack"
+            "block": "mcd_d_nether:moldy_nether_tiles"
           },
           "output_state": {
-            "Name": "mcd_d_nether:moldy_cut_blackstone"
+            "Name": "mcd_d_nether:moldy_blackstone_tiles"
           }
         },
         {
@@ -36,10 +36,10 @@
           },
           "input_predicate": {
             "predicate_type": "minecraft:block_match",
-            "block": "mcd_d_nether:spalling_cut_netherrack"
+            "block": "mcd_d_nether:spalling_nether_tiles"
           },
           "output_state": {
-            "Name": "mcd_d_nether:spalling_cut_blackstone"
+            "Name": "mcd_d_nether:spalling_blackstone_tiles"
           }
         },
         {
