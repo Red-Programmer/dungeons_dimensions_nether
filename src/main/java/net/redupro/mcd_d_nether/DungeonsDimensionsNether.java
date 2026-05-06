@@ -16,7 +16,7 @@ import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElementTy
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.block.custom.*;
 import net.redupro.mcd_d_nether.world.level.levelgen.feature.*;
-import net.redupro.mcd_d_nether.world.level.levelgen.structure.pools.FreeFeaturePoolElement;
+import net.redupro.mcd_d_nether.world.level.levelgen.structure.pools.AdvancedFeaturePoolElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,8 +43,8 @@ public class DungeonsDimensionsNether implements ModInitializer {
     public static final NetherWallFlowerPatchFeature NETHER_WALL_FLOWER_PATCH_FEATURE = new NetherWallFlowerPatchFeature(RandomPatchConfiguration.CODEC);
     public static final GaseousGlobPatchFeature GASEOUS_GLOB_PATCH_FEATURE = new GaseousGlobPatchFeature(RandomPatchConfiguration.CODEC);
     public static final AshPatchFeature ASH_PATCH_FEATURE = new AshPatchFeature(RandomPatchConfiguration.CODEC);
-    public static final FortressCapFeature FORTRESS_CAP_FEATURE = new FortressCapFeature(NoneFeatureConfiguration.CODEC);
-    public static final BigFortressCapFeature BIG_FORTRESS_CAP_FEATURE = new BigFortressCapFeature(NoneFeatureConfiguration.CODEC);
+    public static final FortressCapFeature FORTRESS_CAP_FEATURE = new FortressCapFeature(RotatableFeatureConfig.CODEC);
+    public static final BigFortressCapFeature BIG_FORTRESS_CAP_FEATURE = new BigFortressCapFeature(RotatableFeatureConfig.CODEC);
     public static final WarpingVinesFeature WARPING_VINES_FEATURE = new WarpingVinesFeature(NoneFeatureConfiguration.CODEC);
     public static final VentFeature VENT_FEATURE = new VentFeature(VentFeatureConfig.CODEC);
 
@@ -73,6 +73,6 @@ public class DungeonsDimensionsNether implements ModInitializer {
         Registry.register(BuiltInRegistries.FEATURE, WARPING_VINES_ID, WARPING_VINES_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, VENT_ID, VENT_FEATURE);
 
-        Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "free_feature_pool_element"), (StructurePoolElementType<FreeFeaturePoolElement>) () -> FreeFeaturePoolElement.CODEC);
+        Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "advanced_feature_pool_element"), (StructurePoolElementType<AdvancedFeaturePoolElement>) () -> AdvancedFeaturePoolElement.CODEC);
     }
 }

@@ -1,4 +1,6 @@
 {
   "type": "mcd_d_nether:big_fortress_cap",
-  "config": {}
+  "config": {
+    "rotation": "east"
+  }
 }

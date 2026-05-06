@@ -82,9 +82,37 @@
     },
     {
       "apply": {
-        "model": "mcd_d_nether:block/nothing"
+        "model": "mcd_d_nether:block/nether_wart_fluff_bottom"
       },
       "when": {
+        "facing": "north",
+        "half": "lower"
+      }
+    },
+    {
+      "apply": {
+        "model": "mcd_d_nether:block/nether_wart_fluff_bottom", "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "half": "lower"
+      }
+    },
+    {
+      "apply": {
+        "model": "mcd_d_nether:block/nether_wart_fluff_bottom", "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "half": "lower"
+      }
+    },
+    {
+      "apply": {
+        "model": "mcd_d_nether:block/nether_wart_fluff_bottom", "y": 270
+      },
+      "when": {
+        "facing": "west",
         "half": "lower"
       }
     }

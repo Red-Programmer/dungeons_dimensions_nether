@@ -14,7 +14,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
@@ -48,11 +47,6 @@ public class NetherWallFlower extends Block {
             case NORTH -> SOUTH_SHAPE;
             default -> WEST_SHAPE;
         };
-    }
-
-    @Override
-    protected boolean propagatesSkylightDown(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
-        return true;
     }
 
     @Override
@@ -95,11 +89,6 @@ public class NetherWallFlower extends Block {
     private boolean canPlaceOn(BlockGetter world, BlockPos pos, Direction side) {
         BlockState blockState = world.getBlockState(pos);
         return blockState.isFaceSturdy(world, pos, side);
-    }
-
-    @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType type) {
-        return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, type);
     }
 
     public static boolean placeAt(LevelAccessor world, BlockState state, BlockPos pos) {
