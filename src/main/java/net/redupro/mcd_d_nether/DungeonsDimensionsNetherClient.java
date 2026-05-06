@@ -2,12 +2,7 @@ package net.redupro.mcd_d_nether;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
-import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 
 public class DungeonsDimensionsNetherClient implements ClientModInitializer {
