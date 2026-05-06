@@ -95,16 +95,6 @@ public class GlobBlock extends Block {
         builder.add(FACING);
     }
 
-    @Override
-    protected boolean propagatesSkylightDown(BlockState state) {
-        return true;
-    }
-
-    @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType type) {
-        return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, type);
-    }
-
     public static boolean placeAt(LevelAccessor world, BlockState state, BlockPos pos) {
         if (new ChunkPos(pos).equals(new ChunkPos(pos.relative(state.getValue(FACING))))) {
             if (world.getBlockState(pos).is(Blocks.AIR)) {

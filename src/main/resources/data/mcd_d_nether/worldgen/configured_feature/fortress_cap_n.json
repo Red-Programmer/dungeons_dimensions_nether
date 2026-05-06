@@ -1,4 +1,6 @@
 {
   "type": "mcd_d_nether:fortress_cap",
-  "config": {}
+  "config": {
+    "rotation": "north"
+  }
 }

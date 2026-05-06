@@ -129,17 +129,7 @@ public class QuadBrushBlock extends Block {
     }
 
     @Override
-    protected boolean propagatesSkylightDown(BlockState state) {
-        return true;
-    }
-
-    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(QUADRANT, FACING);
-    }
-
-    @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType type) {
-        return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, type);
     }
 }

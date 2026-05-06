@@ -52,11 +52,6 @@ public class NetherWallFlower extends Block {
     }
 
     @Override
-    protected boolean propagatesSkylightDown(BlockState state) {
-        return true;
-    }
-
-    @Override
     protected BlockState updateShape(
             BlockState state,
             LevelReader world,
@@ -98,11 +93,6 @@ public class NetherWallFlower extends Block {
     private boolean canPlaceOn(BlockGetter world, BlockPos pos, Direction side) {
         BlockState blockState = world.getBlockState(pos);
         return blockState.isFaceSturdy(world, pos, side);
-    }
-
-    @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType type) {
-        return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, type);
     }
 
     public static boolean placeAt(LevelAccessor world, BlockState state, BlockPos pos) {

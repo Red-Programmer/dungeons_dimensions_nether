@@ -212,9 +212,4 @@ public class IvyBlock extends Block implements BonemealableBlock {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(IVY_PART, FACING, FRUIT);
     }
-
-    @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType type) {
-        return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, type);
-    }
 }

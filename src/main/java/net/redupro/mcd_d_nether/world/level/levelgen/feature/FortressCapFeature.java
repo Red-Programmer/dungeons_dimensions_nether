@@ -17,19 +17,18 @@ import net.redupro.mcd_d_nether.DungeonsDimensionsNether;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.util.McddnTags;
 
-public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
-    public FortressCapFeature(Codec<NoneFeatureConfiguration> codec) {
+public class FortressCapFeature extends Feature<RotatableFeatureConfig> {
+    public FortressCapFeature(Codec<RotatableFeatureConfig> codec) {
         super(codec);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> featurePlaceContext) {
+    public boolean place(FeaturePlaceContext<RotatableFeatureConfig> featurePlaceContext) {
         WorldGenLevel level = featurePlaceContext.level();
         BlockPos blockPos = featurePlaceContext.origin();
         RandomSource random = featurePlaceContext.random();
-        ChunkPos chunkPos = new ChunkPos(blockPos);
-        Direction direction = getDirection(level, blockPos, chunkPos);
-        if (direction == null || level.getBlockState(blockPos.below()).is(McddnTags.Blocks.BLACKSTONE_TILES)) {
+        Direction direction = featurePlaceContext.config().direction;
+        if (level.getBlockState(blockPos.below()).is(McddnTags.Blocks.BLACKSTONE_TILES)) {
             return false;
         }
         switch (random.nextIntBetweenInclusive(1, 4)) {
@@ -118,7 +117,7 @@ public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
         drawLine(level, blockPos.relative(direction.getClockWise(), -3), Blocks.AIR.defaultBlockState(), direction.getClockWise(), 7);
         drawLine(level, blockPos.relative(direction.getClockWise(), -3).above(1), Blocks.AIR.defaultBlockState(), direction.getClockWise(), 7);
         drawLine(level, blockPos.relative(direction.getClockWise(), -2).above(2), Blocks.AIR.defaultBlockState(), direction.getClockWise(), 6);
-        this.setBlock(level, blockPos.above(2).relative(direction.getClockWise(), random.nextIntBetweenInclusive(-2, 6)), McddnBlocks.NETHERITE_CHAIN.defaultBlockState());
+        this.setBlock(level, blockPos.above(2).relative(direction.getClockWise(), random.nextIntBetweenInclusive(-2, 3)), McddnBlocks.NETHERITE_CHAIN.defaultBlockState());
 
         drawLine(level, blockPos.relative(direction.getClockWise(), -2).relative(direction).below(3), Blocks.AIR.defaultBlockState(), direction.getClockWise(), 4);
         drawLine(level, blockPos.relative(direction.getClockWise(), -2).relative(direction).below(2), Blocks.AIR.defaultBlockState(), direction.getClockWise(), 4);
@@ -187,61 +186,5 @@ public class FortressCapFeature extends Feature<NoneFeatureConfiguration> {
         this.setBlock(level, blockPos.above(6).relative(direction.getOpposite()), fence);
         this.setBlock(level, blockPos.above(7).relative(direction.getOpposite()), fence);
         this.setBlock(level, blockPos.above(8).relative(direction.getOpposite()), McddnBlocks.ORNATE_POLISHED_NETHERRACK.defaultBlockState());
-    }
-
-    private Direction getDirection(WorldGenLevel level, BlockPos blockPos, ChunkPos chunkPos) {
-        if (level.getBlockState(blockPos.below().north()).is(McddnTags.Blocks.BLACKSTONE_TILES)) {
-            return Direction.SOUTH;
-        } else if (level.getBlockState(blockPos.below().east()).is(McddnTags.Blocks.BLACKSTONE_TILES)) {
-            return Direction.WEST;
-        } else if (level.getBlockState(blockPos.below().south()).is(McddnTags.Blocks.BLACKSTONE_TILES)) {
-            return Direction.NORTH;
-        } else if (level.getBlockState(blockPos.below().west()).is(McddnTags.Blocks.BLACKSTONE_TILES)) {
-            return Direction.EAST;
-        } else if ( !chunkPos.equals(new ChunkPos(blockPos.north())) ^ !chunkPos.equals(new ChunkPos(blockPos.east())) ^ !chunkPos.equals(new ChunkPos(blockPos.south())) ^ !chunkPos.equals(new ChunkPos(blockPos.west()))){
-            if ( !chunkPos.equals(new ChunkPos(blockPos.north())) ){
-                return Direction.SOUTH;
-            } else if ( !chunkPos.equals(new ChunkPos(blockPos.east())) ){
-                return Direction.WEST;
-            } else if ( !chunkPos.equals(new ChunkPos(blockPos.south())) ){
-                return Direction.NORTH;
-            } else {
-                return Direction.EAST;
-            }
-        } else if (!chunkPos.equals(new ChunkPos(blockPos.north())) && !chunkPos.equals(new ChunkPos(blockPos.east()))) {
-            if (level.getBlockState(blockPos.south(4)).isAir()) {
-                return Direction.SOUTH;
-            } else if (level.getBlockState(blockPos.west(4)).isAir()) {
-                return Direction.WEST;
-            } else {
-                return null;
-            }
-        } else if (!chunkPos.equals(new ChunkPos(blockPos.east())) && !chunkPos.equals(new ChunkPos(blockPos.south()))) {
-            if (level.getBlockState(blockPos.west(4)).isAir()) {
-                return Direction.WEST;
-            } else if (level.getBlockState(blockPos.north(4)).isAir()) {
-                return Direction.NORTH;
-            } else {
-                return null;
-            }
-        } else if (!chunkPos.equals(new ChunkPos(blockPos.south())) && !chunkPos.equals(new ChunkPos(blockPos.west()))) {
-            if (level.getBlockState(blockPos.north(4)).isAir()) {
-                return Direction.NORTH;
-            } else if (level.getBlockState(blockPos.east(4)).isAir()) {
-                return Direction.EAST;
-            } else {
-                return null;
-            }
-        } else if (!chunkPos.equals(new ChunkPos(blockPos.west())) && !chunkPos.equals(new ChunkPos(blockPos.north()))) {
-            if (level.getBlockState(blockPos.east(4)).isAir()) {
-                return Direction.EAST;
-            } else if (level.getBlockState(blockPos.south(4)).isAir()) {
-                return Direction.SOUTH;
-            } else {
-                return null;
-            }
-        } else {
-            return null;
-        }
     }
 }

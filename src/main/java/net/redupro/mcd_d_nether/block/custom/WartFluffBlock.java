@@ -3,6 +3,7 @@ package net.redupro.mcd_d_nether.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.LivingEntity;
@@ -59,11 +60,6 @@ public class WartFluffBlock extends Block {
             case NORTH -> SOUTH_SHAPE;
             default -> WEST_SHAPE;
         };
-    }
-
-    @Override
-    protected boolean propagatesSkylightDown(BlockState state) {
-        return true;
     }
 
     @Override
@@ -167,7 +163,7 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType type) {
-        return type == PathComputationType.AIR && !this.hasCollision || super.isPathfindable(state, type);
+    protected long getSeed(BlockState blockState, BlockPos blockPos) {
+        return Mth.getSeed(blockPos.getX(), blockPos.below(blockState.getValue(HALF) == DoubleBlockHalf.LOWER ? 0 : 1).getY(), blockPos.getZ());
     }
 }
