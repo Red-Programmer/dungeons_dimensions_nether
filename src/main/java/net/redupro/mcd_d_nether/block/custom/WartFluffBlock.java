@@ -39,20 +39,14 @@ public class WartFluffBlock extends Block {
     private static final VoxelShape SOUTH_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 16.0, 1.0);
     private static final VoxelShape NORTH_SHAPE = Block.box(0.0, 0.0, 15.0, 16.0, 16.0, 16.0);
 
-    public static final MapCodec<WartFluffBlock> CODEC = simpleCodec(WartFluffBlock::new);
-
     public WartFluffBlock(Properties settings) {
         super(settings);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HANGING, false).setValue(HALF, DoubleBlockHalf.UPPER));
     }
 
     @Override
-    public @NotNull MapCodec<WartFluffBlock> codec() {
-        return CODEC;
-    }
-
-    @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    @NotNull
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         return switch (direction) {
             case SOUTH -> NORTH_SHAPE;
@@ -63,7 +57,8 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    protected @NotNull BlockState updateShape(
+    @NotNull
+    public BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
@@ -119,7 +114,7 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         Direction direction = state.getValue(FACING);
         return this.canPlaceOn(world, pos.relative(direction), direction);
     }
@@ -130,7 +125,7 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    public @NotNull BlockState playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
+    public @NotNull void playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
         if (!world.isClientSide()) {
             if (player.isCreative()) {
                 onBreakInCreative(world, pos, state, player);
@@ -138,8 +133,6 @@ public class WartFluffBlock extends Block {
                 dropResources(state, world, pos, null, player, player.getMainHandItem());
             }
         }
-
-        return super.playerWillDestroy(world, pos, state, player);
     }
 
     @Override
@@ -161,7 +154,7 @@ public class WartFluffBlock extends Block {
     }
 
     @Override
-    protected long getSeed(BlockState blockState, BlockPos blockPos) {
+    public long getSeed(BlockState blockState, BlockPos blockPos) {
         return Mth.getSeed(blockPos.getX(), blockPos.below(blockState.getValue(HALF) == DoubleBlockHalf.LOWER ? 0 : 1).getY(), blockPos.getZ());
     }
 }

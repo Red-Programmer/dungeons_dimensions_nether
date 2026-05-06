@@ -14,7 +14,7 @@ import net.redupro.mcd_d_nether.DungeonsDimensionsNether;
 public class McddnItems {
 
     private static Item register(String name) {
-        ResourceKey< Item > itemKey = ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, name));
+        ResourceKey< Item > itemKey = ResourceKey.create(Registries.ITEM, new ResourceLocation(DungeonsDimensionsNether.MOD_ID, name));
         return Registry.register(BuiltInRegistries.ITEM, itemKey, new Item(new Item.Properties()));
     }
 

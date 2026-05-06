@@ -17,7 +17,6 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.pools.FeaturePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
-import net.minecraft.world.level.levelgen.structure.templatesystem.LiquidSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import org.jetbrains.annotations.NotNull;
@@ -80,7 +79,6 @@ public class AdvancedFeaturePoolElement extends FeaturePoolElement {
             Rotation rotation,
             BoundingBox boundingBox,
             RandomSource randomSource,
-            LiquidSettings liquidSettings,
             boolean bl
     ) {
         Holder<PlacedFeature> feature = switch (rotation) {

@@ -30,19 +30,13 @@ public class GlobBlock extends Block {
     private static final VoxelShape SOUTH_SHAPE = Block.box(3.0, 3.0, 0.0, 13.0, 13.0, 9.0);
     private static final VoxelShape WEST_SHAPE = Block.box(7.0, 3.0, 3.0, 16.0, 13.0, 13.0);
 
-    public static final MapCodec<GlobBlock> CODEC =simpleCodec(GlobBlock::new);
-
     public GlobBlock(Properties settings) {
         super(settings);
     }
 
     @Override
-    public @NotNull MapCodec<GlobBlock> codec() {
-        return CODEC;
-    }
-
-    @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    @NotNull
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         return switch (direction) {
             case UP -> DOWN_SHAPE;
@@ -61,7 +55,8 @@ public class GlobBlock extends Block {
     }
 
     @Override
-    protected @NotNull BlockState updateShape(
+    @NotNull
+    public BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
@@ -77,7 +72,7 @@ public class GlobBlock extends Block {
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         Direction direction = state.getValue(FACING);
         return this.canPlaceOn(world, pos.relative(direction), direction);
     }

@@ -13,7 +13,7 @@ public class SucculentBlock extends RootsBlock {
         super(settings);
     }
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return Block.box(2.0, 0.0, 2.0, 14.0, 8.0, 14.0);
     }
 }

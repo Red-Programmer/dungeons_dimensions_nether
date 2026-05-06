@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:nether_bricks"
+  },
+  "result": "mcd_d_nether:spalling_nether_bricks"
+}

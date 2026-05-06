@@ -16,7 +16,7 @@ public class AshLayerBlock extends SnowLayerBlock {
         super(properties);
     }
     @Override
-    protected void onPlace(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState2, boolean bl) {
+    public void onPlace(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState2, boolean bl) {
         if (level.getBlockState(blockPos.below()).is(Blocks.BASALT)) {
             if (level.getBlockState(blockPos.below()).getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y) {
                 level.setBlock(blockPos.below(), McddnBlocks.ASHY_BASALT.defaultBlockState(), 2);
@@ -24,7 +24,7 @@ public class AshLayerBlock extends SnowLayerBlock {
         }
     }
     @Override
-    protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
+    public void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
 
     }
 }

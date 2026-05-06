@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "dark_nether_bricks",
+  "key": {
+    "#": {
+      "item": "minecraft:nether_bricks"
+    },
+    "B": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "pattern": [
+    "###",
+    "#B#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "mcd_d_nether:dark_nether_bricks"
+  },
+  "show_notification": true
+}

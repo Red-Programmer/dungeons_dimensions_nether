@@ -1,13 +1,13 @@
-// 1.21.1	2026-04-30T17:09:08.3616857	Dungeons Dimensions Nether/Tags for minecraft:block
-f3bcd7a15244558a79f815c3b6003044269e8818 data\minecraft\tags\block\mineable\hoe.json
-1bdfe2bfcb36a7478a3cd9d03f577a4ad2feaec5 data\minecraft\tags\block\mineable\axe.json
-6bb92775b3ae19c2a1cd2411ad8070b5de7ebcf4 data\minecraft\tags\block\mineable\pickaxe.json
-a394bed2efd658da0352ef5b1c9ffa4c082d2c2a data\minecraft\tags\block\fences.json
-2f7d8de22006fadfa768ad2a99a1f03da45b0353 data\minecraft\tags\block\walls.json
-aa9629a5c73a1b59c459deee83083188433b2052 data\minecraft\tags\block\climbable.json
-6c79d2fa89b4532e87fd82303e38255a361388a7 data\minecraft\tags\block\infiniburn_nether.json
-6c79d2fa89b4532e87fd82303e38255a361388a7 data\minecraft\tags\block\infiniburn_end.json
-5324d43f53d132dc65774d8735b180d30d87f938 data\minecraft\tags\block\guarded_by_piglins.json
-6c79d2fa89b4532e87fd82303e38255a361388a7 data\minecraft\tags\block\nether_carver_replaceables.json
-6c79d2fa89b4532e87fd82303e38255a361388a7 data\minecraft\tags\block\infiniburn_overworld.json
-6bf5988e803132ca0c1068cd36f0f41ea03b7b0b data\minecraft\tags\block\mineable\shovel.json
+// 1.20.1	2026-05-06T10:54:28.7765261	Dungeons Dimensions Nether/Tags for minecraft:block
+46885bb535e35fc67534cc7c713139e076632a08 data\minecraft\tags\blocks\fences.json
+68f12d94cabd2ed007e655c53cad1d37561a2f7e data\minecraft\tags\blocks\nether_carver_replaceables.json
+68f12d94cabd2ed007e655c53cad1d37561a2f7e data\minecraft\tags\blocks\infiniburn_nether.json
+574140d61ca5436fcb78273013ba5c3872d538da data\minecraft\tags\blocks\mineable\hoe.json
+7239831189fff3087004957eef07d5cf1a1a9df3 data\minecraft\tags\blocks\mineable\axe.json
+60d27f1914e88dc69e791e3e5ea4b1a5a7e50c00 data\minecraft\tags\blocks\guarded_by_piglins.json
+56ece05f219762af4dcc1d440c4ebe0cca599d24 data\minecraft\tags\blocks\walls.json
+68f12d94cabd2ed007e655c53cad1d37561a2f7e data\minecraft\tags\blocks\infiniburn_end.json
+3cb29d393bb72bcedacf294b8d1d06b36df4a7e9 data\minecraft\tags\blocks\mineable\shovel.json
+68f12d94cabd2ed007e655c53cad1d37561a2f7e data\minecraft\tags\blocks\infiniburn_overworld.json
+f067191a7451b9559505ce30eb3c4c2b77b1f409 data\minecraft\tags\blocks\climbable.json
+3fa018e4a0620456f330e8bffd539b3d4202100a data\minecraft\tags\blocks\mineable\pickaxe.json

@@ -43,7 +43,8 @@ public class MouldBlock extends TallRootsBlock {
     }
 
     @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    @NotNull
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction facing = state.getValue(FACING);
         boolean corner = state.getValue(CORNER);
         boolean edge = state.getValue(EDGE);
@@ -78,7 +79,8 @@ public class MouldBlock extends TallRootsBlock {
     }
 
     @Override
-    protected @NotNull BlockState updateShape(
+    @NotNull
+    public BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
@@ -125,7 +127,7 @@ public class MouldBlock extends TallRootsBlock {
     }
 
     @Override
-    protected void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         boolean mouldType = this.defaultBlockState().is(McddnBlocks.MOONLIGHT_MOULD);
         if(checkArea(world, pos, mouldType) && !state.getValue(CAP) && state.getValue(HALF) == DoubleBlockHalf.UPPER) {
             world.setBlockAndUpdate(pos.above(), this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER).setValue(CAP, true));
@@ -244,7 +246,7 @@ public class MouldBlock extends TallRootsBlock {
     }
 
     @Override
-    protected boolean isRandomlyTicking(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         return true;
     }
 
@@ -254,7 +256,7 @@ public class MouldBlock extends TallRootsBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state) {
+    public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean bl) {
         return false;
     }
 

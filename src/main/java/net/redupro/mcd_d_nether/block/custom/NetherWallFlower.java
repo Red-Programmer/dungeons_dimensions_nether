@@ -27,19 +27,13 @@ public class NetherWallFlower extends Block {
     private static final VoxelShape SOUTH_SHAPE = Block.box(0.0, 9.0, 0.0, 16.0, 15.0, 8.0);
     private static final VoxelShape NORTH_SHAPE = Block.box(0.0, 9.0, 8.0, 16.0, 15.0, 16.0);
 
-    public static final MapCodec<NetherWallFlower> CODEC = simpleCodec(NetherWallFlower::new);
-
     public NetherWallFlower(Properties settings) {
         super(settings);
     }
 
     @Override
-    public @NotNull MapCodec<NetherWallFlower> codec() {
-        return CODEC;
-    }
-
-    @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    @NotNull
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         return switch (direction) {
             case SOUTH -> NORTH_SHAPE;
@@ -50,7 +44,8 @@ public class NetherWallFlower extends Block {
     }
 
     @Override
-    protected @NotNull BlockState updateShape(
+    @NotNull
+    public BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
@@ -81,7 +76,7 @@ public class NetherWallFlower extends Block {
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         Direction direction = state.getValue(FACING);
         return this.canPlaceOn(world, pos.relative(direction), direction);
     }

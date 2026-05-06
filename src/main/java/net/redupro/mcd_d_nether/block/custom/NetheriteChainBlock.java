@@ -24,7 +24,7 @@ public class NetheriteChainBlock extends ChainBlock {
     }
 
     @Override
-    protected VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         return SHAPES.get(blockState.getValue(AXIS));
     }
 }

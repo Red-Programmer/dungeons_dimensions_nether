@@ -35,8 +35,8 @@
         },
         {
           "location_predicate": {
-            "predicate_type": "minecraft:tag_match",
-            "tag": "minecraft:air"
+            "predicate_type": "minecraft:block_match",
+            "block": "minecraft:air"
           },
           "input_predicate": {
             "predicate_type": "minecraft:block_match",

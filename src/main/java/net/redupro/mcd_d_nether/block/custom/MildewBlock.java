@@ -21,12 +21,12 @@ public class MildewBlock extends RootsBlock {
     }
 
     @Override
-    protected boolean isRandomlyTicking(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         return true;
     }
 
     @Override
-    protected void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         Integer age = state.getValue(AGE);
         if (age == 0) {
             world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());

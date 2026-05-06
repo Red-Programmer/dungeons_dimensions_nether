@@ -20,8 +20,8 @@ import net.redupro.mcd_d_nether.block.enums.Quadrant;
 import java.util.concurrent.CompletableFuture;
 
 public class McddnLootTableProvider extends FabricBlockLootTableProvider {
-    public McddnLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
-        super(dataOutput, registryLookup);
+    public McddnLootTableProvider(FabricDataOutput dataOutput) {
+        super(dataOutput);
     }
 
     @Override

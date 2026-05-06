@@ -25,7 +25,7 @@ public class SpikeBlock extends Block {
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         if (state.getValue(UP)) {
             return SHAPE_TALL;
         } else if (state.getValue(DOWN)) {
@@ -44,7 +44,7 @@ public class SpikeBlock extends Block {
     }
 
     @Override
-    protected BlockState updateShape(
+    public BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,

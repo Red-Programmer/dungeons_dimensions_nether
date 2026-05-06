@@ -14,7 +14,7 @@ public class McddnTags {
         public static final TagKey<Block> VENT_REPLACEABLES = createTag("vent_replaceables");
 
         private static TagKey<Block> createTag(String id) {
-            return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, id));
+            return TagKey.create(Registries.BLOCK, new ResourceLocation(DungeonsDimensionsNether.MOD_ID, id));
         }
     }
 }

@@ -31,20 +31,14 @@ public class QuadBrushBlock extends Block {
     private static final VoxelShape SOUTH_SHAPE = Block.box(0.0, 0.0, 3.0, 16.0, 16.0, 6.0);
     private static final VoxelShape NORTH_SHAPE = Block.box(0.0, 0.0, 10.0, 16.0, 16.0, 13.0);
 
-    public static final MapCodec<QuadBrushBlock> CODEC = simpleCodec(QuadBrushBlock::new);
-
     public QuadBrushBlock(Properties settings) {
         super(settings);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(QUADRANT, Quadrant.QUAD_1));
     }
 
     @Override
-    public @NotNull MapCodec<QuadBrushBlock> codec() {
-        return CODEC;
-    }
-
-    @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    @NotNull
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         return switch (direction) {
             case SOUTH -> SOUTH_SHAPE;
@@ -55,7 +49,8 @@ public class QuadBrushBlock extends Block {
     }
 
     @Override
-    protected @NotNull BlockState updateShape(
+    @NotNull
+    public BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
@@ -105,7 +100,7 @@ public class QuadBrushBlock extends Block {
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         Direction direction = state.getValue(FACING);
         BlockPos offset = pos.relative(direction.getClockWise(Direction.Axis.Y)).below();
         return this.canPlaceOn(world, pos.below()) && this.canPlaceOn(world, offset);

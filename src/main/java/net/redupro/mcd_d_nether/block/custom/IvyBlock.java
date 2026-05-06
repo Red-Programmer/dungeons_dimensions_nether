@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -39,18 +40,14 @@ public class IvyBlock extends Block implements BonemealableBlock {
     private static final VoxelShape SOUTH_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 16.0, 8.0);
     private static final VoxelShape NORTH_SHAPE = Block.box(0.0, 0.0, 8.0, 16.0, 16.0, 16.0);
 
-    public static final MapCodec<IvyBlock> CODEC =  simpleCodec(IvyBlock::new);
     public IvyBlock(Properties settings) {
         super(settings);
         this.registerDefaultState(defaultBlockState().setValue(IVY_PART, IvyPart.TIP).setValue(FACING, Direction.NORTH).setValue(FRUIT, false));
     }
-    @Override
-    public @NotNull MapCodec<IvyBlock> codec() {
-        return CODEC;
-    }
 
     @Override
-    protected @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    @NotNull
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction direction = state.getValue(FACING);
         return switch (direction) {
             case SOUTH -> SOUTH_SHAPE;
@@ -71,7 +68,8 @@ public class IvyBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    protected @NotNull BlockState updateShape(
+    @NotNull
+    public BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
@@ -92,7 +90,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         BlockPos blockPos = pos.below();
         return this.canPlantOnTop(world.getBlockState(blockPos), world, blockPos);
     }
@@ -144,7 +142,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    protected void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         Direction facing = state.getValue(FACING);
         if (state.getValue(IVY_PART).equals(IvyPart.TIP)) {
             if (world.getBlockState(pos.above().relative(facing.getOpposite())).isFaceSturdy(world, pos.above().relative(facing.getOpposite()), facing)) {
@@ -167,12 +165,12 @@ public class IvyBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    protected @NotNull InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+    public @NotNull InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand interactionHand, BlockHitResult hit) {
         return Ivy.pickFruit(player, state, world, pos);
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state) {
+    public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean bl) {
         Direction facing = state.getValue(FACING);
         if (state.getValue(IVY_PART).equals(IvyPart.LEFT) || state.getValue(IVY_PART).equals(IvyPart.RIGHT)) {
             return !state.getValue(FRUIT);
@@ -200,7 +198,7 @@ public class IvyBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    protected boolean isRandomlyTicking(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         return true;
     }
 

@@ -14,7 +14,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElementType;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
-import net.redupro.mcd_d_nether.block.custom.*;
 import net.redupro.mcd_d_nether.world.level.levelgen.feature.*;
 import net.redupro.mcd_d_nether.world.level.levelgen.structure.pools.AdvancedFeaturePoolElement;
 import org.slf4j.Logger;
@@ -24,17 +23,17 @@ public class DungeonsDimensionsNether implements ModInitializer {
 	public static final String MOD_ID = "mcd_d_nether";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public static final ResourceLocation MCDDN_HUGE_FUNGUS_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "mcddn_huge_fungus");
-    public static final ResourceLocation STACKED_FEATURE_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "simple_stacked_feature");
-    public static final ResourceLocation ADVANCED_BLOCK_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "advanced_block");
-    public static final ResourceLocation IVY_FEATURE_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "crimson_ivy");
-    public static final ResourceLocation NETHER_WALL_FLOWER_PATCH_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "nether_wall_flower_patch");
-    public static final ResourceLocation GASEOUS_GLOB_PATCH_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "gaseous_glob_patch");
-    public static final ResourceLocation ASH_PATCH_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "ash_patch");
-    public static final ResourceLocation FORTRESS_CAP_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "fortress_cap");
-    public static final ResourceLocation BIG_FORTRESS_CAP_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "big_fortress_cap");
-    public static final ResourceLocation WARPING_VINES_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "warping_vines");
-    public static final ResourceLocation VENT_ID = ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "vent");
+    public static final ResourceLocation MCDDN_HUGE_FUNGUS_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "mcddn_huge_fungus");
+    public static final ResourceLocation STACKED_FEATURE_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "simple_stacked_feature");
+    public static final ResourceLocation ADVANCED_BLOCK_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "advanced_block");
+    public static final ResourceLocation IVY_FEATURE_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "crimson_ivy");
+    public static final ResourceLocation NETHER_WALL_FLOWER_PATCH_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "nether_wall_flower_patch");
+    public static final ResourceLocation GASEOUS_GLOB_PATCH_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "gaseous_glob_patch");
+    public static final ResourceLocation ASH_PATCH_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "ash_patch");
+    public static final ResourceLocation FORTRESS_CAP_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "fortress_cap");
+    public static final ResourceLocation BIG_FORTRESS_CAP_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "big_fortress_cap");
+    public static final ResourceLocation WARPING_VINES_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "warping_vines");
+    public static final ResourceLocation VENT_ID = new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "vent");
 
     public static final McddnHugeFungusFeature MCDDN_HUGE_FUNGUS_FEATURE = new McddnHugeFungusFeature(McddnHugeFungusFeatureConfig.CODEC);
     public static final SimpleStackedFeature SIMPLE_STACKED_FEATURE = new SimpleStackedFeature(SimpleRandomFeatureConfiguration.CODEC);
@@ -53,13 +52,7 @@ public class DungeonsDimensionsNether implements ModInitializer {
 	public void onInitialize() {
         McddnBlocks.registerMcddnBlocks();
 
-        ResourceManagerHelper.registerBuiltinResourcePack(ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "custom_fortress"), FabricLoader.getInstance().getModContainer(DungeonsDimensionsNether.MOD_ID).orElseThrow(), Component.translatable("Custom Nether Fortress"), ResourcePackActivationType.DEFAULT_ENABLED);
-
-        Registry.register(BuiltInRegistries.BLOCK_TYPE, "wart_fluff", WartFluffBlock.CODEC);
-        Registry.register(BuiltInRegistries.BLOCK_TYPE, "nether_wall_flower", NetherWallFlower.CODEC);
-        Registry.register(BuiltInRegistries.BLOCK_TYPE, "quad_brush", QuadBrushBlock.CODEC);
-        Registry.register(BuiltInRegistries.BLOCK_TYPE, "ivy", IvyBlock.CODEC);
-        Registry.register(BuiltInRegistries.BLOCK_TYPE, "glob", GlobBlock.CODEC);
+        ResourceManagerHelper.registerBuiltinResourcePack(new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "custom_fortress"), FabricLoader.getInstance().getModContainer(DungeonsDimensionsNether.MOD_ID).orElseThrow(), Component.translatable("Custom Nether Fortress"), ResourcePackActivationType.DEFAULT_ENABLED);
 
         Registry.register(BuiltInRegistries.FEATURE, MCDDN_HUGE_FUNGUS_ID, MCDDN_HUGE_FUNGUS_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, STACKED_FEATURE_ID, SIMPLE_STACKED_FEATURE);
@@ -73,6 +66,6 @@ public class DungeonsDimensionsNether implements ModInitializer {
         Registry.register(BuiltInRegistries.FEATURE, WARPING_VINES_ID, WARPING_VINES_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, VENT_ID, VENT_FEATURE);
 
-        Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, ResourceLocation.fromNamespaceAndPath(DungeonsDimensionsNether.MOD_ID, "advanced_feature_pool_element"), (StructurePoolElementType<AdvancedFeaturePoolElement>) () -> AdvancedFeaturePoolElement.CODEC);
+        Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "advanced_feature_pool_element"), (StructurePoolElementType<AdvancedFeaturePoolElement>) () -> AdvancedFeaturePoolElement.CODEC.codec());
     }
 }

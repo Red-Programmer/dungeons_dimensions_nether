@@ -15,7 +15,7 @@ public class BloodthornBlossomBlock extends RootsBlock {
         super(properties);
     }
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 }

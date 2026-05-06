@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "mcd_d_nether:dark_nether_brick_fence",
+    "mcd_d_nether:bone_fence"
+  ]
+}

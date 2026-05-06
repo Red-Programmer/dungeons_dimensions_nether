@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:netherrack"
+    },
+    "W": {
+      "item": "minecraft:nether_wart"
+    }
+  },
+  "pattern": [
+    "#W",
+    "W#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "mcd_d_nether:polished_red_netherrack"
+  },
+  "show_notification": true
+}

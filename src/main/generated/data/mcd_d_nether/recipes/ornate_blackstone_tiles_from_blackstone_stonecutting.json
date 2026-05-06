@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "minecraft:blackstone"
+  },
+  "result": "mcd_d_nether:ornate_blackstone_tiles"
+}

@@ -4,7 +4,7 @@
   "start_jigsaw_name": "start",
   "biomes": "#minecraft:has_structure/nether_fortress",
   "terrain_adaptation": "none",
-  "size": 20,
+  "size": 7,
   "start_height": {
     "absolute": 37
   },

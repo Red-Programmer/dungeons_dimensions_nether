@@ -16,16 +16,16 @@ public class WartHangingBlock extends Block {
         super(properties);
     }
     @Override
-    protected boolean skipRendering(BlockState blockState, BlockState blockState2, Direction direction) {
+    public boolean skipRendering(BlockState blockState, BlockState blockState2, Direction direction) {
         return blockState2.is(this) || super.skipRendering(blockState, blockState2, direction);
     }
     @Override
-    protected VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         return SHAPE;
     }
 
     @Override
-    protected BlockState updateShape(
+    public BlockState updateShape(
             BlockState blockState,
             Direction direction,
             BlockState blockState2,
