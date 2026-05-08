@@ -14,6 +14,7 @@ public class DungeonsDimensionsNetherClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.WARPING_VINES_PLANT, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.WARPED_BLOSSOM, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.POTTED_WARPED_BLOSSOM, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.POTTED_CRIMSON_SPROUTS, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.WARPED_WART_FLUFF, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.NETHER_WART_FLUFF, RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(McddnBlocks.WARPED_STALK, RenderType.cutout());
