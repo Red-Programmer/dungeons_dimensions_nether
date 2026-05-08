@@ -1,9 +1,9 @@
 {
   "values": [
-    "mcd_d_nether:cut_blackstone",
-    "mcd_d_nether:moldy_cut_blackstone",
-    "mcd_d_nether:spalling_cut_blackstone",
-    "mcd_d_nether:inset_polished_blackstone",
-    "mcd_d_nether:moldy_inset_polished_blackstone"
+    "mcd_d_nether:blackstone_tiles",
+    "mcd_d_nether:moldy_blackstone_tiles",
+    "mcd_d_nether:spalling_blackstone_tiles",
+    "mcd_d_nether:ornate_blackstone_tiles",
+    "mcd_d_nether:moldy_ornate_blackstone_tiles"
   ]
 }
