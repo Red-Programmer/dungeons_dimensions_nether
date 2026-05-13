@@ -72,7 +72,7 @@
     },
     {
       "processor_type": "minecraft:protected_blocks",
-      "value": "#minecraft:air"
+      "value": "#mcd_d_nether:air"
     }
   ]
 }

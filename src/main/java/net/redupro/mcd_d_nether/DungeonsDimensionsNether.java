@@ -1,5 +1,6 @@
 package net.redupro.mcd_d_nether;
 
+import com.mojang.serialization.Codec;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -12,6 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElementType;
 import net.redupro.mcd_d_nether.block.McddnBlocks;
 import net.redupro.mcd_d_nether.world.level.levelgen.feature.*;
@@ -47,6 +49,8 @@ public class DungeonsDimensionsNether implements ModInitializer {
     public static final WarpingVinesFeature WARPING_VINES_FEATURE = new WarpingVinesFeature(NoneFeatureConfiguration.CODEC);
     public static final VentFeature VENT_FEATURE = new VentFeature(VentFeatureConfig.CODEC);
 
+    public static final StructurePoolElementType<AdvancedFeaturePoolElement> ADVANCED_FEATURE = register(new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "advanced_feature_pool_element"), AdvancedFeaturePoolElement.CODEC.codec());
+
 
     @Override
 	public void onInitialize() {
@@ -65,7 +69,8 @@ public class DungeonsDimensionsNether implements ModInitializer {
         Registry.register(BuiltInRegistries.FEATURE, BIG_FORTRESS_CAP_ID, BIG_FORTRESS_CAP_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, WARPING_VINES_ID, WARPING_VINES_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, VENT_ID, VENT_FEATURE);
-
-        Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, new ResourceLocation(DungeonsDimensionsNether.MOD_ID, "advanced_feature_pool_element"), (StructurePoolElementType<AdvancedFeaturePoolElement>) () -> AdvancedFeaturePoolElement.CODEC.codec());
+    }
+    static <P extends StructurePoolElement> StructurePoolElementType<P> register(ResourceLocation location, Codec<P> codec) {
+        return Registry.register(BuiltInRegistries.STRUCTURE_POOL_ELEMENT, location, () -> codec);
     }
 }
